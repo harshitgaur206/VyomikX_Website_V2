@@ -1,0 +1,166 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-source-serif), Georgia, 'Times New Roman', serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Soft warm peach & cream light theme, modern tech dark slate/charcoal dark theme */
+:root {
+  color-scheme: light;
+  --background: oklch(0.978 0.009 75); /* #f9f6f0 warm cream */
+  --foreground: oklch(0.26 0.03 50); /* #382e27 deep warm brown */
+  --card: oklch(0.99 0.004 75); /* #ffffff soft warm off-white */
+  --card-foreground: oklch(0.26 0.03 50);
+  --popover: oklch(0.99 0.004 75);
+  --popover-foreground: oklch(0.26 0.03 50);
+  --primary: oklch(0.44 0.05 50); /* #735c48 matte earth brown */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.015 75); /* #f2ece1 */
+  --secondary-foreground: oklch(0.26 0.03 50);
+  --muted: oklch(0.93 0.012 75);
+  --muted-foreground: oklch(0.46 0.03 50); /* #736254 */
+  --accent: oklch(0.48 0.05 50); /* #7d6551 matte earth brown accent */
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.18 25);
+  --border: oklch(0.89 0.018 75); /* #e6ded0 */
+  --input: oklch(0.89 0.018 75);
+  --ring: oklch(0.48 0.05 50);
+  --chart-1: oklch(0.48 0.05 50);
+  --chart-2: oklch(0.32 0.035 55);
+  --chart-3: oklch(0.45 0.04 60);
+  --chart-4: oklch(0.6 0.05 70);
+  --chart-5: oklch(0.4 0.05 50);
+  --radius: 0.85rem;
+  --sidebar: oklch(0.96 0.012 75);
+  --sidebar-foreground: oklch(0.26 0.03 50);
+  --sidebar-primary: oklch(0.44 0.05 50);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.94 0.015 75);
+  --sidebar-accent-foreground: oklch(0.26 0.03 50);
+  --sidebar-border: oklch(0.89 0.018 75);
+  --sidebar-ring: oklch(0.48 0.05 50);
+}
+
+/* Modern tech dark slate / charcoal dark theme - not pitch black */
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.18 0.015 250); /* #12151e modern dark slate */
+  --foreground: oklch(0.94 0.005 240); /* #f1f5f9 slate white */
+  --card: oklch(0.22 0.018 250); /* #1a1e2b slate card surface */
+  --card-foreground: oklch(0.94 0.005 240);
+  --popover: oklch(0.22 0.018 250);
+  --popover-foreground: oklch(0.94 0.005 240);
+  --primary: oklch(0.76 0.025 65); /* #c8b9a6 matte bronze/warm silver */
+  --primary-foreground: oklch(0.15 0 0);
+  --secondary: oklch(0.26 0.02 250); /* #222736 */
+  --secondary-foreground: oklch(0.94 0.005 240);
+  --muted: oklch(0.24 0.015 250); /* #1d2230 */
+  --muted-foreground: oklch(0.7 0.01 240); /* #94a3b8 */
+  --accent: oklch(0.74 0.03 65); /* #c4b3a0 matte bronze accent */
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.58 0.18 25);
+  --border: oklch(0.28 0.02 250); /* #2a3144 border */
+  --input: oklch(0.28 0.02 250);
+  --ring: oklch(0.74 0.03 65);
+  --chart-1: oklch(0.74 0.03 65);
+  --chart-2: oklch(0.65 0 0);
+  --chart-3: oklch(0.5 0 0);
+  --chart-4: oklch(0.4 0 0);
+  --chart-5: oklch(0.3 0 0);
+  --sidebar: oklch(0.2 0.018 250);
+  --sidebar-foreground: oklch(0.94 0.005 240);
+  --sidebar-primary: oklch(0.76 0.025 65);
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.26 0.02 250);
+  --sidebar-accent-foreground: oklch(0.94 0.005 240);
+  --sidebar-border: oklch(0.28 0.02 250);
+  --sidebar-ring: oklch(0.74 0.03 65);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .section-divider {
+    @apply border-y border-border bg-muted/40;
+  }
+  .bg-tech-grid {
+    background-image: radial-gradient(circle at 1px 1px, color-mix(in oklch, var(--foreground) 6%, transparent) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+  .card-sheen {
+    background-image: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--card) 100%, transparent),
+      color-mix(in oklch, var(--accent) 5%, var(--card))
+    );
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.animate-fade-up { animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-float { animation: float-subtle 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .animate-float {
+    animation: none;
+  }
+}
