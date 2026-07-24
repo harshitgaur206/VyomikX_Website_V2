@@ -1,0 +1,134 @@
+{
+  "emails": [
+    {
+      "target": "vyomikX@gmail.com",
+      "subject": "[VyomikX Contact] School Visit Request - Harshit Gaur",
+      "submission": {
+        "id": "1784888508156-y7gq9vy",
+        "createdAt": "2026-07-24T10:21:48.156Z",
+        "name": "Harshit Gaur",
+        "email": "hgaur9368@gmail.com",
+        "organization": "AMU",
+        "type": "School Visit Request",
+        "message": "cewvr",
+        "phone": "+919368242569",
+        "preferredTime": "7-8"
+      },
+      "timestamp": "2026-07-24T10:21:48.186Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    },
+    {
+      "target": "vyomikX@gmail.com",
+      "subject": "[VyomikX Contact] School Visit Request - Harshit Gaur",
+      "submission": {
+        "id": "1784888507408-k8dw4gv",
+        "createdAt": "2026-07-24T10:21:47.408Z",
+        "name": "Harshit Gaur",
+        "email": "hgaur9368@gmail.com",
+        "organization": "AMU",
+        "type": "School Visit Request",
+        "message": "cewvr",
+        "phone": "+919368242569",
+        "preferredTime": "7-8"
+      },
+      "timestamp": "2026-07-24T10:21:47.432Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    },
+    {
+      "target": "vyomikX@gmail.com",
+      "subject": "[VyomikX Contact] School Visit Request - Harshit Gaur",
+      "submission": {
+        "id": "1784888506645-ghlf2xi",
+        "createdAt": "2026-07-24T10:21:46.645Z",
+        "name": "Harshit Gaur",
+        "email": "hgaur9368@gmail.com",
+        "organization": "AMU",
+        "type": "School Visit Request",
+        "message": "cewvr",
+        "phone": "+919368242569",
+        "preferredTime": "7-8"
+      },
+      "timestamp": "2026-07-24T10:21:46.678Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    },
+    {
+      "target": "vyomikX@gmail.com",
+      "subject": "[VyomikX Contact] School Visit Request - Harshit Gaur",
+      "submission": {
+        "id": "1784888505761-voec29w",
+        "createdAt": "2026-07-24T10:21:45.761Z",
+        "name": "Harshit Gaur",
+        "email": "hgaur9368@gmail.com",
+        "organization": "AMU",
+        "type": "School Visit Request",
+        "message": "cewvr",
+        "phone": "+919368242569",
+        "preferredTime": "7-8"
+      },
+      "timestamp": "2026-07-24T10:21:45.788Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    },
+    {
+      "target": "vyomikX@gmail.com",
+      "subject": "[VyomikX Contact] School Visit Request - Harshit Gaur",
+      "submission": {
+        "id": "1784888503727-m16k361",
+        "createdAt": "2026-07-24T10:21:43.727Z",
+        "name": "Harshit Gaur",
+        "email": "hgaur9368@gmail.com",
+        "organization": "AMU",
+        "type": "School Visit Request",
+        "message": "cewvr",
+        "phone": "+919368242569",
+        "preferredTime": "7-8"
+      },
+      "timestamp": "2026-07-24T10:21:43.749Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    },
+    {
+      "target": "vyomikx@gmail.com",
+      "subject": "[VyomikX Contact] Donate Spare Parts from Harshit Gaur",
+      "submission": {
+        "id": "1784886358365-165t6wf",
+        "createdAt": "2026-07-24T09:45:58.365Z",
+        "name": "Harshit Gaur",
+        "email": "hgaur9368@gmail.com",
+        "organization": "AMU",
+        "type": "Donate Spare Parts",
+        "message": "I would like to connect"
+      },
+      "timestamp": "2026-07-24T09:45:58.399Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    },
+    {
+      "target": "vyomikx@gmail.com",
+      "subject": "[VyomikX Contact] Donate Spare Parts from Harshit Gaur",
+      "submission": {
+        "id": "1784886354156-zl4kivv",
+        "createdAt": "2026-07-24T09:45:54.156Z",
+        "name": "Harshit Gaur",
+        "email": "hgaur9368@gmail.com",
+        "organization": "AMU",
+        "type": "Donate Spare Parts",
+        "message": "I would like to connect"
+      },
+      "timestamp": "2026-07-24T09:45:54.182Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    },
+    {
+      "target": "vyomikX@gmail.com",
+      "subject": "[VyomikX Contact] School Visit Request from hjuy",
+      "submission": {
+        "id": "1784885840371-59x2w7a",
+        "createdAt": "2026-07-24T09:37:20.371Z",
+        "name": "hjuy",
+        "email": "hgaur9368@gmail.com",
+        "organization": "ece",
+        "type": "School Visit Request",
+        "message": "2ed"
+      },
+      "timestamp": "2026-07-24T09:37:20.393Z",
+      "status": "LOGGED_OUTBOUND_QUEUE"
+    }
+  ]
+}
