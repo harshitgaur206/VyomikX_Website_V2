@@ -8,6 +8,8 @@ import {
   Package,
   Users,
   Wrench,
+  Heart,
+  GraduationCap,
 } from "lucide-react"
 import { projects, values, futureVision, team, communityLinks } from "@/lib/site-data"
 import { SectionHeading } from "@/components/section-heading"
@@ -22,21 +24,39 @@ const communityIcons = [BookOpen, Package, Gift, HandHeart]
 const aboutSlides = [
   {
     src: "/outreach/workshop-hands-on.jpg",
-    alt: "Students learning robotics hands-on with microcontrollers",
-    title: "Hands-On Robotics & Circuit Assemblies",
-    tag: "Workshops",
+    alt: "Students assembling and experimenting with microcontroller-based robotics projects during a hands-on workshop",
+    title: "Learning by Building",
+    tag: "Hands-On Learning",
   },
   {
     src: "/outreach/workshop-girls-solar.jpg",
-    alt: "Young students exploring solar tracking robot",
-    title: "School Outreach & Community Visits",
-    tag: "School Visits",
+    alt: "Students learning about a solar-powered tracking robot during a technology outreach session",
+    title: "Technology Beyond the Classroom",
+    tag: "STEM Outreach",
   },
   {
     src: "/outreach/workshop-spider-robot.jpg",
-    alt: "Mentors demonstrating spider robot gait control",
-    title: "Student-Led Hardware Mentorship",
-    tag: "Mentorship",
+    alt: "Students exploring the movement and gait mechanism of a multi-legged spider robot with mentors",
+    title: "Robotics Through Exploration",
+    tag: "Robotics Mentorship",
+  },
+  {
+    src: "/gallery/outreach-10.jpeg",
+    alt: "Students participating in an interactive technology and robotics learning activity",
+    title: "Making Technology Accessible",
+    tag: "Tech Education",
+  },
+  {
+    src: "/gallery/outreach-7.jpeg",
+    alt: "Young learners collaborating on practical electronics and robotics activities",
+    title: "Building Future Innovators",
+    tag: "Student Innovation",
+  },
+  {
+    src: "/gallery/outreach-9.jpeg",
+    alt: "Students engaging with mentors while discovering practical applications of electronics and technology",
+    title: "Inspiring Curiosity Through Tech",
+    tag: "Community Learning",
   },
 ]
 
@@ -52,7 +72,7 @@ export function AboutPreview() {
           <SectionHeading
             eyebrow="Who We Are"
             title="Students helping students build with technology"
-            description="VyomikX is not a corporate lab — we are a group of ZHCET students who believe every curious mind deserves access to tools, mentorship, and the chance to build something real."
+            description="VyomikX is not a corporate lab or a College Club — we are a group of ZHCET students who believe every curious mind deserves access to tools, mentorship, and the chance to build something real."
           />
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {values.map((value, i) => {
@@ -90,7 +110,7 @@ export function FeaturedProjects() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
             eyebrow="Our Work"
-            title="Projects built to be shared"
+            title="Projects Built to Inspire"
             description="Every build starts with a question: how can we make this accessible to students who don't have expensive tools? Here are three examples."
           />
           <Button asChild variant="outline" className="shrink-0 rounded-full">
@@ -116,7 +136,7 @@ export function OpenResources() {
       <SectionHeading
         eyebrow="Open Resources"
         title="Everything we share is 100% free"
-        description="Learning guides, equipment loans, mentorship — no fees, no paywalls. We exist to remove barriers, not create them."
+        description="Learning guides, equipments, mentorship — no fees, no paywalls. We exist to remove barriers, not create them."
         align="center"
         className="mx-auto"
       />
@@ -155,7 +175,7 @@ export function FuturePreview() {
         <SectionHeading
           eyebrow="Future Vision"
           title="Building an accessible ecosystem for future technology leaders"
-          description="Our strategic roadmap establishes open-access maker labs, hands-on school visits, and shared hardware repositories to ensure zero financial barriers to engineering education."
+          description="Our strategic roadmap is to open-access to all tech tools, hands-on school visits, and shared hardware software repositories to ensure zero financial barriers to engineering education."
           align="center"
           className="mx-auto"
         />
@@ -241,21 +261,58 @@ export function HomeCta() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
             Whether you want to learn, donate spare parts, mentor a student, or bring a workshop to
-            your school — we&apos;d love to hear from you. Everything we offer is free.
+            your school — we would love to hear from you. Everything we offer is free.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:flex-wrap">
-            <Button asChild size="lg" className="w-full rounded-full bg-[#c25e38] text-white hover:bg-[#a94e2d] dark:bg-[#e07a5f] sm:w-auto">
-              <Link href="/contact?topic=workshop">
-                Join a Workshop
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="w-full rounded-full sm:w-auto">
-              <Link href="/contact?topic=donate">Donate Spare Parts</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="w-full rounded-full sm:w-auto">
-              <Link href="/contact?topic=mentor">Mentor a Student</Link>
-            </Button>
+           <div className="flex flex-col gap-3 sm:flex-row">
+  {/* Join a Workshop */}
+<div className="flex flex-col gap-3 sm:flex-row">
+  {/* Join a Workshop */}
+  <Button
+    asChild
+    size="lg"
+    className="w-full rounded-full border border-[#c25e38] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#c25e38] hover:bg-[#c25e38] hover:text-white sm:w-auto"
+  >
+    <Link
+      href="/contact?topic=workshop"
+      className="inline-flex items-center justify-center gap-2"
+    >
+      <span>Join a Workshop</span>
+      <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+    </Link>
+  </Button>
+
+  {/* Donate Spare Parts */}
+  <Button
+    asChild
+    size="lg"
+    className="w-full rounded-full border border-[#c25e38] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#c25e38] hover:bg-[#c25e38] hover:text-white sm:w-auto"
+  >
+    <Link
+      href="/contact?topic=donate"
+      className="inline-flex items-center justify-center gap-2"
+    >
+      <span>Donate Spare Parts</span>
+      <Heart className="h-4 w-4 shrink-0" />
+    </Link>
+  </Button>
+
+  {/* Mentor a Student */}
+  <Button
+    asChild
+    size="lg"
+    className="w-full rounded-full border border-[#c25e38] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#c25e38] hover:bg-[#c25e38] hover:text-white sm:w-auto"
+  >
+    <Link
+      href="/contact?topic=mentor"
+      className="inline-flex items-center justify-center gap-2"
+    >
+      <span>Mentor a Student</span>
+      <GraduationCap className="h-4 w-4 shrink-0" />
+    </Link>
+  </Button>
+</div>
+</div>
           </div>
         </div>
       </div>

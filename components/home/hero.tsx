@@ -39,34 +39,39 @@ export function Hero() {
 
           {/* Action Buttons - Toned Down & Diversified */}
           <div className="mt-8 flex flex-col items-center gap-3.5 sm:flex-row lg:justify-start">
-            <Button 
-              asChild 
-              size="lg" 
-              className="w-full rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:opacity-95 sm:w-auto"
-            >
-              <Link href="/contact?topic=support">
-                Support Our Work
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </Link>
-            </Button>
+            <Button
+  asChild
+  size="lg"
+  className="w-full rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:opacity-95 sm:w-auto"
+>
+  <Link
+    href="/contact?topic=support"
+    className="inline-flex items-center justify-center"
+  >
+    <span>Support Our Work</span>
+    <ArrowRight className="ml-1.5 h-4 w-4 shrink-0" />
+  </Link>
+</Button>
             
-            <Button 
-              asChild 
-              size="lg" 
-              variant="outline" 
-              className="w-full rounded-full border border-border bg-card/80 px-7 py-3.5 text-sm font-medium text-foreground shadow-xs backdrop-blur-sm hover:bg-muted sm:w-auto"
-            >
-              <Link href="/projects">
-                <Layers className="mr-1.5 h-4 w-4 text-accent" />
-                Browse Projects
-              </Link>
-            </Button>
+            <Button asChild
+  size="lg"
+  variant="outline"
+  className="w-full rounded-full border border-border bg-card/80 px-7 py-3.5 text-sm font-medium text-foreground shadow-xs backdrop-blur-sm hover:bg-muted sm:w-auto"
+>
+  <Link
+    href="/projects"
+    className="inline-flex items-center justify-center"
+  >
+    <Layers className="mr-1.5 h-4 w-4 shrink-0 text-accent" />
+    <span>Browse Projects</span>
+  </Link>
+</Button>
           </div>
 
           {/* Clean Open Access Telemetry Bar */}
           <div className="mt-8 flex items-center justify-center gap-3 rounded-full border border-border/80 bg-card/60 px-5 py-2 text-xs font-medium text-muted-foreground backdrop-blur-md lg:justify-start lg:max-w-md">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>100% Free Resources &amp; your Tech space</span>
+            <span>100% Free Resources &amp; your Tech space &amp; Your Gateway to Technology</span>
           </div>
         </div>
 

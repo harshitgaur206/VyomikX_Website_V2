@@ -14,23 +14,23 @@ export const metadata: Metadata = {
 const strategicPillars = [
   {
     tag: "PILLAR 01",
-    title: "Open Campus Maker Space & Component Bank",
+    title: "Accessible Technology Education",
     description:
-      "Establishing a 24/7 accessible hardware lab at ZHCET, AMU with 3D printers, oscilloscopes, power supplies, and a zero-cost component lending library for every student.",
+      "Making technology easier to understand through practical workshops, beginner-friendly learning resources, and hands-on activities that encourage students to learn by doing.",
     icon: Cpu,
   },
   {
     tag: "PILLAR 02",
-    title: " STEM Outreach & School Visits",
+    title: "STEM Outreach & School Engagement",
     description:
-      "Scaling our robotics kits into primary and secondary schools across Aligarh, delivering free practical demonstrations on solar trackers, rovers, and microcontrollers.",
+      "Taking practical technology education beyond the classroom through school visits, demonstrations, interactive sessions, and community-focused STEM activities.",
     icon: Rocket,
   },
   {
     tag: "PILLAR 03",
-    title: "Open-Source Engineering Documentation",
+    title: "Knowledge That Stays Open",
     description:
-      "Publishing step-by-step assembly guides, circuit schematics, C++/Python control firmware, and bill-of-materials for 100% of our builds on GitHub.",
+      "Sharing free guides, tutorials, project documentation, and learning resources so students can continue exploring, experimenting, and building independently.",
     icon: Terminal,
   },
 ]

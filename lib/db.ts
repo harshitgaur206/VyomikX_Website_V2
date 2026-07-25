@@ -1,4 +1,5 @@
 import { appendFile, mkdir, readFile, writeFile } from "fs/promises"
+import os from "os"
 import path from "path"
 
 export type ContactSubmission = {
@@ -23,16 +24,32 @@ export type FeedbackSubmission = {
 
 type Store<T> = { items: T[] }
 
-const DATA_DIR = path.join(process.cwd(), "data")
+// Determine safe data directory (fallback to OS temp directory if process.cwd() is read-only)
+const LOCAL_DATA_DIR = path.join(process.cwd(), "data")
+const TMP_DATA_DIR = path.join(os.tmpdir(), "vyomikx-data")
 
-async function ensureDataDir() {
-  await mkdir(DATA_DIR, { recursive: true })
+async function getWritableDataDir(): Promise<string> {
+  try {
+    await mkdir(LOCAL_DATA_DIR, { recursive: true })
+    // Test write permission
+    const testFile = path.join(LOCAL_DATA_DIR, ".write-test")
+    await writeFile(testFile, "test", "utf-8")
+    return LOCAL_DATA_DIR
+  } catch {
+    // Fallback to temp directory on Vercel / serverless environments
+    try {
+      await mkdir(TMP_DATA_DIR, { recursive: true })
+      return TMP_DATA_DIR
+    } catch {
+      return TMP_DATA_DIR
+    }
+  }
 }
 
 async function readStore<T>(filename: string): Promise<Store<T>> {
-  await ensureDataDir()
-  const filePath = path.join(DATA_DIR, filename)
   try {
+    const dataDir = await getWritableDataDir()
+    const filePath = path.join(dataDir, filename)
     const raw = await readFile(filePath, "utf-8")
     return JSON.parse(raw) as Store<T>
   } catch {
@@ -41,9 +58,13 @@ async function readStore<T>(filename: string): Promise<Store<T>> {
 }
 
 async function writeStore<T>(filename: string, store: Store<T>) {
-  await ensureDataDir()
-  const filePath = path.join(DATA_DIR, filename)
-  await writeFile(filePath, JSON.stringify(store, null, 2), "utf-8")
+  try {
+    const dataDir = await getWritableDataDir()
+    const filePath = path.join(dataDir, filename)
+    await writeFile(filePath, JSON.stringify(store, null, 2), "utf-8")
+  } catch {
+    // Gracefully handle read-only disk in serverless runtime
+  }
 }
 
 function escapeSql(str: string): string {
@@ -51,10 +72,11 @@ function escapeSql(str: string): string {
 }
 
 async function appendSqlSubmission(entry: ContactSubmission) {
-  await ensureDataDir()
-  const sqlFile = path.join(DATA_DIR, "contact_submissions.sql")
-  
-  const createTableStmt = `-- Contact Submissions SQL Database File
+  try {
+    const dataDir = await getWritableDataDir()
+    const sqlFile = path.join(dataDir, "contact_submissions.sql")
+
+    const createTableStmt = `-- Contact Submissions SQL Database File
 CREATE TABLE IF NOT EXISTS contact_submissions (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
@@ -65,7 +87,6 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );\n\n`
 
-  try {
     const exists = await readFile(sqlFile, "utf-8").then(() => true).catch(() => false)
     if (!exists) {
       await writeFile(sqlFile, createTableStmt, "utf-8")
@@ -81,7 +102,7 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
 
     await appendFile(sqlFile, insertStmt, "utf-8")
   } catch {
-    // Gracefully handle file append
+    // Gracefully handle file write errors
   }
 }
 
@@ -92,17 +113,20 @@ function newId() {
 export async function saveContactSubmission(
   data: Omit<ContactSubmission, "id" | "createdAt">,
 ): Promise<ContactSubmission> {
-  const store = await readStore<ContactSubmission>("contact-submissions.json")
   const entry: ContactSubmission = {
     id: newId(),
     createdAt: new Date().toISOString(),
     ...data,
   }
-  store.items.unshift(entry)
-  await writeStore("contact-submissions.json", store)
-  
-  // Write to SQL Database File
-  await appendSqlSubmission(entry)
+
+  try {
+    const store = await readStore<ContactSubmission>("contact-submissions.json")
+    store.items.unshift(entry)
+    await writeStore("contact-submissions.json", store)
+    await appendSqlSubmission(entry)
+  } catch {
+    // Never fail submission if disk write is blocked
+  }
 
   return entry
 }
@@ -110,13 +134,19 @@ export async function saveContactSubmission(
 export async function saveFeedbackSubmission(
   data: Omit<FeedbackSubmission, "id" | "createdAt">,
 ): Promise<FeedbackSubmission> {
-  const store = await readStore<FeedbackSubmission>("feedback-submissions.json")
   const entry: FeedbackSubmission = {
     id: newId(),
     createdAt: new Date().toISOString(),
     ...data,
   }
-  store.items.unshift(entry)
-  await writeStore("feedback-submissions.json", store)
+
+  try {
+    const store = await readStore<FeedbackSubmission>("feedback-submissions.json")
+    store.items.unshift(entry)
+    await writeStore("feedback-submissions.json", store)
+  } catch {
+    // Never fail feedback if disk write is blocked
+  }
+
   return entry
 }

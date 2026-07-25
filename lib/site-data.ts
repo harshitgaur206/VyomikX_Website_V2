@@ -4,11 +4,12 @@ export const site = {
   subtitle:
     "A student-led movement at ZHCET, AMU. We share tools, mentorship, and equipment so curious minds from all backgrounds can build real technology.",
   email: "vyomikx@gmail.com",
-  phone:"897890",
+  phone: "+91 897890",
   location: "ZHCET, Aligarh Muslim University, Aligarh, India",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/vyomikx/" },
     { label: "Instagram", href: "https://www.instagram.com/vyomik.x/" },
+    { label: "YouTube", href: "https://youtube.com/@vyomikx?si=Iq4YVAQbLOX9FYvu" },
   ],
   stats: [
     { value: "100%", label: "Free Resources" },
@@ -73,7 +74,7 @@ export const galleryItems: GalleryItem[] = [
     category: "School Visits",
     image: "/outreach/workshop-girls-solar.jpg",
     date: "Jul 2026",
-    location: "Primary School Outreach, Aligarh",
+    location: " School Outreach, Aligarh",
     description: "Young students exploring light sensors and solar tracker mechanisms during our community robotics visit.",
   },
   {
@@ -82,7 +83,7 @@ export const galleryItems: GalleryItem[] = [
     category: "Workshops",
     image: "/outreach/workshop-spider-robot.jpg",
     date: "Jun 2026",
-    location: "ZHCET Maker Session, AMU",
+    location: "School Outreach, BulandShahr",
     description: "Team members demonstrating hexapod spider robot gait control and multi-servo calibration to school children.",
   },
   {
@@ -91,7 +92,7 @@ export const galleryItems: GalleryItem[] = [
     category: "Workshops",
     image: "/outreach/workshop-hands-on.jpg",
     date: "May 2026",
-    location: "Community Tech Lab, Aligarh",
+    location: "Community Program, Aligarh",
     description: "Students collaborating on laptop software logic, robotic arm joint control, and breadboard circuit assembly.",
   },
   {
@@ -105,20 +106,20 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: "g5",
-    title: "6-DOF CyberDeck Robotic Arm Setup",
-    category: "Projects",
-    image: "/projects/robotic-arm.png",
-    date: "Mar 2026",
-    location: "ZHCET Robotics Lab",
+    title: "Demonstrating Aurdino working",
+    category: "Community",
+    image: "/gallery/outreach-7.jpeg",
+    date: "Jul 2026",
+    location: "Aligarh",
     description: "In-house built 6-DOF robotic manipulator running OpenCV hand gesture tracking and SocketIO control.",
   },
   {
     id: "g6",
     title: "Outdoor Autonomous Navigation Test",
     category: "Community",
-    image: "/outreach/students-outdoor.webp",
-    date: "Feb 2026",
-    location: "ZHCET Campus Quad",
+    image: "/gallery/outreach-9.jpeg",
+    date: "July 2026",
+    location: "Aligarh",
     description: "Students testing wireless obstacle avoidance and outdoor navigation algorithms.",
   },
 ]
@@ -153,11 +154,11 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "An autonomous line follower robot with a 5-channel TCRT5000 IR sensor array, L298N differential drive, and PID weighted error logic for smooth trajectory execution.",
-    image: "/projects/line-follower/line-follower.png",
+    image: "/projects/line-follower/line-follower-1.jpeg",
     whyWeBuilt:
       "Standard 2-IR followers produce harsh, jerky turns. We engineered this 5-IR system so students could master proportional-derivative (PID) feedback control on affordable hardware.",
     guideAvailable: true,
-    guideUrl: "/guides/line-follower.pdf",
+    guideUrl: "https://drive.google.com/file/d/1qokB_2IjsfAask3CRe4zHgAGszOq_b0b/view?usp=drive_link",
     overview:
       "This autonomous line follower employs a 5-sensor IR array (Far Left, Near Left, Center, Near Right, Far Right) paired with an L298N dual H-bridge motor driver. By calculating weighted spatial errors across the array (-4 to +4), the robot dynamically computes smooth differential motor speeds using a PID algorithm (BaseSpeed ± Kp×Error + Kd×ΔError). If the line is momentarily lost, an error-memory recovery loop executes sharp pivot recovery.",
     highlights: [
@@ -180,9 +181,10 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino C++", "PID Control", "IR Sensing", "Differential Drive"],
     gallery: [
-      { src: "/projects/line-follower/line-follower.png", caption: "5-Channel IR sensor array & L298N chassis layout" },
-      { src: "/projects/line-follower/line-follower.jpeg", caption: "Track calibration & sensor threshold tuning during workshop" },
-      { src: "/outreach/students-outdoor.webp", caption: "Outdoor track speed optimization test" },
+      { src: "/projects/line-follower/line-follower-1.jpeg", caption: "5-Channel IR sensor array & L298N chassis layout" },
+      { src: "/projects/line-follower/line-follower-2.jpeg", caption: "Microcontroller wiring & motor driver test bench" },
+      { src: "/projects/line-follower/line-follower-3.jpeg", caption: "Sensor array reflection calibration" },
+      { src: "/projects/line-follower/line-follower-4.jpeg", caption: "High-speed line follower track execution" },
     ],
   },
   {
@@ -193,11 +195,11 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "Industrial-grade 6-DOF & 5-DOF robotic manipulation systems featuring OpenCV AI vision hand tracking, Flask-SocketIO web control, and teach-repeat trajectory playback.",
-    image: "/projects/robotic-arm/robotic-arm.png",
+    image: "/projects/robotic-arm/robotic-arm-5.jpeg",
     whyWeBuilt:
       "Industrial robot arms are typically locked behind proprietary software; we designed an open hardware ecosystem combining AI computer vision, web dashboards, and manual potentiometer teach modes.",
     guideAvailable: true,
-    guideUrl: "/guides/robotic-arm.pdf",
+    guideUrl: "https://drive.google.com/file/d/1QhYbKPfhWFW38AebFMHhFrR2Sf5OUiHN/view?usp=drive_link",
     overview:
       "Our robotic arm platform integrates two advanced control architectures: a 6-DOF OpenCV MediaPipe hand gesture tracking controller communicating via Flask-SocketIO to a PCA9685 I2C PWM driver, and a 5-DOF Teach & Repeat system. The software incorporates cubic Hermite polynomial (Smoothstep) trajectory interpolation and Exponential Moving Average (EMA) noise filtering to deliver fluid, jerk-free mechanical arm movement.",
     highlights: [
@@ -220,10 +222,13 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "Flask-SocketIO", "OpenCV", "MediaPipe", "Arduino C++", "I2C Bus"],
     gallery: [
-      { src: "/projects/robotic-arm/robotic-arm.png", caption: "6-DOF CyberDeck robotic manipulator assembly" },
-      { src: "/projects/robotic-arm/robotic-arm.jpeg", caption: "Servo motor joint wiring & base turret mount" },
-      { src: "/projects/robotic-arm/robotic-arm-gripper.jpeg", caption: "End-effector precision claw testing on ZHCET test bench" },
-      { src: "/outreach/workshop-hands-on.jpg", caption: "Students configuring OpenCV hand tracking dashboard" },
+      { src: "/projects/robotic-arm/robotic-arm-1.jpeg", caption: "6-DOF CyberDeck robotic manipulator assembly" },
+      { src: "/projects/robotic-arm/robotic-arm-2.jpeg", caption: "Servo motor joint wiring & base turret mount" },
+      { src: "/projects/robotic-arm/robotic-arm-3.jpeg", caption: "End-effector precision claw testing " },
+      { src: "/projects/robotic-arm/robotic-arm-4.jpeg", caption: "Robotic arm joint potentiometer calibration" },
+      { src: "/projects/robotic-arm/robotic-arm-5.jpeg", caption: "Base rotation turret servo linkage" },
+      { src: "/projects/robotic-arm/robotic-arm-8.jpeg", caption: "PCA9685 16-channel servo driver wiring" },
+      { src: "/projects/robotic-arm/robotic-arm-7.jpeg", caption: "Teach-and-repeat joint playback testing" },
     ],
   },
   {
@@ -234,13 +239,13 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "A dual-axis (Yaw & Pitch) photovoltaic tracking system equipped with high-side INA219 I2C current/voltage telemetry, DHT22 climate sensors, and closed-loop battery charging.",
-    image: "/projects/solar-tracker-robot/solar-tracker.png",
+    image: "/projects/solar-tracker-robot/solar-tracker-2.jpeg",
     whyWeBuilt:
       "Stationary solar panels suffer significant efficiency drops; we built an intelligent dual-axis tracker that maximizes energy capture while monitoring real-time power metrics.",
     guideAvailable: true,
-    guideUrl: "/guides/solar-tracker.pdf",
+    guideUrl: "https://drive.google.com/file/d/1EF63EKnPWSFRuM2M8p3RN0KvBSVENVmY/view?usp=drive_link",
     overview:
-      "This system dynamically tracks the sun's trajectory across two degrees of freedom using a cross-axis quadrant of 4 LDR photoresistors and MG996R high-torque metal-gear servos. Integrated INA219 high-side instrumentation logs open-circuit voltage, load current, and instantaneous power, while a DHT22 logs ambient temperature and humidity. An LM2596 buck regulator and TP4056 linear charger manage safe battery power distribution.",
+      "This system dynamically tracks the sun's trajectory across two degrees of freedom using a cross-axis quadrant of 4 LDR photoresistors and MG996R high-torque metal-gear servos. Integrated INA219 high-side instrumentation logs open-circuit voltage, load current, and instantaneous power, while a DHT22 logs ambient temperature and humidity.",
     highlights: [
       "Dual-Axis (Horizontal Yaw & Vertical Pitch) quadrant LDR tracking",
       "High-precision INA219 I2C bus current & voltage power logging",
@@ -261,48 +266,9 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino C++", "Photovoltaics", "I2C Instrumentation", "Power Management"],
     gallery: [
-      { src: "/projects/solar-tracker-robot/solar-tracker.png", caption: "Dual-axis solar tracking mechanical frame" },
-      { src: "/projects/solar-tracker-robot/solar-tracker.jpeg", caption: "LDR sensor cross-shield & servo pitch/yaw joints" },
-      { src: "/outreach/workshop-girls-solar.jpg", caption: "School visit students experimenting with light alignment" },
-    ],
-  },
-  {
-    slug: "spider-robot",
-    title: "Hexapod Spider Robot",
-    category: "Legged Robotics",
-    year: "2026",
-    status: "Completed",
-    summary:
-      "A hexapod-style walking robot with articulated legs that crawls, turns, and adapts its gait over uneven ground.",
-    image: "/projects/spider-robot/spider-robot.png",
-    whyWeBuilt:
-      "We built this with low-cost 3D-printed parts and affordable servos so local schools could replicate multi-legged robotics without expensive machinery.",
-    guideAvailable: true,
-    overview:
-      "Our spider robot uses multiple servo-driven legs coordinated by an inverse-kinematics gait engine. Each leg has multiple degrees of freedom, letting the robot walk, strafe, and rotate in place. It is a favourite build for teaching students about coordinated multi-actuator control.",
-    highlights: [
-      "Multi-legged gait with coordinated servo control",
-      "Walks, turns, and strafes in any direction",
-      "Wireless control from a custom remote",
-      "Fully 3D-printed, student-designed chassis",
-    ],
-    challenge:
-      "Synchronising many servos into a smooth, stable gait without the robot toppling took careful timing and leg-sequence tuning.",
-    outcome:
-      "The finished spider walks reliably across flat and mildly uneven surfaces and is a crowd favourite at demos.",
-    specs: [
-      { label: "Controller", value: "Arduino Mega" },
-      { label: "Actuators", value: "12x SG90 Servos" },
-      { label: "Legs", value: "6 Articulated" },
-      { label: "Control", value: "Bluetooth Remote" },
-      { label: "Body", value: "3D Printed PLA" },
-      { label: "Power", value: "2S LiPo Battery" },
-    ],
-    tech: ["Arduino", "Servo Control", "Inverse Kinematics", "3D Printing"],
-    gallery: [
-      { src: "/projects/spider-robot/spider-robot.png", caption: "12-DOF hexapod spider robot 3D printed frame" },
-      { src: "/projects/spider-robot/spider-robot.jpeg", caption: "PCA9685 16-channel servo driver & battery harness" },
-      { src: "/outreach/workshop-spider-robot.jpg", caption: "Live gait demonstration for school children" },
+      { src: "/projects/solar-tracker-robot/solar-tracker-1.jpeg", caption: "Dual-axis solar tracking mechanical frame" },
+      { src: "/projects/solar-tracker-robot/solar-tracker-2.jpeg", caption: "LDR sensor cross-shield & servo pitch/yaw joints" },
+      { src: "/projects/solar-tracker-robot/solar-tracker-3.jpeg", caption: "Photovoltaic panel voltage & current telemetry test" },
     ],
   },
   {
@@ -317,6 +283,7 @@ export const projects: Project[] = [
     whyWeBuilt:
       "Modern home automation proprietary hubs are expensive; we engineered a low-cost, open-hardware controller with fallback physical wall switches.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1At4yY-0zSontfj6icrsMnTSlqPod8SBB/view?usp=drive_link",
     overview:
       "Our Smart Home Automation Controller integrates Wi-Fi and Bluetooth connectivity with optocoupler-isolated relay modules, current sensors, and a real-time MQTT dashboard. Built around the ESP32 dual-core microcontroller, it enables voice, app, and local web-based control of appliances while retaining physical switch synchronization.",
     highlights: [
@@ -337,49 +304,49 @@ export const projects: Project[] = [
       { label: "Power", value: "5V 2A SMPS Supply" },
       { label: "Safety", value: "Fuse + Varistor Protection" },
     ],
-    tech: ["ESP32", "IoT", "MQTT", "WebSockets", "Relays", "Embedded C++"],
+    tech: ["Arduino", "IoT", "MQTT", "WebSockets", "Relays", "Embedded C++"],
     gallery: [
-      { src: "/projects/smart-home-automation/Home-Automation.jpeg", caption: "ESP32 4-Channel optocoupler relay hub" },
-      { src: "/outreach/workshop-hands-on.jpg", caption: "Students configuring ESP32 web server logic" },
-      { src: "/outreach/workshop-mentoring.jpg", caption: "Relay wiring & optocoupler safety demonstration" },
+      { src: "/projects/smart-home-automation/Home-Automation.jpeg", caption: "Arduino 4-Channel optocoupler relay hub" },
     ],
   },
   {
-    slug: "rc-plane",
-    title: "RC Plane",
-    category: "Aerial Robotics",
+    slug: "battle-bot",
+    title: "High-Impact Combat BattleBot",
+    category: "Competitive Robotics",
     year: "2026",
     status: "Completed",
     summary:
-      "A hand-built fixed-wing RC aircraft designed, balanced, and flown by the team.",
-    image: "/projects/rc-plane/rc-plane.png",
+      "A heavy-duty combat robot with an armor-plated chassis, high-torque dual H-bridge differential drive, and high-RPM active kinetic weapon spinner.",
+    image: "/projects/battle-bot/battle-bot-1.jpeg",
     whyWeBuilt:
-      "Aeromodelling kits are expensive; we used foam board and locally sourced motors so flight becomes accessible to every curious student.",
+      "Combat robotics teaches extreme mechanical stress tolerance, impact dynamics, and high-current electrical safety under competition conditions.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/16_Ax0Zn2i6b0SzMYo4yQu-x1O3zjSujR/view?usp=drive_link",
     overview:
-      "Our RC plane project covered the full journey of flight: airfoil selection, control-surface design, centre-of-gravity balancing, and maiden-flight trimming. It gave members hands-on experience with aerodynamics and the discipline of flight testing.",
+      "Engineered for inter-collegiate robotics combat, this BattleBot features a steel-reinforced aluminum chassis, shock-isolated motor mounts, and a 2.4GHz wireless control link. Powered by 3S/4S LiPo batteries and high-current ESCs, it withstands high-G collisions while maintaining rapid maneuverability.",
     highlights: [
-      "Foam-board airframe with reinforced spar",
-      "Three-channel control: throttle, elevator, rudder",
-      "Carefully balanced centre of gravity",
-      "Successful maiden flight and landing",
+      "Steel-reinforced shock-isolated armor chassis",
+      "High-torque 4WD DC motor differential drive train",
+      "High-RPM active kinetic weapon motor subsystem",
+      "2.4GHz low-latency wireless remote control receiver",
     ],
     challenge:
-      "Achieving a stable, trimmed flight demanded precise CG placement and control-throw tuning before the first launch.",
+      "Preventing internal battery connection disconnects during high-velocity collisions required custom TPU rubber shock dampeners.",
     outcome:
-      "Completed multiple controlled flights, giving the team its first taste of aeromodelling.",
+      "Successfully competed in regional robotics arena matches, demonstrating zero power losses during heavy impacts.",
     specs: [
-      { label: "Wingspan", value: "~1 m" },
-      { label: "Motor", value: "Brushless 1000KV" },
-      { label: "Radio", value: "2.4GHz 6-Ch" },
-      { label: "Servos", value: "3x 9g" },
-      { label: "Airframe", value: "Foam Board" },
-      { label: "Battery", value: "3S LiPo" },
+      { label: "Controller", value: "Arduino / 2.4GHz Radio Rx" },
+      { label: "Drivetrain", value: "4x High-Torque Geared DC Motors" },
+      { label: "Motor Driver", value: "Dual High-Current H-Bridge ESCs" },
+      { label: "Chassis", value: "Steel Reinforced Aluminum Alloy" },
+      { label: "Power Source", value: "11.1V - 14.8V High-C LiPo Pack" },
+      { label: "Safety", value: "Removable Weapon Power Key" },
     ],
-    tech: ["Aerodynamics", "RC Systems", "Brushless", "Flight Testing"],
+    tech: ["Combat Engineering", "Radio Control", "Metal Fabrication", "High Current ESC"],
     gallery: [
-      { src: "/projects/rc-plane/rc-plane.png", caption: "Depron foam RC plane wing profile & motor assembly" },
-      { src: "/projects/rc-plane/rc-plane.jpeg", caption: "Brushless motor, ESC & 2.4GHz receiver layout" },
+      { src: "/projects/battle-bot/battle-bot-1.jpeg", caption: "BattleBot combat chassis & drive motor assembly" },
+      { src: "/projects/battle-bot/battle-bot-2.jpeg", caption: "High-torque wheel drive and internal battery harness" },
+      { src: "/projects/battle-bot/battle-bot-3.jpeg", caption: "Completed armor-plated BattleBot ready for arena match" },
     ],
   },
   {
@@ -390,12 +357,13 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "A 5-finger bio-inspired articulated robotic hand driven by tendon cable lines and micro servos for dexterous grasping and tactile sensor experimentation.",
-    image: "/projects/bionic-hand/robotic-hand.jpeg",
+    image: "/projects/bionic-hand/bionic-hand-2.jpeg",
     whyWeBuilt:
       "Commercial prosthetic research hands cost thousands of dollars; we created a fully 3D-printable bionic hand so students can explore prosthetic control and bio-mechanics.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/15moe6OYRlR4RZxJqVF3oVAJx_EKFc3l8/view?usp=drive_link",
     overview:
-      "Featuring 5 independently articulated fingers controlled by high-tensile tendon lines and dedicated micro servos, this bionic hand mimics natural human hand kinematics. Integrated flex sensors and pressure-sensitive tactile pads allow the controller to execute delicate grasping routines on objects of various shapes and textures.",
+      "Featuring 5 independently articulated fingers controlled by high-tensile tendon lines and dedicated micro servos, this bionic hand mimics natural human hand kinematics. Integrated flex sensors allow the controller to execute delicate grasping routines.",
     highlights: [
       "5-Finger independent tendon-driven articulation",
       "Bio-inspired flexible finger joint mechanics",
@@ -403,21 +371,25 @@ export const projects: Project[] = [
       "Palm-integrated compact servo actuator array",
     ],
     challenge:
-      "Eliminating tendon binding and friction during multi-finger flexion required designing custom 3D-printed internal cable guide channels and tensioners.",
+      "Eliminating tendon binding and friction during multi-finger flexion required designing custom 3D-printed internal cable guide channels.",
     outcome:
-      "Successfully grips complex objects from fragile eggs to soft spheres, serving as an accessible platform for prosthetic control research.",
+      "Successfully grips complex objects from fragile items to soft spheres.",
     specs: [
       { label: "Microcontroller", value: "Arduino / ESP32" },
       { label: "Actuators", value: "5x Micro High-Torque Servos" },
       { label: "Drive Mechanism", value: "High-Tensile Tendon Cables" },
-      { label: "Sensors", value: "Flex & Tactile Pressure Sensor Array" },
+      { label: "Sensors", value: "Flex & Tactile Pressure Sensors" },
       { label: "Structure", value: "3D Printed PLA + TPU Joints" },
       { label: "Power Supply", value: "5V 4A Regulated Supply" },
     ],
     tech: ["Bionic Robotics", "Tendon Mechanics", "Servo Control", "3D Printing"],
     gallery: [
-      { src: "/projects/bionic-hand/robotic-hand.jpeg", caption: "5-finger tendon-driven prosthetic hand assembly" },
-      { src: "/projects/robotic-arm/robotic-arm.png", caption: "Servo motor array & tension wire routing" },
+      { src: "/projects/bionic-hand/bionic-hand-1.jpeg", caption: "5-finger tendon-driven prosthetic hand assembly" },
+      { src: "/projects/bionic-hand/bionic-hand-2.jpeg", caption: "Finger segment hinge pin alignment" },
+      { src: "/projects/bionic-hand/bionic-hand-3.jpeg", caption: "Palmar servo mounting block" },
+      { src: "/projects/bionic-hand/bionic-hand-4.jpeg", caption: "Micro servo wire routing in wrist" },
+      { src: "/projects/bionic-hand/bionic-hand-5.jpeg", caption: "Tendon line tensioning test" },
+      { src: "/projects/bionic-hand/bionic-hand-6.jpeg", caption: "Articulated grasp trajectory validation" },
     ],
   },
   {
@@ -428,12 +400,13 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "A high-efficiency DC-DC step-up boost converter engineered for stable voltage stepping, closed-loop PWM regulation, and reliable power delivery in mobile robotic systems.",
-    image: "/projects/booster-converter/dc-booster.png",
+    image: "/projects/booster-converter/booster-converter-3.jpeg",
     whyWeBuilt:
-      "Voltage sag and brownouts frequently reset student microcontrollers during heavy motor loads; we engineered an affordable, robust DC boost converter module using accessible components.",
+      "Voltage sag and brownouts frequently reset student microcontrollers during heavy motor loads; we engineered an affordable, robust DC boost converter module.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/drive/folders/1vyomikx_dc_booster_guide",
     overview:
-      "Engineered to step up variable battery input voltages (e.g. 3.7V - 7.4V) to a rock-solid high-voltage rail (12V - 24V), this boost converter utilizes a high-frequency switching transistor, power inductor, fast Schottky diode, and closed-loop feedback monitoring. It ensures uninterrupted power delivery for inductive motor drivers and logic controllers alike.",
+      "Engineered to step up variable battery input voltages (e.g. 3.7V - 7.4V) to a rock-solid high-voltage rail (12V - 24V), this boost converter utilizes a high-frequency switching transistor, power inductor, fast Schottky diode, and closed-loop feedback monitoring.",
     highlights: [
       "Closed-loop PWM voltage regulation for tight output stability",
       "High-frequency switching topology for minimal ripple voltage",
@@ -454,8 +427,10 @@ export const projects: Project[] = [
     ],
     tech: ["Power Electronics", "PWM Switching", "DC-DC Conversion", "PCB Design"],
     gallery: [
-      { src: "/projects/booster-converter/dc-booster.png", caption: "500W Boost Converter circuit & MOSFET heatsink" },
-      { src: "/projects/smart-home-automation/Home-Automation.jpeg", caption: "High-power switching electronics test bench" },
+      { src: "/projects/booster-converter/booster-converter-1.jpeg", caption: "500W Boost Converter circuit & MOSFET heatsink" },
+      { src: "/projects/booster-converter/booster-converter-2.jpeg", caption: "High-power switching inductor & capacitor array" },
+      { src: "/projects/booster-converter/booster-converter-3.jpeg", caption: "PCB power rail soldering and thermal inspection" },
+      { src: "/projects/booster-converter/booster-converter-4.jpeg", caption: "Booster circuit" },
     ],
   },
   {
@@ -466,12 +441,13 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "A fast, agile wireless robot built for robot-soccer matches — designed to push, dribble, and score.",
-    image: "/projects/robo-soccer/robosoccer.png",
+    image: "/projects/robo-soccer/robo-soccer-4.jpeg",
     whyWeBuilt:
       "Competition robots often cost thousands — we designed this bot with common parts so any student club can afford to compete.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1CtVDIVsSehjjlAK1OlCAHSMg0OTxJ8Uc/view?usp=drive_link",
     overview:
-      "Built for inter-college robo-soccer competitions, this bot pairs a low, aggressive chassis with high-torque geared motors and responsive wireless control. The drivetrain is tuned for quick acceleration and tight turning so it can out-manoeuvre opponents on the field.",
+      "Built for inter-college robo-soccer competitions, this bot pairs a low, aggressive chassis with high-torque geared motors and responsive wireless control.",
     highlights: [
       "High-torque geared drive for quick bursts",
       "Low centre of gravity for stability in tackles",
@@ -492,8 +468,92 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino", "Motor Control", "Wireless", "Mechanical Design"],
     gallery: [
-      { src: "/projects/robo-soccer/robosoccer.png", caption: "Dual-motor soccer bot chassis & dribbler mechanism" },
-      { src: "/projects/robo-soccer/Robo-soccer.jpeg", caption: "High-torque N20 motor drive & wireless module" },
+      { src: "/projects/robo-soccer/robo-soccer-1.jpeg", caption: "Dual-motor soccer bot chassis & dribbler mechanism" },
+      { src: "/projects/robo-soccer/robo-soccer-7.jpeg", caption: "High-torque N20 motor drive & wireless module" },
+      { src: "/projects/robo-soccer/robo-soccer-3.jpeg", caption: "RoboSoccer team assembly & receiver calibration" },
+      { src: "/projects/robo-soccer/robo-soccer-4.jpeg", caption: "Arena dribbler test and ball control" },
+    ],
+  },
+  {
+    slug: "spider-robot",
+    title: "Hexapod Spider Robot",
+    category: "Legged Robotics",
+    year: "2026",
+    status: "Completed",
+    summary:
+      "A hexapod-style walking robot with articulated legs that crawls, turns, and adapts its gait over uneven ground.",
+    image: "/projects/spider-robot/spider-robot-3.jpeg",
+    whyWeBuilt:
+      "We built this with low-cost 3D-printed parts and affordable servos so local schools could replicate multi-legged robotics without expensive machinery.",
+    guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1GuOEySb79H_8KnzZ5WkBweLpzlu8Ov15/view?usp=drive_link",
+    overview:
+      "Our spider robot uses multiple servo-driven legs coordinated by an inverse-kinematics gait engine. Each leg has multiple degrees of freedom, letting the robot walk, strafe, and rotate in place.",
+    highlights: [
+      "Multi-legged gait with coordinated servo control",
+      "Walks, turns, and strafes in any direction",
+      "Wireless control from a custom remote",
+      "Fully 3D-printed, student-designed chassis",
+    ],
+    challenge:
+      "Synchronising many servos into a smooth, stable gait without the robot toppling took careful timing and leg-sequence tuning.",
+    outcome:
+      "The finished spider walks reliably across flat and mildly uneven surfaces and is a crowd favourite at demos.",
+    specs: [
+      { label: "Controller", value: "Arduino Mega" },
+      { label: "Actuators", value: "12x SG90 Servos" },
+      { label: "Legs", value: "6 Articulated" },
+      { label: "Control", value: "Bluetooth Remote" },
+      { label: "Body", value: "3D Printed PLA" },
+      { label: "Power", value: "2S LiPo Battery" },
+    ],
+    tech: ["Arduino", "Servo Control", "Inverse Kinematics", "3D Printing"],
+    gallery: [
+      { src: "/projects/spider-robot/spider-robot-1.jpeg", caption: "12-DOF hexapod spider robot 3D printed frame" },
+      { src: "/projects/spider-robot/spider-robot-2.jpeg", caption: "PCA9685 16-channel servo driver & battery harness" },
+      { src: "/projects/spider-robot/spider-robot-3.jpeg", caption: "Leg joint servo calibration and leg alignment" },
+      { src: "/projects/spider-robot/spider-robot-4.jpeg", caption: "Walking tripod gait test on laboratory surface" },
+    ],
+  },
+  {
+    slug: "rc-plane",
+    title: "RC Plane",
+    category: "Aerial Robotics",
+    year: "2026",
+    status: "Completed",
+    summary:
+      "A hand-built fixed-wing RC aircraft designed, balanced, and flown by the team.",
+    image: "/projects/rc-plane/rc-plane-2.jpeg",
+    whyWeBuilt:
+      "Aeromodelling kits are expensive; we used foam board and locally sourced motors so flight becomes accessible to every curious student.",
+    guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1vN5-w0UIGGsxlzzNoG0wYZ0CJnFkksuH/view?usp=drive_link",
+    overview:
+      "Our RC plane project covered the full journey of flight: airfoil selection, control-surface design, centre-of-gravity balancing, and maiden-flight trimming.",
+    highlights: [
+      "Foam-board airframe with reinforced spar",
+      "Three-channel control: throttle, elevator, rudder",
+      "Carefully balanced centre of gravity",
+      "Successful maiden flight and landing",
+    ],
+    challenge:
+      "Achieving a stable, trimmed flight demanded precise CG placement and control-throw tuning before the first launch.",
+    outcome:
+      "Completed multiple controlled flights, giving the team its first taste of aeromodelling.",
+    specs: [
+      { label: "Wingspan", value: "~1 m" },
+      { label: "Motor", value: "Brushless 1000KV" },
+      { label: "Radio", value: "2.4GHz 6-Ch" },
+      { label: "Servos", value: "3x 9g" },
+      { label: "Airframe", value: "Foam Board" },
+      { label: "Battery", value: "3S LiPo" },
+    ],
+    tech: ["Aerodynamics", "RC Systems", "Brushless", "Flight Testing"],
+    gallery: [
+      { src: "/projects/rc-plane/rc-plane-1.jpeg", caption: "Depron foam RC plane wing profile & motor assembly" },
+      { src: "/projects/rc-plane/rc-plane-2.jpeg", caption: "Brushless motor, ESC & 2.4GHz receiver layout" },
+      { src: "/projects/rc-plane/rc-plane-3.jpeg", caption: "Aileron control horn linkage and servo mount" },
+      { src: "/projects/rc-plane/rc-plane-3.jpeg", caption: "RC plane" },
     ],
   },
   {
@@ -504,12 +564,13 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "A slayer-exciter Tesla coil that produces visible high-voltage arcs and wirelessly lights bulbs.",
-    image: "/projects/tesla-coil/tesla-coil.png",
+    image: "/projects/tesla-coil/tesla-coil-1.jpeg",
     whyWeBuilt:
       "High-voltage demos inspire curiosity; we designed ours with safety cut-offs so we can bring electromagnetism to any classroom.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1gcoAbqF5Vo8p10v7fSRLqg4jn9t_Pkic/view?usp=drive_link",
     overview:
-      "A deep dive into high-voltage electronics and resonance, our Tesla coil steps a low DC input up to tens of kilovolts, producing crackling arcs and wirelessly powering nearby fluorescent tubes. It is one of our most memorable public demonstrations of electromagnetism.",
+      "A deep dive into high-voltage electronics and resonance, our Tesla coil steps a low DC input up to tens of kilovolts, producing crackling arcs and wirelessly powering nearby fluorescent tubes.",
     highlights: [
       "Resonant high-voltage step-up circuit",
       "Wireless lighting of fluorescent tubes",
@@ -530,7 +591,8 @@ export const projects: Project[] = [
     ],
     tech: ["High Voltage", "Resonance", "Electronics", "Coil Winding"],
     gallery: [
-      { src: "/projects/tesla-coil/tesla-coil.png", caption: "Slayer exciter Tesla coil arcing demonstration" },
+      { src: "/projects/tesla-coil/tesla-coil-1.jpeg", caption: "Slayer exciter Tesla coil arcing demonstration" },
+      { src: "/projects/tesla-coil/tesla-coil-2.jpeg", caption: "Resonant secondary coil winding & wireless tube discharge" },
     ],
   },
   {
@@ -541,12 +603,13 @@ export const projects: Project[] = [
     status: "Completed",
     summary:
       "An autonomous rover that sweeps an ultrasonic sensor to detect obstacles and steer around them.",
-    image: "/projects/obstacle-avoider/obstacle-avoider.png",
+    image: "/projects/obstacle-avoider/obstacle-avoider-3.jpeg",
     whyWeBuilt:
       "Autonomy made simple: our clean, commented code lets beginners understand every line and extend the robot themselves.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1YXZajWVljqESrWNjgBx2UM1-QtY5dysW/view?usp=drive_link",
     overview:
-      "A teaching platform for autonomy, this rover sweeps a servo-mounted ultrasonic sensor, measures clearances, and picks the freest heading to avoid collisions. Its clean state machine makes it easy for beginners to read and extend.",
+      "A teaching platform for autonomy, this rover sweeps a servo-mounted ultrasonic sensor, measures clearances, and picks the freest heading to avoid collisions.",
     highlights: [
       "Servo-swept ultrasonic scanning",
       "Clear, beginner-friendly state machine",
@@ -567,7 +630,9 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino", "C++", "Ultrasonic", "Robotics"],
     gallery: [
-      { src: "/projects/obstacle-avoider/obstacle-avoider.png", caption: "Ultrasonic sensor on servo scanning forward" },
+      { src: "/projects/obstacle-avoider/obstacle-avoider-1.jpeg", caption: "Ultrasonic sensor on servo scanning forward" },
+      { src: "/projects/obstacle-avoider/obstacle-avoider-2.jpeg", caption: "Chassis motor mounting and distance sensor wiring" },
+      { src: "/projects/obstacle-avoider/obstacle-avoider-3.jpeg", caption: "Obstacle-avoider" },
     ],
   },
   {
@@ -578,12 +643,13 @@ export const projects: Project[] = [
     status: "In Progress",
     summary:
       "A two-wheeled robot that stays upright in real time using an IMU and a PID balance controller.",
-    image: "/projects/self-balancing-robot/self-balancing.png",
+    image: "/projects/self-balancing-robot/self-balancing-robot-6.jpeg",
     whyWeBuilt:
       "Control theory on a budget — we're building this so students can experiment with PID tuning without industrial equipment.",
-    guideAvailable: false,
+    guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1tm9rOT1X_rpgvpfZKZohNDgzBG9q4lOJ/view?usp=drive_link",
     overview:
-      "An inverted-pendulum challenge, this two-wheeled robot reads tilt from an IMU and drives its motors to constantly correct its balance. It is our deepest dive yet into real-time control theory and sensor fusion.",
+      "An inverted-pendulum challenge, this two-wheeled robot reads tilt from an IMU and drives its motors to constantly correct its balance.",
     highlights: [
       "MPU6050 IMU with complementary filter",
       "Real-time PID balance loop",
@@ -591,9 +657,9 @@ export const projects: Project[] = [
       "Tunable gains for experimentation",
     ],
     challenge:
-      "Fusing accelerometer and gyro data into a stable tilt estimate, then tuning the PID for fast recovery, is an ongoing refinement.",
+      "Fusing accelerometer and gyro data into a stable tilt estimate, then tuning the PID for fast recovery.",
     outcome:
-      "The robot balances and self-corrects; work continues on smoother motion and remote drive-while-balancing.",
+      "The robot balances and self-corrects; work continues on smoother motion.",
     specs: [
       { label: "Controller", value: "Arduino Nano" },
       { label: "Sensor", value: "MPU6050 IMU" },
@@ -604,81 +670,110 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino", "Sensor Fusion", "PID Control", "Control Theory"],
     gallery: [
-      { src: "/projects/self-balancing-robot/self-balancing.png", caption: "Two-wheeled PID inverted pendulum balancing" },
+      { src: "/projects/self-balancing-robot/self-balancing-robot-4.jpeg", caption: "Two-wheeled PID inverted pendulum balancing" },
+      { src: "/projects/self-balancing-robot/self-balancing-robot-3.jpeg", caption: "MPU6050 IMU mounting and pitch angle calibration" },
+      { src: "/projects/self-balancing-robot/self-balancing-robot-5.jpeg", caption: "Stepping motor current driver tuning" },
+      { src: "/projects/self-balancing-robot/self-balancing-robot-6.jpeg", caption: "Balncing by self" },
     ],
   },
   {
-    slug: "agri-drone",
-    title: "Agricultural Drone",
-    category: "Aerial Robotics",
+    slug: "water-rocket",
+    title: "Water Rocket",
+    category: "Aerospace",
     year: "2026",
     status: "Completed",
     summary:
-      "A quadcopter platform engineered for autonomous field mapping and crop health inspection.",
-    image: "/projects/agri-drone/agri-drone.png",
+      "A pressurised water-and-air rocket engineered for maximum altitude and a clean recovery.",
+    image: "/projects/water-rocket/water-rocket-1.jpeg",
     whyWeBuilt:
-      "Commercial agricultural drones are prohibitively expensive; we created an open hardware quadcopter platform for student research in aerial surveying.",
+      "A zero-cost intro to physics and engineering using recycled bottles — perfect for school outreach demos where budgets are tight.",
     guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1xEnWc6NDx49qtG21EMC3Vd5sAq77yy9e/view?usp=drive_link",
     overview:
-      "Built on a durable carbon-fiber frame with Pixhawk flight controller telemetry, this agricultural quadcopter executes autonomous waypoint navigation and aerial multispectral mapping.",
+      "A hands-on introduction to thrust, pressure, and aerodynamics, our water rocket uses compressed air to expel water and launch skyward.",
     highlights: [
-      "Autonomous GPS waypoint mission planning",
-      "Pixhawk flight controller telemetry feedback",
-      "High-efficiency brushless ESC drivetrain",
-      "Failsafe auto-return home protection",
+      "Optimised water-to-air pressure ratio",
+      "Aerodynamic fins for a straight ascent",
+      "Reinforced pressure bottle",
+      "Reusable launch pad with remote release",
     ],
     challenge:
-      "Calibrating compass interference and PID flight stabilization during windy field conditions.",
+      "Maximising altitude while keeping the flight straight required tuning fin placement.",
     outcome:
-      "Completed autonomous waypoint flight missions and aerial image surveying tests.",
+      "Reached impressive heights in test launches and became a staple demo for younger students.",
     specs: [
-      { label: "Flight Controller", value: "Pixhawk 2.4.8" },
-      { label: "Frame", value: "Carbon Fiber Quad" },
-      { label: "Motors", value: "4x 920KV Brushless" },
-      { label: "ESC", value: "30A Opto ESC" },
-      { label: "GPS", value: "M8N High-Precision GPS" },
-      { label: "Battery", value: "4S 5000mAh LiPo" },
+      { label: "Propellant", value: "Water + Air" },
+      { label: "Pressure", value: "~60 psi" },
+      { label: "Body", value: "2L PET Bottle" },
+      { label: "Fins", value: "3x Custom" },
+      { label: "Launch", value: "Remote Release" },
+      { label: "Recovery", value: "Ballistic" },
     ],
-    tech: ["Pixhawk", "ArduPilot", "GPS Navigation", "Quadcopter"],
+    tech: ["Aerodynamics", "Pressure Systems", "Prototyping"],
     gallery: [
-      { src: "/projects/agri-drone/agri-drone.png", caption: "Quadcopter frame with Pixhawk flight controller" },
+      { src: "/projects/water-rocket/water-rocket-1.jpeg", caption: "Water rocket on the launch pad" },
     ],
   },
+]
+
+export type ValueItem = { title: string; description: string }
+
+export const values: ValueItem[] = [
   {
-    slug: "mars-rover",
-    title: "Rocker-Bogie Mars Rover Prototype",
-    category: "Autonomous Systems",
-    year: "2026",
-    status: "Completed",
-    summary:
-      "A 6-wheeled planetary rover featuring rocker-bogie passive suspension for navigating rough terrain and obstacles.",
-    image: "/projects/mars-rover/rover.png",
-    whyWeBuilt:
-      "Rocker-bogie suspension is the gold standard for space exploration; we built this prototype to study passive terrain adaptation.",
-    guideAvailable: true,
-    overview:
-      "This rover prototype utilizes a 6-wheel rocker-bogie mechanism to maintain equal wheel payload distribution over extreme terrain, climbing rocks without springs or hydraulics.",
-    highlights: [
-      "Passive 6-wheel rocker-bogie suspension geometry",
-      "Independent high-torque wheel hub motors",
-      "Ultrasonic & camera telemetry payload",
-      "Wireless ground station telemetry dashboard",
-    ],
-    challenge:
-      "Engineering durable 3D-printed pivot joints to sustain high torsional loads over rocks.",
-    outcome:
-      "Successfully traversed 15cm obstacles with zero chassis tilt instabilities.",
-    specs: [
-      { label: "Suspension", value: "6-Wheel Rocker-Bogie" },
-      { label: "Controller", value: "Arduino Mega / ESP32" },
-      { label: "Drive", value: "6x High-Torque Metal Gear Motors" },
-      { label: "Chassis", value: "Aluminium & 3D Printed PETG" },
-      { label: "Power", value: "3S LiPo Power Station" },
-    ],
-    tech: ["Rocker-Bogie", "Kinematics", "Robotics", "3D Printing"],
-    gallery: [
-      { src: "/projects/mars-rover/rover.png", caption: "Rocker-bogie suspension mars rover prototype" },
-    ],
+    title: "100% Free Resources",
+    description: "Every workshop, guide, and equipment loan is free — zero paywalls or hidden fees.",
+  },
+  {
+    title: "Shared Knowledge",
+    description: "Use microcontrollers, sensors, and tools so financial barriers don't stop your ideas.",
+  },
+  {
+    title: "Student-to-Student Mentorship",
+    description: "Learn directly from senior builders who walked the same path and built real systems.",
+  },
+  {
+    title: "Community Outreach",
+    description: "We bring mobile robotics kits and hands-on demonstrations directly into local schools.",
+  },
+]
+
+export type FutureVisionItem = {
+  title: string
+  description: string
+  timeframe: "Near Term" | "Mid Term" | "Long Term"
+}
+
+export const futureVision: FutureVisionItem[] = [
+    {
+    title: "More Students Reached",
+    timeframe: "Near Term",
+    description:
+      "Expanding our workshops, learning resources, and outreach programs to help more students discover technology through practical and accessible learning.",
+  },
+  {
+    title: "Mobile STEM Workshops",
+    timeframe: "Near Term",
+    description: "Equipping a mobile kit to bring hands-on robotics sessions to multiple schools across the district.",
+  },
+  {
+    title: "Open Tech Library",
+    timeframe: "Mid Term",
+    description: "Publishing complete schematics, CAD files, and firmware for all VyomikX builds online.",
+  },
+  {
+    title: "Inter-College Robotics Exchange",
+    timeframe: "Mid Term",
+    description: "Partnering with neighboring student clubs of different colleges to host Tech camps over over India .",
+  },
+  {
+    title: "Regional Student Innovation Hub",
+    timeframe: "Long Term",
+    description: "Building a permanent, student-run research & prototyping lab for low-cost technology solutions.",
+  },
+  {  title: "A Wider Impact Through Technology",
+    timeframe: "Long Term",
+    description:
+      "Growing VyomikX into a wider student-led initiative that helps make technology learning more accessible, practical, and inspiring for young learners.",
   },
 ]
 
@@ -696,110 +791,48 @@ export const team: TeamMember[] = [
     role: "Team Coordinator",
     image: "/team/nigam.jpeg",
     bio: "Coordinates the team's projects and direction, keeping builds on track and mentoring members through every stage.",
-    focus: ["Leadership", "Coordination"],
+    focus: ["Leadership", "Coordination","Electronics"],
   },
   {
     name: "Himanshu",
     role: "Team Coordinator",
     image: "/team/himanshu.jpeg",
     bio: "Drives planning and execution across the team, connecting ideas with the resources and people needed to build them.",
-    focus: ["Planning", "Systems"],
+    focus: ["Planning", "Systems","Embedded"],
   },
   {
     name: "Harshit Gaur",
-    role: "Team Member",
+    role: "Software & Web Lead",
     image: "/team/harshit.jpg",
-    bio: "Hands-on builder working across electronics and embedded control for the team's robotics projects.",
-    focus: ["Electronics", "Embedded"],
+    bio: "Leads software development, web architecture, and full-stack integration for the team's platforms and projects.",
+    focus: ["Software", "Web Architecture", "Full-Stack"],
   },
   {
     name: "Mayank Saini",
     role: "Team Member",
     image: "/team/mayank.jpeg",
     bio: "Focuses on mechanical design and fabrication, turning concepts into sturdy, working hardware.",
-    focus: ["Mechanical", "Fabrication"],
+    focus: ["Mechanical", "Fabrication","Electronics"],
   },
   {
     name: "Suryansh Jindal",
     role: "Team Member",
-    image: "/team/suryansh.png",
-    bio: "Works on programming and control logic, bringing the team's machines to life through code.",
-    focus: ["Programming", "Control"],
+    image: "/team/suryansh.jpeg",
+    bio: "Works on Simulations , bringing the team's machines and ideas to life through simulations .",
+    focus: ["Testing", "Control","Simulations"],
   },
   {
     name: "Rishabh Chaudhary",
     role: "Team Member",
     image: "/team/rishabh.jpeg",
-    bio: "Contributes to circuit design and testing, making sure every build is reliable and safe.",
-    focus: ["Circuits", "Testing"],
+    bio: "Contributes to electronics assembly, circuit troubleshooting, hardware testing and softwares across projects.",
+    focus: ["Electronics", "Testing","Software"],
   },
   {
     name: "Aditya Raghav",
     role: "Team Member",
     image: "/team/aditya.jpeg",
-    bio: "Supports prototyping and assembly, helping ideas move quickly from sketch to working model.",
-    focus: ["Prototyping", "Assembly"],
-  },
-]
-
-export type FutureItem = {
-  title: string
-  description: string
-  timeframe: string
-}
-
-export const futureVision: FutureItem[] = [
-  {
-    title: "Open Maker Space",
-    timeframe: "Near Term",
-    description:
-      "Setting up a welcoming community lab where any student can walk in, borrow components, and build without financial stress.",
-  },
-  {
-    title: "School Visits & Workshops",
-    timeframe: "Near Term",
-    description:
-      "Conducting hands-on robotics workshops and school visits across Aligarh to inspire the next generation of engineers.",
-  },
-  {
-    title: "Open Project Documentation",
-    timeframe: "Mid Term",
-    description:
-      "Publishing comprehensive open-source technical schematics, code registries, and assembly guides for all completed projects.",
-  },
-  {
-    title: "National Robotics Competitions",
-    timeframe: "Mid Term",
-    description:
-      "Representing ZHCET in national robotics championships and engineering challenges to showcase student innovation.",
-  },
-  {
-    title: "Empowered Student Community",
-    timeframe: "Long Term",
-    description:
-      "Establishing a self-sustaining network of student mentors who pay forward technical knowledge to incoming generations.",
-  },
-]
-
-export const values = [
-  {
-    title: "Equal Access to Tools",
-    description:
-      "Providing microcontrollers, sensors, and development equipment to students who don't have their own.",
-  },
-  {
-    title: "Free Open Mentorship",
-    description:
-      "Publishing every circuit schematic, source code line, and assembly guide freely for all students.",
-  },
-  {
-    title: "Community First",
-    description:
-      "Guiding beginners step-by-step through hands-on build sessions — ensuring no curious student gets left behind.",
-  },
-  {
-    title: "Practical Skill Building",
-    description:
-      "Teaching real-world hardware design, embedded programming, and system troubleshooting for future tech careers.",
+    bio: "Assists with project builds, workshop logistics, and mentoring new students during school visits.",
+    focus: ["Outreach", "Hands-On","Management"],
   },
 ]

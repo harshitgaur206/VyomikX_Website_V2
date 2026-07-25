@@ -39,7 +39,7 @@ const requestTypes = [
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle")
-  const [type, setType] = useState("Home Automation Project")
+  const [type, setType] = useState("School Visit Request")
   const [errors, setErrors] = useState<Errors>({})
   const [apiError, setApiError] = useState<string | null>(null)
 
@@ -101,7 +101,10 @@ export function ContactForm() {
         </div>
         <div className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-emerald-600 dark:text-emerald-400">
           <Cpu className="h-3.5 w-3.5" />
-          [DB_SAVED &amp; FORWARDED TO VYOMIKX@GMAIL.COM]
+          <p className="mt-2 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
+  Thank you! Your request has been received successfully. Our team has been
+  notified and will get back to you shortly.
+</p>
         </div>
         <h3 className="mt-3 font-display text-2xl font-bold text-foreground">Request Submitted Successfully</h3>
         <p className="mt-2 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
@@ -158,6 +161,23 @@ export function ContactForm() {
           <Input id="name" name="name" placeholder="Your name" aria-invalid={!!errors.name} />
           {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
         </div>
+
+        <div
+  className="absolute -left-[9999px]"
+  aria-hidden="true"
+>
+  <label htmlFor="website">
+    Website
+  </label>
+
+  <input
+    id="website"
+    name="website"
+    type="text"
+    tabIndex={-1}
+    autoComplete="off"
+  />
+</div>
 
         <div className="space-y-2">
           <Label htmlFor="email">Email Address *</Label>

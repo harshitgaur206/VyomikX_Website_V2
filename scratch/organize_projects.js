@@ -19,9 +19,7 @@ const projectFolderMap = {
   'self-balancing-robot': ['self-balancing.png'],
   'maze-solver': ['maze-solver.png'],
   'rc-car': ['rc-car.png'],
-  'waste-segregator': ['waste-segregator.png'],
   'water-rocket': ['water-rocket.png'],
-  'mars-rover': ['rover.png'],
 };
 
 for (const [folder, files] of Object.entries(projectFolderMap)) {
