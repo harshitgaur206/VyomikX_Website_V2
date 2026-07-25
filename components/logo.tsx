@@ -10,7 +10,7 @@ export function Logo({ className }: { className?: string }) {
       )}
     >
       <Image
-        src="/logo.png"
+        src="/logo/logo.jpg"
         alt="VyomikX logo"
         fill
         sizes="48px"
