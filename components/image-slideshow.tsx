@@ -56,9 +56,9 @@ export function ImageSlideshow({ slides }: { slides: SlideItem[] }) {
         ))}
 
         {/* Top Tech Telemetry Pill */}
-        <div className="absolute left-4 top-4 z-20 flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-3.5 py-1 text-[11px] font-mono font-medium text-emerald-300 backdrop-blur-md">
-          <Sparkles className="h-3 w-3 text-emerald-400" />
-          <span>[WHO_WE_ARE_FEED]</span>
+        <div className="absolute left-4 top-4 z-20 flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-3.5 py-1 text-[11px] font-mono font-medium text-brown-300 backdrop-blur-md">
+          <Sparkles className="h-3 w-3 text-brown-400" />
+          <span>Students Learning</span>
         </div>
 
         {/* Slide Info Badge & Caption Overlay */}

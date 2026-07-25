@@ -20,7 +20,7 @@ export function HeroPhotoGrid() {
           className="absolute right-0 top-0 aspect-[4/3] w-[76%] rotate-[4deg] overflow-hidden rounded-3xl border-4 border-card bg-card shadow-2xl transition-all duration-500 hover:rotate-0 hover:scale-[1.02] hover:z-20 sm:right-2"
         >
           <Image
-            src="/outreach/workshop-spider-robot.jpg"
+            src="/outreach/workshop-team.jpg"
             alt="Students building a spider robot with mentorship"
             fill
             sizes="(max-width: 768px) 75vw, 420px"
@@ -34,6 +34,14 @@ export function HeroPhotoGrid() {
           className="absolute bottom-0 left-0 z-10 aspect-[4/3] w-[78%] -rotate-[3deg] overflow-hidden rounded-3xl border-4 border-card bg-card shadow-2xl transition-all duration-500 hover:rotate-0 hover:scale-[1.02] sm:left-2"
         >
           <Image
+            src="/outreach/workshop-girls-solar.jpg"
+            alt="Students collaborating on a solar tracking robot build"
+            fill
+            sizes="(max-width: 768px) 80vw, 450px"
+            className="object-cover"
+            priority
+          />
+           <Image
             src="/outreach/workshop-girls-solar.jpg"
             alt="Students collaborating on a solar tracking robot build"
             fill

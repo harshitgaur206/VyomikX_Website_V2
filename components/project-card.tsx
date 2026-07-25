@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowUpRight, BookOpen } from "lucide-react"
+import { ArrowUpRight, BookOpen, Download } from "lucide-react"
 import type { Project } from "@/lib/site-data"
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -40,9 +40,9 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {project.guideAvailable && (
-          <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-accent">
-            <BookOpen className="h-3.5 w-3.5" />
-            Free technical report &amp; assembly guide available
+          <p className="mt-3 flex items-center gap-1.5 text-xs font-semibold text-accent">
+            <Download className="h-3.5 w-3.5" />
+            Free technical report &amp; Drive guide available
           </p>
         )}
       </div>
