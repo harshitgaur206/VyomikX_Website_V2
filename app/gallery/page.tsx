@@ -7,6 +7,12 @@ import { PageHeader } from "@/components/page-header"
 import { galleryItems, type GalleryItem } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
 
+import { WorkshopVideoShowcase, WORKSHOP_DRIVE_URL } from "@/components/workshop-video-showcase"
+import { ExternalLink, FolderOpen, Video } from "lucide-react"
+
+import { GalleryMediaSlider } from "@/components/gallery-media-slider"
+import { galleryMediaSlides } from "@/lib/site-data"
+
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All")
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
@@ -23,13 +29,23 @@ export default function GalleryPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Gallery"
+        eyebrow="Gallery &amp; Media Archive"
         title="Captured moments from our builds &amp; outreach"
-        description="Browse photos from our community workshops, school visits, robotics build sessions, and hands-on mentorship."
+        description="Explore high-resolution photos and video clips from our community workshops, school visits, robotics sessions, and team builds."
       />
 
-      <section className="bg-tech-grid py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-tech-grid py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Interactive Multi-Media Gallery Slider (Videos + Photos) */}
+          <div>
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="font-display text-2xl font-bold text-foreground">Featured Workshop Videos &amp; Photos</h2>
+            </div>
+            <GalleryMediaSlider slides={galleryMediaSlides} />
+          </div>
+
+          {/* Dedicated Google Drive Media Archive Callout Card */}
+          
           {/* Category Filter Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2.5">
             {categories.map((cat) => (

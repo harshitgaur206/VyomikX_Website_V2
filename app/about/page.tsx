@@ -44,24 +44,32 @@ import { ImageSlideshow } from "@/components/image-slideshow"
 
 const aboutSlides = [
   {
-    src: "/outreach/workshop-hands-on.jpg",
-    alt: "Students assembling electronics and robotics with laptop guidance",
-    title: "Practical Hardware Engineering & Circuit Assembly",
-    tag: "Workshops",
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (1).jpg",
+    alt: "Students engaging in hands-on robotics and electronics assembly at Heeralal Barahseeni Inter College",
+    title: "Robotics & Electronics Workshop",
+    tag: "Heeralal Barahseeni Inter College",
   },
   {
-    src: "/outreach/workshop-girls-solar.jpg",
-    alt: "Young students exploring solar tracking robot",
-    title: "Free School Visits & Community Demonstrations",
-    tag: "School Visits",
+    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (1).jpg",
+    alt: "Guiding students through breadboard circuit assembly at Gopiram Paliwal Inter College",
+    title: "Circuit Assembly & Microcontroller Mentoring",
+    tag: "Gopiram Paliwal Inter College",
   },
   {
-    src: "/outreach/workshop-spider-robot.jpg",
-    alt: "Mentors guiding students on spider robot gait control",
-    title: "Mentorship & Hands-on Robotics",
-    tag: "Mentorship",
+    src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (10).jpg",
+    alt: "Demonstrating open-hardware robotics and sensor control at Raghuveer Sahay Inter College",
+    title: "STEM Outreach & Practical Hardware Demo",
+    tag: "Raghuveer Sahay Inter College",
+  },
+  {
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (3).jpg",
+    alt: "Students exploring sensors and microcontrollers",
+    title: "Interactive Microcontroller Hardware Lab",
+    tag: "School Outreach",
   },
 ]
+
+import { WorkshopVideoShowcase } from "@/components/workshop-video-showcase"
 
 export default function AboutPage() {
   return (
@@ -72,7 +80,7 @@ export default function AboutPage() {
         description="VyomikX is a student-led movement at ZHCET, AMU. We share tools, mentorship, and equipment so curious minds from all backgrounds can build real technology — completely free."
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 space-y-12">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <ImageSlideshow slides={aboutSlides} />
           <div className="space-y-5 leading-relaxed text-muted-foreground">
@@ -93,6 +101,8 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+
+        {/* Looping Workshop Video Showcase Component */}
       </section>
 
       <section className="section-divider">
