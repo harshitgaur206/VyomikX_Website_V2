@@ -23,80 +23,87 @@ const communityIcons = [BookOpen, Package, Gift, HandHeart]
 
 const aboutSlides = [
   {
-    src: "/outreach/workshop-hands-on.jpg",
-    alt: "Students assembling and experimenting with microcontroller-based robotics projects during a hands-on workshop",
-    title: "Learning by Building",
-    tag: "Hands-On Learning",
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (1).jpg",
+    alt: "Students engaging in hands-on electronics assembly and circuit testing at Heeralal Barahseeni Inter College",
+    title: "Hands-On Robotics & Circuit Workshop",
+    tag: "Heeralal Barahseeni Inter College",
   },
   {
-    src: "/outreach/workshop-girls-solar.jpg",
-    alt: "Students learning about a solar-powered tracking robot during a technology outreach session",
-    title: "Technology Beyond the Classroom",
-    tag: "STEM Outreach",
+    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (34).heic",
+    alt: "Mentors guiding students on microcontroller signals and motor control at Gopiram Paliwal Inter College",
+    title: "Circuit Assembly & Electronics Mentoring",
+    tag: "Gopiram Paliwal Inter College",
+  },
+  
+  {
+    src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (16).jpg",
+    alt: "Practical hardware demonstration of autonomous rovers at Raghuveer Sahay Inter College",
+    title: "STEM Outreach & Hardware Demonstration",
+    tag: "Raghuveer Sahay Inter College",
   },
   {
-    src: "/outreach/workshop-spider-robot.jpg",
-    alt: "Students exploring the movement and gait mechanism of a multi-legged spider robot with mentors",
-    title: "Robotics Through Exploration",
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (2).jpg",
+    alt: "Interactive motor control and PWM speed regulation session",
+    title: "Student Electronics & Motor Driver Session",
     tag: "Robotics Mentorship",
   },
   {
-    src: "/gallery/outreach-10.jpeg",
-    alt: "Students participating in an interactive technology and robotics learning activity",
-    title: "Making Technology Accessible",
-    tag: "Tech Education",
-  },
-  {
-    src: "/gallery/outreach-7.jpeg",
-    alt: "Young learners collaborating on practical electronics and robotics activities",
-    title: "Building Future Innovators",
-    tag: "Student Innovation",
-  },
-  {
-    src: "/gallery/outreach-9.jpeg",
-    alt: "Students engaging with mentors while discovering practical applications of electronics and technology",
-    title: "Inspiring Curiosity Through Tech",
-    tag: "Community Learning",
+    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (29).heic",
+    alt: "Students collaborating on robotic arm joint servos and wiring",
+    title: "Hands-On Robotics Build & Teamwork",
+    tag: "Open Hardware Practice",
   },
 ]
+
+import { WorkshopVideoShowcase, WORKSHOP_DRIVE_URL } from "@/components/workshop-video-showcase"
+import { ExternalLink, FolderOpen } from "lucide-react"
 
 export function AboutPreview() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div className="relative">
-          <ImageSlideshow slides={aboutSlides} />
+      <div className="space-y-12">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="relative">
+            <ImageSlideshow slides={aboutSlides} />
+          </div>
+
+          <div>
+            <SectionHeading
+              eyebrow="Who We Are"
+              title="Students helping students build with technology"
+              description="VyomikX is a student movement at ZHCET, AMU — we share tools, mentorship, and open hardware resources so curious minds from all backgrounds can build real technology."
+            />
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              {values.map((value, i) => {
+                const Icon = valueIcons[i % valueIcons.length]
+                return (
+                  <div key={value.title} className="rounded-xl border border-border bg-card p-5 shadow-xs transition-all hover:border-accent/40">
+                    <Icon className="h-5 w-5 text-accent" />
+                    <h3 className="mt-3 font-display text-base font-semibold text-foreground">
+                      {value.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                      {value.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Button asChild variant="outline" className="rounded-full">
+                <Link href="/about">
+                  More About Us
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+
+            </div>
+          </div>
         </div>
 
-        <div>
-          <SectionHeading
-            eyebrow="Who We Are"
-            title="Students helping students build with technology"
-            description="VyomikX is not a corporate lab or a College Club — we are a group of ZHCET students who believe every curious mind deserves access to tools, mentorship, and the chance to build something real."
-          />
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {values.map((value, i) => {
-              const Icon = valueIcons[i % valueIcons.length]
-              return (
-                <div key={value.title} className="rounded-xl border border-border bg-card p-5 shadow-xs transition-all hover:border-accent/40">
-                  <Icon className="h-5 w-5 text-accent" />
-                  <h3 className="mt-3 font-display text-base font-semibold text-foreground">
-                    {value.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    {value.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-          <Button asChild variant="outline" className="mt-8 rounded-full">
-            <Link href="/about">
-              More About Us
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+        {/* Looping Workshop Video Showcase Component */}
+        
       </div>
     </section>
   )
