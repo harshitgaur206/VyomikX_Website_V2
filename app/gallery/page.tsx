@@ -37,12 +37,7 @@ export default function GalleryPage() {
       <section className="bg-tech-grid py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Interactive Multi-Media Gallery Slider (Videos + Photos) */}
-          <div>
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-display text-2xl font-bold text-foreground">Featured Workshop Videos &amp; Photos</h2>
-            </div>
-            <GalleryMediaSlider slides={galleryMediaSlides} />
-          </div>
+          
 
           {/* Dedicated Google Drive Media Archive Callout Card */}
           
