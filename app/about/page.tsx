@@ -67,6 +67,19 @@ const aboutSlides = [
     title: "Interactive Microcontroller Hardware Lab",
     tag: "School Outreach",
   },
+  {
+  src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (4).jpg",
+  alt: "Students assembling Arduino circuits on breadboards",
+  title: "Arduino Circuit Building Session",
+  tag: "Electronics Workshop",
+  },
+    {
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (38).jpg",
+    alt: "Interactive motor control and PWM speed regulation session",
+    title: "Student Electronics & Motor Driver Session",
+    tag: "Robotics Mentorship",
+  },
+
 ]
 
 import { WorkshopVideoShowcase } from "@/components/workshop-video-showcase"
