@@ -29,7 +29,7 @@ const aboutSlides = [
     tag: "Heeralal Barahseeni Inter College",
   },
   {
-    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (34).heic",
+    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (14).jpg",
     alt: "Mentors guiding students on microcontroller signals and motor control at Gopiram Paliwal Inter College",
     title: "Circuit Assembly & Electronics Mentoring",
     tag: "Gopiram Paliwal Inter College",
