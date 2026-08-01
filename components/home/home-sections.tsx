@@ -53,6 +53,12 @@ const aboutSlides = [
     title: "Hands-On Robotics Build & Teamwork",
     tag: "Open Hardware Practice",
   },
+  {
+  src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (4).jpg",
+  alt: "Students assembling Arduino circuits on breadboards",
+  title: "Arduino Circuit Building Session",
+  tag: "Electronics Workshop",
+},
 ]
 
 import { WorkshopVideoShowcase, WORKSHOP_DRIVE_URL } from "@/components/workshop-video-showcase"

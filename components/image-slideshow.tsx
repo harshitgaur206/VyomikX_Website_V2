@@ -177,19 +177,6 @@ export function ImageSlideshow({ slides }: { slides: SlideItem[] }) {
         })}
 
         {/* Top Telemetry & Media Type Pill */}
-        <div className="absolute left-4 top-4 z-20 flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-3.5 py-1 text-[11px] font-mono font-medium text-white backdrop-blur-md">
-          {currentIsVideo ? (
-            <>
-              <Video className="h-3.5 w-3.5 text-emerald-400" />
-              <span className="text-emerald-400 font-bold">VIDEO REEL</span>
-            </>
-          ) : (
-            <>
-              <Sparkles className="h-3 w-3 text-amber-400" />
-              <span>WORKSHOP PHOTO</span>
-            </>
-          )}
-        </div>
 
         {/* Top Right Controls (Mute toggle for videos) */}
         {currentIsVideo && (
