@@ -172,6 +172,7 @@ export const galleryItems: GalleryItem[] = [
 export type MediaSlideItem = {
   src: string
   title: string
+  muted :boolean
   caption?: string
   category?: string
   type?: "image" | "video"
@@ -179,55 +180,62 @@ export type MediaSlideItem = {
 
 export const galleryMediaSlides: MediaSlideItem[] = [
   {
-    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Videos/workshop (1).mp4",
+    src: "https://docs.google.com/uc?export=view&id=1lEPX_927IT26BjJ0flGNWW_6CMJavZbI",
     title: "Robotics & Electronics Workshop Reel",
     caption: "Live action from Heeralal Barahseeni Inter College, Aligarh.",
     category: "Workshops",
     type: "video",
+    muted: true,
   },
   {
-    src: "/Workshops/Gopiram_Paliwal_Inter_College/Videos/workshop (1).mp4",
+    src: "https://docs.google.com/uc?export=view&id=1QTt0HfW1Yc6e70FCZxe4L44XU8LhDwCl",
     title: "Hands-On Circuit & Automation Session",
     caption: "Students building and testing circuits at Gopiram Paliwal Inter College.",
     category: "Workshops",
     type: "video",
+    muted: true,
   },
   {
-    src: "/Workshops/Raghuveer_sahay_Inter_College/Videos/workshop (4).mp4",
+    src: "https://docs.google.com/uc?export=view&id=1l_4YFT6TVFb0Dbz9aiq2boow64UiSk1e",
     title: "STEM & Autonomous Systems Demonstration",
     caption: "Outreach robotics session at Raghuveer Sahay Inter College.",
     category: "School Visits",
     type: "video",
+    muted: true,
   },
   {
-    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Videos/workshop (4).mp4",
+    src: "https://docs.google.com/uc?export=view&id=154qwmTf2YMl5W9bSMT41ySLH3JnDYuRG",
     title: "Interactive School Outreach Session",
     caption: "Students exploring sensors, microcontrollers, and motor drivers.",
     category: "School Visits",
     type: "video",
+    muted: true,
   },
   {
-    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Videos/workshop (6).mp4",
+    src: "https://docs.google.com/uc?export=view&id=1h5TGBUa666-jmNCqbbhK4DRZN6FfLuYF",
     title: "Circuit Assembly & Mentorship",
     caption: "Guiding curious students through breadboard circuit assembly.",
     category: "Workshops",
     type: "video",
+    muted: true,
   },
   {
-    src: "/Workshops/Raghuveer_sahay_Inter_College/Videos/workshop (7).mp4",
+    src: "https://docs.google.com/uc?export=view&id=157EJtU76nPzWyjbco-Z6y8UXVXDAkRxG",
     title: "Practical Hardware Demonstration",
     caption: "Demonstrating open-hardware rovers and sensor control.",
     category: "School Visits",
     type: "video",
+    muted: true,
   },
   {
-    src: "/Workshops/Gopiram_Paliwal_Inter_College/Videos/workshop (3).mp4",
+    src: "https://docs.google.com/uc?export=view&id=1btWrUI8-_RhhOD_KjXfp_-VmTJRZwX9r",
     title: "Practical Learning",
     caption: "Demonstrating and explaining Basic Electronics Components.",
     category: "School Visits",
     type: "video",
+    muted: true,
   }
-]
+];
 
 export type ProjectSpec = { label: string; value: string }
 export type Project = {
