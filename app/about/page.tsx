@@ -44,25 +44,25 @@ import { ImageSlideshow } from "@/components/image-slideshow"
 
 const aboutSlides = [
   {
-    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (1).jpg",
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (22).jpg",
     alt: "Students engaging in hands-on robotics and electronics assembly at Heeralal Barahseeni Inter College",
     title: "Robotics & Electronics Workshop",
     tag: "Heeralal Barahseeni Inter College",
   },
   {
-    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (1).jpg",
+    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (14).jpg",
     alt: "Guiding students through breadboard circuit assembly at Gopiram Paliwal Inter College",
     title: "Circuit Assembly & Microcontroller Mentoring",
     tag: "Gopiram Paliwal Inter College",
   },
   {
-    src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (10).jpg",
+    src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (25).jpg",
     alt: "Demonstrating open-hardware robotics and sensor control at Raghuveer Sahay Inter College",
     title: "STEM Outreach & Practical Hardware Demo",
     tag: "Raghuveer Sahay Inter College",
   },
   {
-    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (3).jpg",
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (17).jpg",
     alt: "Students exploring sensors and microcontrollers",
     title: "Interactive Microcontroller Hardware Lab",
     tag: "School Outreach",

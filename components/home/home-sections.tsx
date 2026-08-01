@@ -42,13 +42,13 @@ const aboutSlides = [
     tag: "Raghuveer Sahay Inter College",
   },
   {
-    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (2).jpg",
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (38).jpg",
     alt: "Interactive motor control and PWM speed regulation session",
     title: "Student Electronics & Motor Driver Session",
     tag: "Robotics Mentorship",
   },
   {
-    src: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (29).heic",
+    src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (29).jpg",
     alt: "Students collaborating on robotic arm joint servos and wiring",
     title: "Hands-On Robotics Build & Teamwork",
     tag: "Open Hardware Practice",
