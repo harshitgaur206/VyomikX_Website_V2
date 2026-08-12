@@ -1,9 +1,15 @@
 import { saveFeedbackSubmission } from "@/lib/db"
 import { isValidEmail, jsonError, jsonSuccess, sanitizeText } from "@/lib/validation"
+import { runApiGuard } from "@/lib/api-guard"
 
 export const runtime = "nodejs"
 
+const MAX_BODY_SIZE = 10_000
+
 export async function POST(request: Request) {
+  const guardError = await runApiGuard(request, { maxBodySize: MAX_BODY_SIZE })
+  if (guardError) return guardError
+
   let body: unknown
   try {
     body = await request.json()

@@ -35,49 +35,6 @@ const ALLOWED_TYPES = new Set([
   "General Inquiry",
 ])
 
-/*
- * Basic in-memory rate limiter.
- *
- * Important:
- * This helps against simple spam, but serverless instances
- * are not guaranteed to share memory.
- *
- * For stronger production protection, add Vercel WAF
- * or a persistent rate limiter such as Upstash.
- */
-const rateLimit = new Map<string, { count: number; resetAt: number }>()
-
-const RATE_LIMIT_WINDOW = 10 * 60 * 1000 // 10 minutes
-const RATE_LIMIT_MAX = 5
-
-function getClientIp(request: Request) {
-  const forwardedFor = request.headers.get("x-forwarded-for")
-
-  if (forwardedFor) {
-    return forwardedFor.split(",")[0].trim()
-  }
-
-  return request.headers.get("x-real-ip") || "unknown"
-}
-
-function isRateLimited(ip: string) {
-  const now = Date.now()
-  const existing = rateLimit.get(ip)
-
-  if (!existing || existing.resetAt <= now) {
-    rateLimit.set(ip, {
-      count: 1,
-      resetAt: now + RATE_LIMIT_WINDOW,
-    })
-
-    return false
-  }
-
-  existing.count += 1
-
-  return existing.count > RATE_LIMIT_MAX
-}
-
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -85,29 +42,6 @@ function escapeHtml(value: string) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;")
-}
-
-function isAllowedOrigin(request: Request) {
-  const origin = request.headers.get("origin")
-
-  // Allow requests without Origin for tools/server-to-server requests.
-  // The rate limiter + validation still protect the endpoint.
-  if (!origin) return true
-
-  const allowedOrigins = new Set([
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://vyomikx.in",
-    "https://www.vyomikx.in",
-  ])
-
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    allowedOrigins.add(
-      process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "")
-    )
-  }
-
-  return allowedOrigins.has(origin)
 }
 
 async function sendEmailNotification(submission: {
@@ -242,43 +176,11 @@ async function sendEmailNotification(submission: {
   return data
 }
 
+import { runApiGuard } from "@/lib/api-guard"
+
 export async function POST(request: Request) {
-  /*
-   * 1. Origin protection
-   */
-  if (!isAllowedOrigin(request)) {
-    return jsonError("Unauthorized request.", 403)
-  }
-
-  /*
-   * 2. Rate limiting
-   */
-  const ip = getClientIp(request)
-
-  if (isRateLimited(ip)) {
-    return jsonError(
-      "Too many requests. Please wait a few minutes and try again.",
-      429
-    )
-  }
-
-  /*
-   * 3. Content-Type validation
-   */
-  const contentType = request.headers.get("content-type") || ""
-
-  if (!contentType.toLowerCase().includes("application/json")) {
-    return jsonError("Invalid content type.", 415)
-  }
-
-  /*
-   * 4. Body-size protection
-   */
-  const contentLength = request.headers.get("content-length")
-
-  if (contentLength && Number(contentLength) > MAX_BODY_SIZE) {
-    return jsonError("Request is too large.", 413)
-  }
+  const guardError = await runApiGuard(request, { maxBodySize: MAX_BODY_SIZE })
+  if (guardError) return guardError
 
   let body: unknown
 
