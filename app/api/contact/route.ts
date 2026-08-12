@@ -12,7 +12,6 @@ import { logEvent } from "@/lib/logger"
 
 export const runtime = "nodejs"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const TARGET_EMAIL = "vyomikx@gmail.com"
 const FROM_EMAIL =
   process.env.RESEND_FROM_EMAIL || "VyomikX Website <onboarding@resend.dev>"
@@ -41,6 +40,15 @@ async function sendEmailNotification(
   },
   requestId: string
 ) {
+  // Check for API key inside the execution context
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY environment variable is not defined.")
+  }
+
+  // Instantiate Resend lazily here
+  const resend = new Resend(apiKey)
+
   const safeId = escapeHtml(submission.id)
   const safeName = escapeHtml(submission.name)
   const safeEmail = escapeHtml(submission.email)
