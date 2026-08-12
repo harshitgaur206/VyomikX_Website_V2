@@ -7,13 +7,19 @@ __v0_jsx-dev-runtime.ts
 .vercel/
 
 # Environment variables
+.env
 .env*.local
 
-# Submission data (stored locally by API)
-data/contact-submissions.json
-data/feedback-submissions.json
+# Data directory (submission payload databases & json logs)
+data/*
+!data/.gitkeep
+
+# OS and Shortcut artifacts
+*.lnk
+.DS_Store
+Thumbs.db
 
 # Common ignores
 node_modules
 .next/
-.DS_Store
+scratch/
