@@ -1,0 +1,42 @@
+name: Production Security & Quality Pipeline
+
+on:
+  push:
+    branches: [ main, security-remediation, security/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-and-build:
+    name: Security Scan, TypeCheck & Build Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/target/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies (Deterministic Lockfile)
+        run: npm ci
+
+      - name: Strict TypeScript Type Check
+        run: npx tsc --noEmit
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Dependency Security Audit
+        run: npm audit --audit-level=high
+
+      - name: Production Next.js Build
+        run: npm run build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}

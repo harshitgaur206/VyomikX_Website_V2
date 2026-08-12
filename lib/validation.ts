@@ -9,12 +9,24 @@ export function sanitizeText(value: unknown, maxLength: number) {
   return value.trim().slice(0, maxLength)
 }
 
-export function jsonError(message: string, status = 400) {
-  return Response.json({ ok: false, error: message }, { status })
+export function sanitizeHeader(value: string): string {
+  return value.replace(/[\r\n]+/g, " ").trim()
 }
 
-export function jsonSuccess<T extends Record<string, unknown>>(data: T) {
-  return Response.json({ ok: true, ...data })
+export function jsonError(message: string, status = 400, requestId?: string) {
+  const body: Record<string, unknown> = { ok: false, error: message }
+  if (requestId) body.requestId = requestId
+  const res = Response.json(body, { status })
+  if (requestId) res.headers.set("X-Request-ID", requestId)
+  return res
+}
+
+export function jsonSuccess<T extends Record<string, unknown>>(data: T, requestId?: string) {
+  const body: Record<string, unknown> = { ok: true, ...data }
+  if (requestId) body.requestId = requestId
+  const res = Response.json(body)
+  if (requestId) res.headers.set("X-Request-ID", requestId)
+  return res
 }
 
 export const ALLOWED_CONTACT_TYPES = [

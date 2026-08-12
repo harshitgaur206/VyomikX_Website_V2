@@ -5,6 +5,7 @@ import {
   contactSchema,
   jsonError,
   jsonSuccess,
+  sanitizeHeader,
 } from "@/lib/validation"
 import { runApiGuard } from "@/lib/api-guard"
 import { logEvent } from "@/lib/logger"
@@ -26,17 +27,20 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#039;")
 }
 
-async function sendEmailNotification(submission: {
-  id: string
-  name: string
-  email: string
-  organization: string
-  type: string
-  message: string
-  phone?: string
-  preferredTime?: string
-  createdAt: string
-}) {
+async function sendEmailNotification(
+  submission: {
+    id: string
+    name: string
+    email: string
+    organization: string
+    type: string
+    message: string
+    phone?: string
+    preferredTime?: string
+    createdAt: string
+  },
+  requestId: string
+) {
   const safeId = escapeHtml(submission.id)
   const safeName = escapeHtml(submission.name)
   const safeEmail = escapeHtml(submission.email)
@@ -49,12 +53,14 @@ async function sendEmailNotification(submission: {
   )
   const safeCreatedAt = escapeHtml(submission.createdAt)
 
-  const mailSubject = `[VyomikX Contact] ${submission.type} - ${submission.name}`
+  // Sanitize subject line against CRLF injection
+  const safeHeaderSubject = sanitizeHeader(`[VyomikX Contact] ${submission.type} - ${submission.name}`)
+  const safeReplyTo = sanitizeHeader(submission.email)
 
   const mailHtml = `
     <div style="font-family:Arial,sans-serif;padding:24px;color:#333;max-width:600px;margin:0 auto;border:1px solid #e2e8f0;border-radius:12px;">
       <h2 style="color:#735c48;margin-top:0;">New VyomikX Contact Submission</h2>
-      <p style="font-size:13px;color:#64748b;">Submitted: ${safeCreatedAt}</p>
+      <p style="font-size:13px;color:#64748b;">Submitted: ${safeCreatedAt} | Request ID: ${requestId}</p>
       <hr style="border:none;border-top:1px solid #e2e8f0;margin:16px 0;" />
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
         <tr><td style="padding:6px 0;font-weight:bold;width:140px;">Submission ID:</td><td>${safeId}</td></tr>
@@ -76,8 +82,8 @@ async function sendEmailNotification(submission: {
   const { data, error } = await resend.emails.send({
     from: FROM_EMAIL,
     to: [TARGET_EMAIL],
-    replyTo: submission.email,
-    subject: mailSubject,
+    replyTo: safeReplyTo,
+    subject: safeHeaderSubject,
     html: mailHtml,
   })
 
@@ -86,6 +92,7 @@ async function sendEmailNotification(submission: {
       level: "error",
       route: "/api/contact",
       message: "Resend email send error",
+      meta: { requestId },
       error,
     })
     throw new Error(error.message)
@@ -95,20 +102,23 @@ async function sendEmailNotification(submission: {
 }
 
 export async function POST(request: Request) {
-  const guardError = await runApiGuard(request, { maxBodySize: MAX_BODY_SIZE })
-  if (guardError) return guardError
+  const { errorResponse, requestId } = await runApiGuard(request, {
+    maxBodySize: MAX_BODY_SIZE,
+    routeId: "contact",
+  })
+  if (errorResponse) return errorResponse
 
   let jsonBody: unknown
   try {
     jsonBody = await request.json()
   } catch {
-    return jsonError("Invalid JSON request body.", 400)
+    return jsonError("Invalid JSON request body.", 400, requestId)
   }
 
   const parsed = contactSchema.safeParse(jsonBody)
   if (!parsed.success) {
     const firstIssue = parsed.error.issues[0]?.message || "Invalid input."
-    return jsonError(firstIssue, 400)
+    return jsonError(firstIssue, 400, requestId)
   }
 
   const { name, email, organization, type, message, phone, preferredTime, website } = parsed.data
@@ -119,11 +129,15 @@ export async function POST(request: Request) {
       level: "warn",
       route: "/api/contact",
       message: "Honeypot triggered by bot",
+      meta: { requestId },
     })
-    return jsonSuccess({
-      status: "RECEIVED",
-      message: "Thank you! Your request has been received.",
-    })
+    return jsonSuccess(
+      {
+        status: "RECEIVED",
+        message: "Thank you! Your request has been received.",
+      },
+      requestId
+    )
   }
 
   let submission
@@ -140,47 +154,58 @@ export async function POST(request: Request) {
       level: "error",
       route: "/api/contact",
       message: "Database save contact submission failed",
+      meta: { requestId },
       error,
     })
-    return jsonError("We couldn't save your request. Please try again.", 500)
+    return jsonError("We couldn't save your request. Please try again.", 500, requestId)
   }
 
   try {
-    await sendEmailNotification({
-      ...submission,
-      phone,
-      preferredTime,
-    })
+    await sendEmailNotification(
+      {
+        ...submission,
+        phone,
+        preferredTime,
+      },
+      requestId
+    )
   } catch (error) {
     logEvent({
       level: "error",
       route: "/api/contact",
       message: "Contact email notification failed",
+      meta: { requestId },
       error,
     })
-    return NextResponse.json(
+    const res = NextResponse.json(
       {
         success: false,
         error: "Your request was saved, but we couldn't send the notification email.",
+        requestId,
       },
       { status: 503 }
     )
+    res.headers.set("X-Request-ID", requestId)
+    return res
   }
 
   logEvent({
     level: "info",
     route: "/api/contact",
     message: "Contact submission processed successfully",
-    meta: { submissionId: submission.id },
+    meta: { submissionId: submission.id, requestId },
   })
 
-  return NextResponse.json(
+  const successRes = NextResponse.json(
     {
       success: true,
       id: submission.id,
       status: "RECEIVED",
       message: "Thank you! Your request has been received.",
+      requestId,
     },
     { status: 200 }
   )
+  successRes.headers.set("X-Request-ID", requestId)
+  return successRes
 }
