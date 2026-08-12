@@ -109,111 +109,120 @@ async function sendEmailNotification(
   return data
 }
 
-export async function POST(request: Request) {
-  const { errorResponse, requestId } = await runApiGuard(request, {
-    maxBodySize: MAX_BODY_SIZE,
-    routeId: "contact",
-  })
-  if (errorResponse) return errorResponse
-
-  let jsonBody: unknown
+eexport async function POST(request: Request) {
   try {
-    jsonBody = await request.json()
-  } catch {
-    return jsonError("Invalid JSON request body.", 400, requestId)
-  }
-
-  const parsed = contactSchema.safeParse(jsonBody)
-  if (!parsed.success) {
-    const firstIssue = parsed.error.issues[0]?.message || "Invalid input."
-    return jsonError(firstIssue, 400, requestId)
-  }
-
-  const { name, email, organization, type, message, phone, preferredTime, website } = parsed.data
-
-  // Honeypot check
-  if (website) {
-    logEvent({
-      level: "warn",
-      route: "/api/contact",
-      message: "Honeypot triggered by bot",
-      meta: { requestId },
+    const { errorResponse, requestId } = await runApiGuard(request, {
+      maxBodySize: MAX_BODY_SIZE,
+      routeId: "contact",
     })
-    return jsonSuccess(
+    if (errorResponse) return errorResponse
+
+    let jsonBody: unknown
+    try {
+      jsonBody = await request.json()
+    } catch {
+      return jsonError("Invalid JSON request body.", 400, requestId)
+    }
+
+    const parsed = contactSchema.safeParse(jsonBody)
+    if (!parsed.success) {
+      const firstIssue = parsed.error.issues[0]?.message || "Invalid input."
+      return jsonError(firstIssue, 400, requestId)
+    }
+
+    const { name, email, organization, type, message, phone, preferredTime, website } = parsed.data
+
+    // Honeypot check
+    if (website) {
+      logEvent({
+        level: "warn",
+        route: "/api/contact",
+        message: "Honeypot triggered by bot",
+        meta: { requestId },
+      })
+      return jsonSuccess(
+        {
+          status: "RECEIVED",
+          message: "Thank you! Your request has been received.",
+        },
+        requestId
+      )
+    }
+
+    let submission
+    try {
+      submission = await saveContactSubmission({
+        name,
+        email,
+        organization,
+        type,
+        message,
+      })
+    } catch (error) {
+      logEvent({
+        level: "error",
+        route: "/api/contact",
+        message: "Database save contact submission failed",
+        meta: { requestId },
+        error,
+      })
+      return jsonError("We couldn't save your request. Please try again.", 500, requestId)
+    }
+
+    try {
+      await sendEmailNotification(
+        {
+          ...submission,
+          phone,
+          preferredTime,
+        },
+        requestId
+      )
+    } catch (error) {
+      logEvent({
+        level: "error",
+        route: "/api/contact",
+        message: "Contact email notification failed",
+        meta: { requestId },
+        error,
+      })
+      const res = NextResponse.json(
+        {
+          success: false,
+          error: "Your request was saved, but we couldn't send the notification email.",
+          requestId,
+        },
+        { status: 503 }
+      )
+      res.headers.set("X-Request-ID", requestId)
+      return res
+    }
+
+    logEvent({
+      level: "info",
+      route: "/api/contact",
+      message: "Contact submission processed successfully",
+      meta: { submissionId: submission.id, requestId },
+    })
+
+    const successRes = NextResponse.json(
       {
+        success: true,
+        id: submission.id,
         status: "RECEIVED",
         message: "Thank you! Your request has been received.",
-      },
-      requestId
-    )
-  }
-
-  let submission
-  try {
-    submission = await saveContactSubmission({
-      name,
-      email,
-      organization,
-      type,
-      message,
-    })
-  } catch (error) {
-    logEvent({
-      level: "error",
-      route: "/api/contact",
-      message: "Database save contact submission failed",
-      meta: { requestId },
-      error,
-    })
-    return jsonError("We couldn't save your request. Please try again.", 500, requestId)
-  }
-
-  try {
-    await sendEmailNotification(
-      {
-        ...submission,
-        phone,
-        preferredTime,
-      },
-      requestId
-    )
-  } catch (error) {
-    logEvent({
-      level: "error",
-      route: "/api/contact",
-      message: "Contact email notification failed",
-      meta: { requestId },
-      error,
-    })
-    const res = NextResponse.json(
-      {
-        success: false,
-        error: "Your request was saved, but we couldn't send the notification email.",
         requestId,
       },
-      { status: 503 }
+      { status: 200 }
     )
-    res.headers.set("X-Request-ID", requestId)
-    return res
+    successRes.headers.set("X-Request-ID", requestId)
+    return successRes
+
+  } catch (err) {
+    console.error("CRITICAL API ROUTE CRASH:", err)
+    return NextResponse.json(
+      { success: false, error: String(err) },
+      { status: 500 }
+    )
   }
-
-  logEvent({
-    level: "info",
-    route: "/api/contact",
-    message: "Contact submission processed successfully",
-    meta: { submissionId: submission.id, requestId },
-  })
-
-  const successRes = NextResponse.json(
-    {
-      success: true,
-      id: submission.id,
-      status: "RECEIVED",
-      message: "Thank you! Your request has been received.",
-      requestId,
-    },
-    { status: 200 }
-  )
-  successRes.headers.set("X-Request-ID", requestId)
-  return successRes
 }
