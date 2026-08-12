@@ -896,6 +896,7 @@ export type TeamMember = {
   bio: string
   image: string
   focus: string[]
+  enrolment?: string
 }
 
 export const team: TeamMember[] = [

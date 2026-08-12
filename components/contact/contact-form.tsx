@@ -207,7 +207,7 @@ export function ContactForm() {
 
         <div className="space-y-2">
           <Label htmlFor="type">Request Category *</Label>
-          <Select value={type} onValueChange={setType}>
+          <Select value={type} onValueChange={(val) => setType(val || "")}>
             <SelectTrigger id="type" aria-invalid={!!errors.type} className="w-full">
               <SelectValue placeholder="Select category" />
             </SelectTrigger>
