@@ -916,7 +916,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Harshit Gaur",
-    role: "Software & Web Lead",
+    role: "Team Member",
     image: "/team/harshit.jpg",
     bio: "Leads software development, web architecture, and full-stack integration for the team's platforms and projects.",
     focus: ["Software", "Web Architecture", "Full-Stack"],

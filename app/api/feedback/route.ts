@@ -1,6 +1,7 @@
 import { saveFeedbackSubmission } from "@/lib/db"
-import { isValidEmail, jsonError, jsonSuccess, sanitizeText } from "@/lib/validation"
+import { feedbackSchema, jsonError, jsonSuccess } from "@/lib/validation"
 import { runApiGuard } from "@/lib/api-guard"
+import { logEvent } from "@/lib/logger"
 
 export const runtime = "nodejs"
 
@@ -10,41 +11,45 @@ export async function POST(request: Request) {
   const guardError = await runApiGuard(request, { maxBodySize: MAX_BODY_SIZE })
   if (guardError) return guardError
 
-  let body: unknown
+  let jsonBody: unknown
   try {
-    body = await request.json()
+    jsonBody = await request.json()
   } catch {
     return jsonError("Invalid JSON body.")
   }
 
-  if (!body || typeof body !== "object") {
-    return jsonError("Invalid request body.")
+  const parsed = feedbackSchema.safeParse(jsonBody)
+  if (!parsed.success) {
+    const firstIssue = parsed.error.issues[0]?.message || "Invalid input."
+    return jsonError(firstIssue, 400)
   }
 
-  const data = body as Record<string, unknown>
-  const name = sanitizeText(data.name, 120) || null
-  const emailRaw = sanitizeText(data.email, 200)
-  const email = emailRaw || null
-  const message = sanitizeText(data.message, 2000)
-  const page = sanitizeText(data.page, 200) || null
-  const rating = Number(data.rating)
-
-  if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
-    return jsonError("Please select a rating from 1 to 5.")
-  }
-  if (!message) return jsonError("Please share your feedback.")
-  if (email && !isValidEmail(email)) return jsonError("Please enter a valid email.")
+  const { name, email, rating, message, page } = parsed.data
 
   try {
     const submission = await saveFeedbackSubmission({
-      name,
-      email,
+      name: name || null,
+      email: email || null,
       rating,
       message,
-      page,
+      page: page || null,
     })
+
+    logEvent({
+      level: "info",
+      route: "/api/feedback",
+      message: "Feedback submission processed successfully",
+      meta: { submissionId: submission.id },
+    })
+
     return jsonSuccess({ id: submission.id })
-  } catch {
+  } catch (error) {
+    logEvent({
+      level: "error",
+      route: "/api/feedback",
+      message: "Save feedback submission failed",
+      error,
+    })
     return jsonError("Could not save your feedback. Please try again.", 500)
   }
 }
