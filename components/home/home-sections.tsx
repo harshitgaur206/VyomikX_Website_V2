@@ -284,7 +284,7 @@ export function HomeCta() {
   <Button
     asChild
     size="lg"
-    className="w-full rounded-full border border-[#c25e38] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#c25e38] hover:bg-[#c25e38] hover:text-white sm:w-auto"
+    className="w-full rounded-full border border-[#8B5E3C] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#8B5E3C] hover:bg-[#8B5E3C] hover:text-white sm:w-auto"
   >
     <Link
       href="/contact?topic=workshop"

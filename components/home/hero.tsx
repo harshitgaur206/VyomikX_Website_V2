@@ -71,7 +71,7 @@ export function Hero() {
           {/* Clean Open Access Telemetry Bar */}
           <div className="mt-8 flex items-center justify-center gap-3 rounded-full border border-border/80 bg-card/60 px-5 py-2 text-xs font-medium text-muted-foreground backdrop-blur-md lg:justify-start lg:max-w-md">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>100% Free Resources &amp; your Tech space &amp; Your Gateway to Technology</span>
+            <span>100% Free Resources &amp; Your Tech space &amp; Your Gateway to Technology</span>
           </div>
         </div>
 

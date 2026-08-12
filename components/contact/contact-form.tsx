@@ -108,7 +108,7 @@ export function ContactForm() {
         </div>
         <h3 className="mt-3 font-display text-2xl font-bold text-foreground">Request Submitted Successfully</h3>
         <p className="mt-2 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
-          Thank you! Your submission has been saved to our SQL database and forwarded directly to <strong>vyomikX@gmail.com</strong>. We will get back to you shortly.
+          Thank you! Your submission has been forwarded directly to <strong>vyomikx@gmail.com</strong>. We will get back to you shortly.
         </p>
         <Button className="mt-6 rounded-full bg-primary px-7 text-primary-foreground hover:opacity-90" onClick={() => setStatus("idle")}>
           Send Another Message
@@ -158,8 +158,13 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">Full Name *</Label>
-          <Input id="name" name="name" placeholder="Your name" aria-invalid={!!errors.name} />
-          {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
+          <Input
+  id="name"
+  name="name"
+  aria-invalid={!!errors.name}
+  aria-describedby={errors.name ? "name-error" : undefined}
+/>
+{errors.name && <p id="name-error" className="text-xs text-destructive">{errors.name}</p>}
         </div>
 
         <div
