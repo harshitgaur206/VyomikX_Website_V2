@@ -109,7 +109,7 @@ async function sendEmailNotification(
   return data
 }
 
-eexport async function POST(request: Request) {
+export async function POST(request: Request) {
   try {
     const { errorResponse, requestId } = await runApiGuard(request, {
       maxBodySize: MAX_BODY_SIZE,
