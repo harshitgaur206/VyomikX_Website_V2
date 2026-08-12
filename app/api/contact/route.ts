@@ -12,7 +12,7 @@ import { logEvent } from "@/lib/logger"
 
 export const runtime = "nodejs"
 
-const TARGET_EMAIL = "hgaur9368@gmail.com"
+const TARGET_EMAIL = "vyomikx@gmail.com"
 const FROM_EMAIL =
   process.env.RESEND_FROM_EMAIL || "VyomikX Website <onboarding@resend.dev>"
 const MAX_BODY_SIZE = 20_000
