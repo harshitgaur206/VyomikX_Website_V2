@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, ExternalLink, FolderOpen, Maximize2, Play, Video, Volume2, VolumeX, X } from "lucide-react"
+import { ChevronLeft, ChevronRight, Maximize2, Play, Volume2, VolumeX, X } from "lucide-react"
+import { useEscapeToClose } from "@/lib/use-escape-to-close"
 
 export type MediaSlide = {
   src: string
@@ -12,8 +13,6 @@ export type MediaSlide = {
   type?: "image" | "video"
   poster?: string
 }
-
-const WORKSHOP_DRIVE_URL = "https://"
 
 function isVideo(src: string, type?: string): boolean {
   if (type === "video") return true
@@ -29,6 +28,8 @@ export function GalleryMediaSlider({ slides }: { slides: MediaSlide[] }) {
 
   const active = slides[activeIdx]
   const currentIsVid = active ? isVideo(active.src, active.type) : false
+
+  useEscapeToClose(lightboxOpen, () => setLightboxOpen(false))
 
   useEffect(() => {
     Object.keys(videoRefs.current).forEach((key) => {
@@ -94,17 +95,11 @@ export function GalleryMediaSlider({ slides }: { slides: MediaSlide[] }) {
 
           {/* Top Tech Telemetry Header Badge */}
           <div className="absolute left-4 top-4 z-20 flex items-center gap-2.5 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 backdrop-blur-md">
-            {currentIsVid ? (
-              <>
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                </span>
-               
-              </>
-            ) : (
-              <>
-              </>
+            {currentIsVid && (
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
             )}
             <span className="text-white/40">&middot;</span>
             <span className="font-mono text-[10px] text-muted-foreground/90">
@@ -114,7 +109,16 @@ export function GalleryMediaSlider({ slides }: { slides: MediaSlide[] }) {
 
           {/* Top Controls */}
           <div className="absolute right-4 top-4 z-20 flex items-center gap-2">
-            
+            {currentIsVid && (
+              <button
+                type="button"
+                onClick={() => setIsMuted((prev) => !prev)}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all active:scale-90 hover:bg-black/80 hover:border-accent"
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+              >
+                {isMuted ? <VolumeX className="h-4 w-4 text-amber-400" /> : <Volume2 className="h-4 w-4 text-emerald-400" />}
+              </button>
+            )}
 
             <button
               type="button"
@@ -141,8 +145,6 @@ export function GalleryMediaSlider({ slides }: { slides: MediaSlide[] }) {
                 <p className="text-xs text-white/80 line-clamp-1">{active.caption}</p>
               )}
             </div>
-
-            
           </div>
 
           {/* Controls */}
@@ -200,9 +202,6 @@ export function GalleryMediaSlider({ slides }: { slides: MediaSlide[] }) {
                 ) : (
                   <Image src={s.src} alt={s.title} fill sizes="128px" className="object-cover" />
                 )}
-                <span className="absolute bottom-1 left-1.5 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[9px] text-white">
-                  
-                </span>
               </button>
             )
           })}
@@ -212,6 +211,9 @@ export function GalleryMediaSlider({ slides }: { slides: MediaSlide[] }) {
       {/* Lightbox Modal */}
       {lightboxOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.title || "Media preview"}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md animate-fade-up"
           onClick={() => setLightboxOpen(false)}
         >

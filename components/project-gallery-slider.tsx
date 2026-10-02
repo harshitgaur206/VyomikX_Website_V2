@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react"
+import { useEscapeToClose } from "@/lib/use-escape-to-close"
 
 export type GalleryImage = {
   src: string
@@ -12,6 +13,8 @@ export type GalleryImage = {
 export function ProjectGallerySlider({ gallery, title }: { gallery: GalleryImage[]; title: string }) {
   const [activeIdx, setActiveIdx] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+
+  useEscapeToClose(lightboxOpen, () => setLightboxOpen(false))
 
   if (!gallery || gallery.length === 0) return null
 
@@ -96,6 +99,9 @@ export function ProjectGallerySlider({ gallery, title }: { gallery: GalleryImage
       {/* Full-Screen Lightbox Modal */}
       {lightboxOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.caption || "Image preview"}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md animate-fade-up"
           onClick={() => setLightboxOpen(false)}
         >

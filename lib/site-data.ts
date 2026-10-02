@@ -67,6 +67,37 @@ export type GalleryItem = {
   description: string
 }
 
+export const galleryMediaSlides = [
+  {
+    src: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (22).jpg",
+    title: "School Robotics Session - Heeralal Barahseeni Inter College",
+    caption: "Demonstrating sensor calibration, motor drivers, and circuit assembly.",
+    category: "School Visits",
+    type: "image" as const,
+  },
+  {
+    src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (26).jpg",
+    title: "Breadboard Assembly & Mentoring - Gopiram Paliwal Inter College",
+    caption: "Guiding students through breadboard circuit assembly, microcontrollers, and relay automation.",
+    category: "Workshops",
+    type: "image" as const,
+  },
+  {
+    src: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (16).jpg",
+    title: "Open Hardware STEM Demo - Raghuveer Sahay Inter College",
+    caption: "Live demonstrations of line-follower robots and autonomous obstacle avoiders.",
+    category: "School Visits",
+    type: "image" as const,
+  },
+  {
+    src: "/gallery/outreach-1.jpg",
+    title: "VyomikX Community Robotics Build",
+    caption: "Hands-on student mentoring and collaborative prototyping at ZHCET, AMU.",
+    category: "Community",
+    type: "image" as const,
+  },
+]
+
 export const galleryItems: GalleryItem[] = [
   {
     id: "g1",
@@ -178,6 +209,7 @@ export type MediaSlideItem = {
   type?: "image" | "video"
 }
 
+/*
 export const galleryMediaSlides: MediaSlideItem[] = [
   {
     src: "https://docs.google.com/uc?export=view&id=1lEPX_927IT26BjJ0flGNWW_6CMJavZbI",
@@ -236,6 +268,7 @@ export const galleryMediaSlides: MediaSlideItem[] = [
     muted: true,
   }
 ];
+*/
 
 export type ProjectSpec = { label: string; value: string }
 export type Project = {

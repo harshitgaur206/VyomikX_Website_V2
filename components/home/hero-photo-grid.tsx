@@ -41,14 +41,6 @@ export function HeroPhotoGrid() {
             className="object-cover"
             priority
           />
-           <Image
-            src="/outreach/workshop-girls-solar.jpg"
-            alt="Students collaborating on a solar tracking robot build"
-            fill
-            sizes="(max-width: 768px) 80vw, 450px"
-            className="object-cover"
-            priority
-          />
         </figure>
       </div>
     </div>

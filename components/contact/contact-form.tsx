@@ -54,6 +54,7 @@ export function ContactForm() {
     const organization = String(data.get("organization") || "").trim()
     const preferredTime = String(data.get("preferredTime") || "").trim()
     const message = String(data.get("message") || "").trim()
+    const website = String(data.get("website") || "").trim()
 
     const nextErrors: Errors = {}
     if (!name) nextErrors.name = "Please enter your name."
@@ -79,6 +80,7 @@ export function ContactForm() {
           type,
           preferredTime,
           message,
+          website,
         }),
       })
       const result = await res.json()
@@ -192,8 +194,9 @@ export function ContactForm() {
             type="email"
             placeholder="you@example.com"
             aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "email-error" : undefined}
           />
-          {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
+          {errors.email && <p id="email-error" className="text-xs text-destructive">{errors.email}</p>}
         </div>
 
         <div className="space-y-2">
@@ -241,8 +244,9 @@ export function ContactForm() {
           rows={5}
           placeholder="Describe your request, school visit details, or questions..."
           aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? "message-error" : undefined}
         />
-        {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
+        {errors.message && <p id="message-error" className="text-xs text-destructive">{errors.message}</p>}
       </div>
 
       {apiError && (

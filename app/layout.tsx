@@ -18,14 +18,33 @@ const sourceSerif = Source_Serif_4({
   display: 'swap',
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vyomikx.in'
+const siteTitle = 'VyomikX — Technology Education for Every Student'
+const siteDescription =
+  'A student-led movement at ZHCET, AMU sharing tools, mentorship, and equipment so curious minds from all backgrounds can build real technology — 100% free.'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'VyomikX — Technology Education for Every Student',
+    default: siteTitle,
     template: '%s — VyomikX',
   },
-  description:
-    'A student-led movement at ZHCET, AMU sharing tools, mentorship, and equipment so curious minds from all backgrounds can build real technology — 100% free.',
+  description: siteDescription,
   keywords: ['robotics', 'STEM', 'VyomikX', 'workshops', 'education', 'ZHCET', 'AMU', 'community'],
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    siteName: 'VyomikX',
+    title: siteTitle,
+    description: siteDescription,
+    images: [{ url: '/logo/logo.jpg', width: 1200, height: 630, alt: 'VyomikX' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/logo/logo.jpg'],
+  },
   icons: {
     icon: [
       {

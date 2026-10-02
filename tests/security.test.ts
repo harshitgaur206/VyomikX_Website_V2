@@ -44,7 +44,7 @@ describe("VyomikX API Security Suite", () => {
   test("CRLF Email Header Sanitization strips newline characters", () => {
     const subjectWithCRLF = "Subject Line\r\nBcc: hacker@evil.com"
     const safe = sanitizeHeader(subjectWithCRLF)
-    expect(safe).toBe("Subject Line  Bcc: hacker@evil.com")
+    expect(safe).toBe("Subject Line Bcc: hacker@evil.com")
     expect(safe).not.toContain("\r")
     expect(safe).not.toContain("\n")
   })

@@ -219,9 +219,14 @@ export async function POST(request: Request) {
     return successRes
 
   } catch (err) {
-    console.error("CRITICAL API ROUTE CRASH:", err)
+    logEvent({
+      level: "error",
+      route: "/api/contact",
+      message: "Unhandled contact route crash",
+      error: err,
+    })
     return NextResponse.json(
-      { success: false, error: String(err) },
+      { success: false, error: "Something went wrong. Please try again." },
       { status: 500 }
     )
   }

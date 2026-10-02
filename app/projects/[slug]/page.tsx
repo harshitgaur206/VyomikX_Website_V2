@@ -60,14 +60,16 @@ export default async function ProjectDetailPage({
       ? project.gallery
       : [{ src: project.image, caption: project.title }]
 
-  const currentIndex = projects.findIndex(
-  (p) => p.slug === project.slug
-)
+  const otherProjects = projects.filter((p) => p.slug !== project.slug)
+  const currentIndex = projects.findIndex((p) => p.slug === project.slug)
 
-const related = [
-  ...projects.slice(currentIndex + 1, currentIndex + 4),
-  ...projects.slice(0, Math.max(0, 3 - (projects.length - currentIndex - 1))),
-].slice(0, 3)
+  const related =
+    otherProjects.length <= 3
+      ? otherProjects
+      : Array.from(
+          { length: 3 },
+          (_, i) => otherProjects[(currentIndex + i) % otherProjects.length]
+        )
 
   return (
     <>

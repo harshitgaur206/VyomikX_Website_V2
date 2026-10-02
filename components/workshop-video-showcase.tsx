@@ -74,7 +74,7 @@ export function WorkshopVideoShowcase({
           <div className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b-2 border-r-2 border-accent/80" />
 
           {/* Tech Telemetry Header Badge */}
-          <div className="absolute left-4 top-4 z-10 flex items-center gap-2.5 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 backdrop-blur-md">
+          {/* <div className="absolute left-4 top-4 z-10 flex items-center gap-2.5 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -84,7 +84,7 @@ export function WorkshopVideoShowcase({
             </span>
             <span className="text-white/40">&middot;</span>
             <span className="font-mono text-[10px] text-muted-foreground/90">60 FPS AUTO-LOOP</span>
-          </div>
+          </div> */}
 
           {/* Floating Player Controls */}
           <div className="absolute right-4 top-4 z-10 flex items-center gap-2">

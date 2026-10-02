@@ -61,8 +61,7 @@ const aboutSlides = [
 },
 ]
 
-import { WorkshopVideoShowcase, WORKSHOP_DRIVE_URL } from "@/components/workshop-video-showcase"
-import { ExternalLink, FolderOpen } from "lucide-react"
+import { WorkshopVideoShowcase } from "@/components/workshop-video-showcase"
 
 export function AboutPreview() {
   return (
@@ -109,7 +108,7 @@ export function AboutPreview() {
         </div>
 
         {/* Looping Workshop Video Showcase Component */}
-        
+
       </div>
     </section>
   )
@@ -279,8 +278,6 @@ export function HomeCta() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:flex-wrap">
            <div className="flex flex-col gap-3 sm:flex-row">
   {/* Join a Workshop */}
-<div className="flex flex-col gap-3 sm:flex-row">
-  {/* Join a Workshop */}
   <Button
     asChild
     size="lg"
@@ -324,7 +321,6 @@ export function HomeCta() {
       <GraduationCap className="h-4 w-4 shrink-0" />
     </Link>
   </Button>
-</div>
 </div>
           </div>
         </div>

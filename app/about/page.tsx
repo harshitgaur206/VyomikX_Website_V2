@@ -82,7 +82,7 @@ const aboutSlides = [
 
 ]
 
-import { WorkshopVideoShowcase } from "@/components/workshop-video-showcase"
+//import { WorkshopVideoShowcase } from "@/components/workshop-video-showcase"
 
 export default function AboutPage() {
   return (
