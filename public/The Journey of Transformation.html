@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Journey of Transformation</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#eef3ec;--card:#f7faf5;--text:#222;--green:#1a9a3c;--orange:#d2662c;--line:#666}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a15;--card:#1b231c;--text:#e6ece6;--green:#3fc261;--orange:#ef8a52;--line:#9aa}}
+:root[data-theme="dark"]{--bg:#141a15;--card:#1b231c;--text:#e6ece6;--green:#3fc261;--orange:#ef8a52;--line:#9aa}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1500px;margin:0 auto;padding:12px}
+.stage{overflow-x:auto;background:var(--card);border-radius:12px}
+svg{display:block;width:100%;min-width:760px;height:auto}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+button{background:var(--green);color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:15px;cursor:pointer}
+button.alt{background:transparent;color:var(--text);border:1px solid var(--line)}
+.fade{opacity:0;transition:opacity .7s ease}
+.fade.on{opacity:1}
+.foot{opacity:0;transition:opacity .35s ease}
+.foot.on{opacity:1}
+.ms text{font-size:15px;fill:var(--text)}
+.ms .dot-in{transform-box:fill-box;transform-origin:center;transition:transform .5s}
+.ms.on .dot-in{transform:scale(1.35)}
+.title{font-size:30px;fill:var(--orange)}
+.lab{font-size:12px;fill:var(--orange)}
+.q text{font-size:16px;fill:var(--orange)}
+.pulse{animation:p 1s infinite alternate}
+@keyframes p{to{r:13;opacity:.55}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="stage">
+<svg id="s" viewBox="0 0 1520 577" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="1520" height="577">
+      <path id="mpath" d="" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="butt"/>
+    </mask>
+    <g id="foot">
+      <ellipse cx="0" cy="0" rx="3.6" ry="6.5" fill="currentColor"/>
+      <ellipse cx="0" cy="9" rx="2.6" ry="3" fill="currentColor"/>
+      <circle cx="-3" cy="-8.8" r="1.4" fill="currentColor"/><circle cx="0" cy="-9.8" r="1.5" fill="currentColor"/><circle cx="3" cy="-8.8" r="1.4" fill="currentColor"/>
+    </g>
+  </defs>
+
+  <rect x="34" y="82" width="383" height="55" rx="6" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+  <text class="title" x="46" y="119">The Journey of Transformation</text>
+
+  <path id="route" fill="none" stroke="var(--green)" stroke-width="5" stroke-dasharray="9 11" stroke-linecap="round" mask="url(#reveal)"
+   d="M0,493 C150,495 330,500 440,470 C470,455 480,420 478,360 C476,280 455,200 475,140 C485,115 492,108 499,104 C520,80 555,62 590,62 C650,62 690,110 685,170 C682,200 678,215 678,225 C672,260 690,290 665,340 C640,400 650,450 720,472 C745,478 760,478 790,470 C830,455 850,400 852,330 C855,250 835,190 850,130 C855,70 900,42 940,48 C990,55 1000,130 960,175 C920,200 880,170 880,120 C880,70 940,60 990,100 C1010,115 1008,130 1007,140 C1005,170 985,200 980,260 C970,330 950,400 970,450 C985,480 1030,485 1075,490"/>
+
+  <g id="feet" style="color:var(--green)"></g>
+
+  <g class="ms fade" id="m0"><circle cx="475" cy="358" r="10" fill="none" stroke="var(--green)" stroke-width="3"/><circle class="dot-in" cx="475" cy="358" r="5" fill="var(--orange)"/>
+    <text x="496" y="362">Entering the world of</text><text x="496" y="380">education to explore</text><text x="496" y="398">the path and</text><text x="496" y="416">opportunities it holds.</text></g>
+  <g class="ms fade" id="m1"><circle cx="499" cy="104" r="10" fill="none" stroke="var(--green)" stroke-width="3"/><circle class="dot-in" cx="499" cy="104" r="5" fill="var(--orange)"/>
+    <text x="520" y="118">Getting her share of</text><text x="520" y="136">well-being, fun, and</text><text x="520" y="154">happiness which is</text><text x="520" y="172">every child's right.</text></g>
+  <g class="ms fade" id="m2"><circle cx="678" cy="225" r="10" fill="none" stroke="var(--green)" stroke-width="3"/><circle class="dot-in" cx="678" cy="225" r="5" fill="var(--orange)"/>
+    <text x="700" y="234">Starting to know</text><text x="700" y="252">about her</text><text x="700" y="270">uniqueness,</text><text x="700" y="288">potential, and</text><text x="700" y="306">the choices she</text><text x="700" y="324">can make.</text></g>
+  <g class="ms fade" id="m3"><circle cx="748" cy="473" r="10" fill="none" stroke="var(--green)" stroke-width="3"/><circle class="dot-in" cx="748" cy="473" r="5" fill="var(--orange)"/>
+    <text x="744" y="510">Steps into the world with all the</text><text x="744" y="528">required skills with aspirations for</text><text x="744" y="546">a better future.</text></g>
+  <g class="ms fade" id="m4"><circle cx="1007" cy="140" r="10" fill="none" stroke="var(--green)" stroke-width="3"/><circle class="dot-in" cx="1007" cy="140" r="5" fill="var(--orange)"/>
+    <text x="1028" y="147">Become a socially and</text><text x="1028" y="165">financially independent</text><text x="1028" y="183">girl.</text></g>
+
+  <g class="fade" id="end">
+    <polygon points="1038,490 1080,488 1050,478 1060,490 1050,500" fill="var(--orange)"/>
+    <g fill="var(--orange)">
+      <path d="M1042,430 L1056,414 L1070,430 L1066,430 L1066,445 L1046,445 L1046,430Z"/>
+      <circle cx="1130" cy="433" r="8"/><circle cx="1114" cy="442" r="6"/><circle cx="1146" cy="442" r="6"/><path d="M1112,458 q18,-18 36,0 v6 h-36z"/>
+      <circle cx="1130" cy="487" r="6"/><circle cx="1150" cy="487" r="6"/><circle cx="1170" cy="487" r="6"/><circle cx="1190" cy="487" r="6"/><path d="M1120,512 q40,-24 80,0 v6 h-80z"/>
+      <circle cx="1080" cy="526" r="7"/><circle cx="1100" cy="526" r="7"/><circle cx="1118" cy="526" r="7"/><path d="M1068,552 q27,-22 54,0 v6 h-54z"/>
+    </g>
+    <text class="lab" x="1076" y="412">VILLAGE</text><text class="lab" x="1170" y="440">COMMUNITY</text><text class="lab" x="1208" y="495">RELATIVES</text><text class="lab" x="1124" y="541">FAMILY</text>
+    <g class="q">
+      <path d="M1320,258 H1285 Q1281,258 1281,262 V418 Q1281,424 1287,424 H1392 M1432,424 H1456 Q1462,424 1462,418 V262 Q1462,258 1456,258 H1330" fill="none" stroke="var(--line)" stroke-width="2.5"/>
+      <text x="1298" y="266" style="font-size:40px;font-family:Georgia,serif">“</text>
+      <text x="1290" y="313">• Confident</text><text x="1290" y="332">• Decision maker</text><text x="1290" y="351">• Voice her opinions</text><text x="1290" y="370">• Lead an independent</text><text x="1302" y="389">and quality life</text>
+    </g>
+  </g>
+
+  <circle id="walker" class="pulse" r="9" fill="var(--orange)" cx="0" cy="493" opacity="0"/>
+</svg>
+</div>
+<div class="ctl">
+  <button id="play">Pause</button>
+  <button id="next" class="alt">Next step ▶</button>
+  <button id="replay" class="alt">Replay ↺</button>
+</div>
+</div>
+<script>
+const NS='http://www.w3.org/2000/svg',$=id=>document.getElementById(id);
+const route=$('route'),mp=$('mpath'),L=route.getTotalLength(),walker=$('walker');
+mp.setAttribute('d',route.getAttribute('d'));
+mp.style.strokeDasharray=L;mp.style.strokeDashoffset=L;
+
+// find path length nearest to each milestone dot
+const pts=[[475,358],[499,104],[678,225],[748,473],[1007,140]];
+const stops=[];let from=0;
+pts.forEach(([x,y])=>{let best=1e9,bl=from;
+  for(let l=from;l<=L;l+=3){const p=route.getPointAtLength(l),d=(p.x-x)**2+(p.y-y)**2;if(d<best){best=d;bl=l}}
+  stops.push(bl);from=bl+10;});
+
+// footprints along the path, alternating left/right
+const feet=[];let n=0;
+const footPos=[];
+stops.forEach(s=>[-48,-26,24,46].forEach(o=>{const d=Math.min(Math.max(s+o,8),L-10);footPos.push(d)}));
+footPos.sort((a,b)=>a-b);
+for(const d of footPos){n++;
+  const a=route.getPointAtLength(d),b=route.getPointAtLength(d+2);
+  const ang=Math.atan2(b.y-a.y,b.x-a.x),side=n%2?1:-1;
+  const x=a.x+Math.cos(ang+Math.PI/2)*7*side,y=a.y+Math.sin(ang+Math.PI/2)*7*side;
+  const u=document.createElementNS(NS,'use');u.setAttribute('href','#foot');
+  u.setAttribute('transform',`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(ang*180/Math.PI+90).toFixed(1)})`);
+  u.setAttribute('class','foot');$('feet').appendChild(u);feet.push({el:u,d});
+}
+
+let p=0,idx=0,playing=true,stepOnly=false,waiting=false,timer=null,last=0;
+const SPEED=230,HOLD=1400;
+
+function draw(){
+  mp.style.strokeDashoffset=L-p;
+  feet.forEach(f=>f.el.classList.toggle('on',f.d<=p));
+  const q=route.getPointAtLength(p);walker.setAttribute('cx',q.x);walker.setAttribute('cy',q.y);
+}
+function tick(t){
+  const dt=Math.min((t-last)/1000,.05);last=t;
+  if(playing&&!waiting&&p<L){
+    const target=idx<stops.length?stops[idx]:L;
+    p=Math.min(p+SPEED*dt,target);draw();
+    if(p>=target){
+      if(idx<stops.length){$('m'+idx).classList.add('on');idx++;
+        if(stepOnly){playing=false;stepOnly=false;setBtn()}
+        else{waiting=true;timer=setTimeout(()=>waiting=false,HOLD)}
+      }else{$('end').classList.add('on');walker.setAttribute('opacity',0);playing=false;setBtn()}
+    }
+  }
+  requestAnimationFrame(tick);
+}
+function setBtn(){$('play').textContent=p>=L?'Done ✓':(playing?'Pause':'Play')}
+function reset(){
+  clearTimeout(timer);waiting=false;p=0;idx=0;playing=true;stepOnly=false;
+  document.querySelectorAll('.fade').forEach(e=>e.classList.remove('on'));
+  walker.setAttribute('opacity',1);draw();setBtn();
+}
+$('play').onclick=()=>{if(p>=L)return;playing=!playing;stepOnly=false;setBtn()};
+$('next').onclick=()=>{if(p>=L)return;clearTimeout(timer);waiting=false;playing=true;stepOnly=true;setBtn()};
+$('replay').onclick=reset;
+walker.setAttribute('opacity',1);draw();
+requestAnimationFrame(t=>{last=t;tick(t)});
+</script>
+</body>
+</html>

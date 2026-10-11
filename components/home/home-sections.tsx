@@ -276,52 +276,52 @@ export function HomeCta() {
             your school — we would love to hear from you. Everything we offer is free.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:flex-wrap">
-           <div className="flex flex-col gap-3 sm:flex-row">
-  {/* Join a Workshop */}
-  <Button
-    asChild
-    size="lg"
-    className="w-full rounded-full border border-[#8B5E3C] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#8B5E3C] hover:bg-[#8B5E3C] hover:text-white sm:w-auto"
-  >
-    <Link
-      href="/contact?topic=workshop"
-      className="inline-flex items-center justify-center gap-2"
-    >
-      <span>Join a Workshop</span>
-      <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-    </Link>
-  </Button>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              {/* Join a Workshop */}
+              <Button
+                asChild
+                size="lg"
+                className="w-full rounded-full border border-[#8B5E3C] bg-[#f5e6d3] text-[#5A3825] shadow-sm transition-all duration-300 hover:border-[#6E472D] hover:bg-[#6E472D] hover:text-white dark:border-[#A67550]/70 dark:bg-[#2A221B] dark:text-[#EADBC8] dark:hover:border-[#8B5E3C] dark:hover:bg-[#8B5E3C] dark:hover:text-white sm:w-auto"
+              >
+                <Link
+                  href="/contact?topic=workshop"
+                  className="inline-flex items-center justify-center gap-2"
+                >
+                  <span>Join a Workshop</span>
+                  <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </Button>
 
-  {/* Donate Spare Parts */}
-  <Button
-    asChild
-    size="lg"
-    className="w-full rounded-full border border-[#c25e38] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#c25e38] hover:bg-[#c25e38] hover:text-white sm:w-auto"
-  >
-    <Link
-      href="/contact?topic=donate"
-      className="inline-flex items-center justify-center gap-2"
-    >
-      <span>Donate Spare Parts</span>
-      <Heart className="h-4 w-4 shrink-0" />
-    </Link>
-  </Button>
+              {/* Donate Spare Parts */}
+              <Button
+                asChild
+                size="lg"
+                className="w-full rounded-full border border-[#8B5E3C] bg-[#f5e6d3] text-[#5A3825] shadow-sm transition-all duration-300 hover:border-[#6E472D] hover:bg-[#6E472D] hover:text-white dark:border-[#A67550]/70 dark:bg-[#2A221B] dark:text-[#EADBC8] dark:hover:border-[#8B5E3C] dark:hover:bg-[#8B5E3C] dark:hover:text-white sm:w-auto"
+              >
+                <Link
+                  href="/contact?topic=donate"
+                  className="inline-flex items-center justify-center gap-2"
+                >
+                  <span>Donate Spare Parts</span>
+                  <Heart className="h-4 w-4 shrink-0" />
+                </Link>
+              </Button>
 
-  {/* Mentor a Student */}
-  <Button
-    asChild
-    size="lg"
-    className="w-full rounded-full border border-[#c25e38] bg-[#f5e6d3] text-[#7a3e28] shadow-sm transition-all duration-300 hover:border-[#c25e38] hover:bg-[#c25e38] hover:text-white sm:w-auto"
-  >
-    <Link
-      href="/contact?topic=mentor"
-      className="inline-flex items-center justify-center gap-2"
-    >
-      <span>Mentor a Student</span>
-      <GraduationCap className="h-4 w-4 shrink-0" />
-    </Link>
-  </Button>
-</div>
+              {/* Mentor a Student */}
+              <Button
+                asChild
+                size="lg"
+                className="w-full rounded-full border border-[#8B5E3C] bg-[#f5e6d3] text-[#5A3825] shadow-sm transition-all duration-300 hover:border-[#6E472D] hover:bg-[#6E472D] hover:text-white dark:border-[#A67550]/70 dark:bg-[#2A221B] dark:text-[#EADBC8] dark:hover:border-[#8B5E3C] dark:hover:bg-[#8B5E3C] dark:hover:text-white sm:w-auto"
+              >
+                <Link
+                  href="/contact?topic=mentor"
+                  className="inline-flex items-center justify-center gap-2"
+                >
+                  <span>Mentor a Student</span>
+                  <GraduationCap className="h-4 w-4 shrink-0" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

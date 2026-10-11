@@ -1,3 +1,5 @@
+import galleryItemsJson from "./gallery-items.json"
+
 export const site = {
   name: "VyomikX",
   tagline: "Bringing Technology & Robotics Education to Every Student",
@@ -57,10 +59,22 @@ export const navLinks: NavLink[] = [
   { label: "Contact", href: "/contact" },
 ]
 
+export const workshopCategories = [
+  "All",
+  "AMU Workshop",
+  "Agrasen Inter College",
+  "Babulal Jain Inter College",
+  "Gopiram Paliwal Inter College",
+  "Heeralal Barahseeni Inter College",
+  "Raghuveer Sahay Inter College",
+] as const
+
+export type WorkshopCategory = (typeof workshopCategories)[number]
+
 export type GalleryItem = {
   id: string
   title: string
-  category: "Workshops" | "School Visits" | "Projects" | "Community"
+  category: string
   image: string
   date: string
   location: string
@@ -98,107 +112,7 @@ export const galleryMediaSlides = [
   },
 ]
 
-export const galleryItems: GalleryItem[] = [
-  {
-    id: "g1",
-    title: "Robotics & Electronics Workshop",
-    category: "School Visits",
-    image: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (22).jpg",
-    date: "Jul 2026",
-    location: "Heeralal Barahseeni Inter College, Aligarh",
-    description: "Hands-on robotics, sensor calibration, and electronics assembly session with school students.",
-  },
-  {
-    id: "g2",
-    title: "Circuit Assembly & Microcontroller Mentoring",
-    category: "Workshops",
-    image: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (26).jpg",
-    date: "Jul 2026",
-    location: "Gopiram Paliwal Inter College, Aligarh",
-    description: "Guiding students through breadboard circuit assembly, microcontrollers, and relay automation.",
-  },
-  {
-    id: "g3",
-    title: "STEM Outreach & Practical Hardware Demo",
-    category: "School Visits",
-    image: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (16).jpg",
-    date: "Jul 2026",
-    location: "Raghuveer Sahay Inter College, Aligarh",
-    description: "Demonstrating open-hardware robotics, autonomous rovers, and sensor feedback logic.",
-  },
-  {
-    id: "g4",
-    title: "Student Electronics & Motor Driver Session",
-    category: "Workshops",
-    image: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (2).jpg",
-    date: "Jul 2026",
-    location: "Raghuveer Sahay Inter College, Aligarh",
-    description: "Interactive mentoring on H-bridge motor drivers, PWM speed control, and chassis assembly.",
-  },
-  {
-    id: "g5",
-    title: "Hands-On Robotics Build & Teamwork",
-    category: "Workshops",
-    image: "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (14).jpg",
-    date: "Jul 2026",
-    location: "Gopiram Paliwal Inter College, Aligarh",
-    description: "Students collaborating on robotic arm joint servos, sensor arrays, and wiring harnesses.",
-  },
-  {
-    id: "g6",
-    title: "School Outreach & Sensor Calibration",
-    category: "School Visits",
-    image: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (21).jpg",
-    date: "Jul 2026",
-    location: "Raghuveer Sahay Inter College, Aligarh",
-    description: "Calibrating ultrasonic rangefinders and IR sensors for obstacle avoidance and line tracking.",
-  },
-  {
-    id: "g7",
-    title: "Interactive Classroom Demonstration",
-    category: "School Visits",
-    image: "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (4).jpg",
-    date: "Jul 2026",
-    location: "Gopiram Paliwal Inter College, Aligarh",
-    description: "Live demonstration of microcontroller firmware uploading and real-time sensor telemetry output.",
-  },
-  {
-    id: "g8",
-    title: "Microcontroller & Sensor Hardware Lab",
-    category: "Workshops",
-    image: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (25).jpg",
-    date: "Jul 2026",
-    location: "Gopiram Paliwal Inter College, Aligarh",
-    description: "Practical experimentation with light sensors, thermistors, and motor control circuits.",
-  },
-  {
-    id: "g10",
-    title: "Hands-On Student Circuit Experimentation",
-    category: "Workshops",
-    image: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (24).jpg",
-    date: "Jul 2026",
-    location: "Heeralal Barahseeni Inter College, Aligarh",
-    description: "Students wiring components, LEDs, and relays on breadboards under team mentorship.",
-  },
-  {
-    id: "g11",
-    title: "Hardware Demonstration & Q&A Session",
-    category: "School Visits",
-    image: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop_2.jpg",
-    date: "Jul 2026",
-    location: "Raghuveer Sahay Inter College, Aligarh",
-    description: "Engaging students in Q&A regarding robotics, engineering pathways, and open-source technology.",
-  },
-  {
-    id: "g12",
-    title: "STEM Education & Practical Learning Lab",
-    category: "Community",
-    image: "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (23).jpg",
-    date: "Jul 2026",
-    location: "Gopiram Paliwal Inter College, Aligarh",
-    description: "Providing free hardware access, learning kits, and step-by-step guides for young minds.",
-  },
-]
+export const galleryItems: GalleryItem[] = galleryItemsJson as GalleryItem[]
 
 export type MediaSlideItem = {
   src: string
@@ -334,16 +248,57 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "line-follower-2",
+    title: "Autonomous Line Follower Robot 2",
+    category: "Autonomous Systems",
+    year: "2026",
+    status: "Completed",
+    summary:
+      "A second-generation autonomous line tracker featuring a wide-span multi-channel optical sensor bar, high-speed differential drive, and refined PID trajectory recovery algorithms.",
+    image: "/projects/line-follower-2/1000070689.jpeg",
+    whyWeBuilt:
+      "Building on our first line follower, Line Follower 2 was designed with an extended sensor baseline and streamlined chassis to achieve higher cornering speeds and tighter tracking accuracy on complex tracks.",
+    guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1qokB_2IjsfAask3CRe4zHgAGszOq_b0b/view?usp=drive_link",
+    overview:
+      "Line Follower Robot 2 evolves our autonomous navigation platform with an extended multi-channel optical sensor array mounted on a custom front boom bar. The wider sensor footprint provides early look-ahead detection for high-curvature turns. Paired with dual high-traction drive wheels and an optimized PID control loop with differential PWM speed throttling, the robot tracks continuous trajectories with minimal hunting oscillation.",
+    highlights: [
+      "Extended wide-span optical sensor array with active status indicators",
+      "High-speed differential steering with high-grip rubber drive wheels",
+      "Fine-tuned PID trajectory tracking with look-ahead corner anticipation",
+      "Dual 18650 lithium power supply with regulated motor voltage",
+    ],
+    challenge:
+      "Balancing weight distribution between the forward sensor boom and the rear battery pack to prevent front dragging while maintaining strong wheel traction.",
+    outcome:
+      "Demonstrated superior curve handling and stability compared to earlier prototypes, serving as a competition-ready testbed.",
+    specs: [
+      { label: "Microcontroller", value: "Arduino Micro / Nano" },
+      { label: "Sensor Array", value: "Wide-Span Multi-Channel IR/Optical Array" },
+      { label: "Motor Driver", value: "L298N Dual H-Bridge Driver" },
+      { label: "Drive Motors", value: "Dual Geared DC Motors with High-Grip Wheels" },
+      { label: "Control Loop", value: "High-Rate PID with Error Damping" },
+      { label: "Power System", value: "2x 18650 3.7V Li-ion Cells (7.4V Rail)" },
+    ],
+    tech: ["Arduino C++", "PID Control", "Optical Sensing", "Differential Drive", "Rapid Prototyping"],
+    gallery: [
+      { src: "/projects/line-follower-2/1000070558.jpeg", caption: "VyomikX engineering team collaborating on Line Follower 2 development in the lab" },
+      { src: "/projects/line-follower-2/1000070689.jpeg", caption: "Wide-span sensor array with active status LEDs and dual-wheel differential chassis" },
+      { src: "/projects/line-follower-2/1000070569.jpeg", caption: "Underside chassis inspection, drive wheel alignment, and circuit board layout" },
+      { src: "/projects/line-follower-2/IMG_20261006_114504005 (1).jpg.jpeg", caption: "Team brainstorming, schematic notes, and sensor boom mechanical design" },
+    ],
+  },
+  {
     slug: "robotic-arm",
     title: "6-DOF CyberDeck & 5-DOF Teach-Repeat Robotic Arm",
     category: "Human-Machine Interface",
     year: "2026",
     status: "Completed",
     summary:
-      "Industrial-grade 6-DOF & 5-DOF robotic manipulation systems featuring OpenCV AI vision hand tracking, Flask-SocketIO web control, and teach-repeat trajectory playback.",
+      "Advanced 6-DOF & 5-DOF robotic manipulation systems featuring OpenCV AI vision hand tracking, Flask-SocketIO web control, and teach-repeat trajectory playback.",
     image: "/projects/robotic-arm/robotic-arm-5.jpeg",
     whyWeBuilt:
-      "Industrial robot arms are typically locked behind proprietary software; we designed an open hardware ecosystem combining AI computer vision, web dashboards, and manual potentiometer teach modes.",
+      "Advanced robot arms are typically locked behind proprietary software; we designed an open hardware ecosystem combining AI computer vision, web dashboards, and manual potentiometer teach modes.",
     guideAvailable: true,
     guideUrl: "https://drive.google.com/file/d/1QhYbKPfhWFW38AebFMHhFrR2Sf5OUiHN/view?usp=drive_link",
     overview:
@@ -375,6 +330,51 @@ export const projects: Project[] = [
       { src: "/projects/robotic-arm/robotic-arm-5.jpeg", caption: "Base rotation turret servo linkage" },
       { src: "/projects/robotic-arm/robotic-arm-8.jpeg", caption: "PCA9685 16-channel servo driver wiring" },
       { src: "/projects/robotic-arm/robotic-arm-7.jpeg", caption: "Teach-and-repeat joint playback testing" },
+    ],
+  },
+  {
+    slug: "drone",
+    title: "F450 Autonomous Quadcopter Drone",
+    category: "Aerial Robotics",
+    year: "2026",
+    status: "Completed",
+    summary:
+      "A custom-built F450 quadcopter drone featuring an STM32 F405 flight controller running INAV, 1000KV brushless motors, 1045 propellers, and 2.4GHz FlySky FS-i6 telemetry control.",
+    image: "/projects/drone/IMG_20261008_161942989.jpg.jpeg",
+    whyWeBuilt:
+      "Commercial ready-to-fly drones hide flight mechanics behind proprietary black boxes; we engineered an open-platform F450 quadcopter from component level so students could master flight dynamics, PID attitude tuning, and avionics.",
+    guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1vN5-w0UIGGsxlzzNoG0wYZ0CJnFkksuH/view?usp=drive_link",
+    overview:
+      "Engineered around an F450 glass-fiber reinforced multirotor frame, this quadcopter features an STM32 F405 flight controller with integrated high-rate gyro/accelerometer, vibration dampeners, and INAV flight firmware. Powered by four high-thrust brushless outrunner motors regulated by 30A ESCs and high-efficiency 1045 propellers, the aircraft communicates with a FlySky FS-i6 2.4GHz radio transceiver and provides configurable flight stabilization modes.",
+    highlights: [
+      "F450 multirotor airframe with high-strength composite arms and integrated PDB",
+      "STM32 F405 flight controller running INAV avionics firmware",
+      "Four high-thrust 2212 1000KV brushless motors with 1045 pitch propellers",
+      "Real-time USB-C telemetry calibration and PID rate tuning in INAV Configurator",
+      "FlySky FS-i6 6-channel 2.4GHz digital proportional RC system",
+    ],
+    challenge:
+      "Eliminating motor vibration harmonics to prevent flight controller sensor noise required silicone vibration isolators and precise PID loop filtering.",
+    outcome:
+      "Achieved rock-solid attitude hold, responsive throttle curves, and successful bench flight telemetry validation.",
+    specs: [
+      { label: "Frame Type", value: "F450 Quadcopter (450mm Diagonal)" },
+      { label: "Flight Controller", value: "STM32 F405 (INAV / Betaflight)" },
+      { label: "Propulsion", value: "4x 2212 1000KV Brushless Motors" },
+      { label: "Propellers", value: "1045 (10-inch Diameter, 4.5 Pitch)" },
+      { label: "Speed Controllers", value: "4x 30A ESCs with SimonK / BLHeli" },
+      { label: "Radio System", value: "FlySky FS-i6 2.4GHz 6-Channel" },
+      { label: "Telemetry & Config", value: "INAV Configurator via USB-C" },
+      { label: "Power Supply", value: "3S 11.1V / 4S 14.8V LiPo Battery" },
+    ],
+    tech: ["Aerodynamics", "Avionics", "INAV Firmware", "Brushless DC", "PID Flight Control", "Telemetry"],
+    gallery: [
+      { src: "/projects/drone/IMG_20261008_161942989.jpg.jpeg", caption: "INAV configurator telemetry test with FlySky FS-i6 radio transmitter & 1045 props" },
+      { src: "/projects/drone/IMG_20261008_100805029.jpg.jpeg", caption: "F450 quadcopter frame overview with brushless motors, arms & wiring harness" },
+      { src: "/projects/drone/IMG_20261008_113638205.jpg.jpeg", caption: "Workbench soldering of flight controller power distribution and signal leads" },
+      { src: "/projects/drone/IMG_20261008_162013173.jpg.jpeg", caption: "STM32 F405 flight controller USB-C connection and active status LED testing" },
+      { src: "/projects/drone/IMG_20261008_100618808.jpg.jpeg", caption: "High-density STM32 F405 flight controller PCB pinout and vibration damping mount" },
     ],
   },
   {
@@ -782,16 +782,16 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "self-balancing-robot",
-    title: "Self-Balancing Robot",
+    slug: "self-balancing-robot-1",
+    title: "Self-Balancing Robot 1",
     category: "Control Systems",
     year: "2026",
-    status: "In Progress",
+    status: "Completed",
     summary:
       "A two-wheeled robot that stays upright in real time using an IMU and a PID balance controller.",
-    image: "/projects/self-balancing-robot/self-balancing-robot-6.jpeg",
+    image: "/projects/self-balancing-robot-1/self-balancing-robot-6.jpeg",
     whyWeBuilt:
-      "Control theory on a budget — we're building this so students can experiment with PID tuning without industrial equipment.",
+      "Control theory on a budget — we built this so students can experiment with PID tuning without industrial equipment.",
     guideAvailable: true,
     guideUrl: "https://drive.google.com/file/d/1tm9rOT1X_rpgvpfZKZohNDgzBG9q4lOJ/view?usp=drive_link",
     overview:
@@ -805,7 +805,7 @@ export const projects: Project[] = [
     challenge:
       "Fusing accelerometer and gyro data into a stable tilt estimate, then tuning the PID for fast recovery.",
     outcome:
-      "The robot balances and self-corrects; work continues on smoother motion.",
+      "The robot balances and self-corrects; serves as our foundational control theory platform.",
     specs: [
       { label: "Controller", value: "Arduino Nano" },
       { label: "Sensor", value: "MPU6050 IMU" },
@@ -816,10 +816,53 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino", "Sensor Fusion", "PID Control", "Control Theory"],
     gallery: [
-      { src: "/projects/self-balancing-robot/self-balancing-robot-4.jpeg", caption: "Two-wheeled PID inverted pendulum balancing" },
-      { src: "/projects/self-balancing-robot/self-balancing-robot-3.jpeg", caption: "MPU6050 IMU mounting and pitch angle calibration" },
-      { src: "/projects/self-balancing-robot/self-balancing-robot-5.jpeg", caption: "Stepping motor current driver tuning" },
-      { src: "/projects/self-balancing-robot/self-balancing-robot-6.jpeg", caption: "Balncing by self" },
+      { src: "/projects/self-balancing-robot-1/self-balancing-robot-4.jpeg", caption: "Two-wheeled PID inverted pendulum balancing" },
+      { src: "/projects/self-balancing-robot-1/self-balancing-robot-3.jpeg", caption: "MPU6050 IMU mounting and pitch angle calibration" },
+      { src: "/projects/self-balancing-robot-1/self-balancing-robot-5.jpeg", caption: "Stepping motor current driver tuning" },
+      { src: "/projects/self-balancing-robot-1/self-balancing-robot-6.jpeg", caption: "Upright balance stabilization test" },
+    ],
+  },
+  {
+    slug: "self-balancing-robot-2",
+    title: "Self-Balancing Robot 2",
+    category: "Control Systems",
+    year: "2026",
+    status: "Completed",
+    summary:
+      "A second-generation inverted pendulum robot featuring a modular dual-deck chassis, low-center-of-gravity 3S 18650 battery bank, MPU6050 6-axis IMU, and closed-loop PID tilt recovery.",
+    image: "/projects/self-balancing-robot-2/1000070786.jpeg",
+    whyWeBuilt:
+      "Iterating on our initial self-balancing experiments, Version 2 addresses chassis rotational inertia by placing heavy battery cells low on the base deck, dramatically improving recovery stability.",
+    guideAvailable: true,
+    guideUrl: "https://drive.google.com/file/d/1tm9rOT1X_rpgvpfZKZohNDgzBG9q4lOJ/view?usp=drive_link",
+    overview:
+      "Self-Balancing Robot 2 represents a major mechanical and control refinement of the classic inverted pendulum challenge. Featuring a vertical dual-deck wooden chassis, it isolates the heavy 3-cell 18650 battery bank close to the wheel axle to minimize rotational inertia, while housing the microcontroller, L298N motor driver, and MPU6050 6-axis IMU on the upper deck. The firmware integrates a high-frequency complementary filter to eliminate accelerometer vibration noise and executes a tuned PID balance loop that drives the dual geared DC motors to maintain upright equilibrium.",
+    highlights: [
+      "Dual-deck chassis separating high-mass battery cells from sensitive electronics",
+      "3-Cell 18650 lithium-ion power bank delivering stable high-discharge current",
+      "MPU6050 6-DOF IMU with complementary pitch filtering",
+      "Real-time closed-loop PID tilt compensation for push recovery",
+      "Dual high-torque DC gear motors with high-traction rubber wheels",
+    ],
+    challenge:
+      "Tuning the derivative (Kd) dampening term to stop high-frequency oscillations without delaying motor response during recovery from external disturbances.",
+    outcome:
+      "Maintained upright stability with quick recovery from pushes, establishing a reliable hardware base for advanced control demonstrations.",
+    specs: [
+      { label: "Controller", value: "Arduino Uno / Nano" },
+      { label: "Inertial Sensor", value: "MPU6050 6-Axis Accelerometer & Gyroscope" },
+      { label: "Motor Driver", value: "L298N Dual H-Bridge" },
+      { label: "Actuators", value: "2x High-Torque Geared DC Motors" },
+      { label: "Power System", value: "3x 18650 Li-ion Cells (11.1V Nominal)" },
+      { label: "Filter Type", value: "Complementary Filter (Alpha = 0.98)" },
+      { label: "Control Algorithm", value: "Closed-Loop PID (Tilt & Position)" },
+    ],
+    tech: ["Arduino C++", "Inverted Pendulum", "IMU Sensor Fusion", "PID Control", "Power Electronics"],
+    gallery: [
+      { src: "/projects/self-balancing-robot-2/1000070786.jpeg", caption: "Dual-deck chassis assembly with low-slung 3S 18650 battery bank and high-torque gear motors" },
+      { src: "/projects/self-balancing-robot-2/1000070800 (1).jpeg", caption: "VyomikX engineering team reviewing schematic calculations & balance dynamics" },
+      { src: "/projects/self-balancing-robot-2/1000070810.jpeg", caption: "Real-time PID firmware calibration and telemetry monitoring via dual laptops" },
+      { src: "/projects/self-balancing-robot-2/20261006_114811.jpg.jpeg", caption: "Hands-on balance equilibrium testing and tilt correction adjustment" },
     ],
   },
   {
@@ -904,12 +947,12 @@ export const futureVision: FutureVisionItem[] = [
   {
     title: "Open Tech Library",
     timeframe: "Mid Term",
-    description: "Publishing complete schematics, CAD files, and firmware for all VyomikX builds online.",
+    description: "We aim to publish schematics, CAD files, firmware and lesson plans openly as our technical library grows.",
   },
   {
     title: "Inter-College Robotics Exchange",
     timeframe: "Mid Term",
-    description: "Partnering with neighboring student clubs of different colleges to host Tech camps over over India .",
+    description: "Partnering with neighboring student clubs of different colleges to host Tech camps over over India.",
   },
   {
     title: "Regional Student Innovation Hub",

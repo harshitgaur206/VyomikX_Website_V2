@@ -180,60 +180,60 @@ export default function AboutPage() {
 </section>
 
       <section className="section-divider">
-  <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-    <SectionHeading
-      eyebrow="Our Journey"
-      title="How we got here"
-      align="center"
-      className="mx-auto"
-    />
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Our Journey"
+            title="How we got here"
+            align="center"
+            className="mx-auto"
+          />
 
-    <ol className="mt-12 space-y-8">
-      {journey.map((item, i) => (
-        <li key={item.title} className="relative flex gap-6">
-          {/* Timeline circle + line */}
-          <div className="flex flex-col items-center">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 px-2 text-center font-display text-xs font-bold leading-tight text-accent sm:h-20 sm:w-20 sm:text-sm">
-              <div
-  className="
-    flex h-16 w-16 shrink-0 items-center justify-center
-    rounded-full border border-accent/30 bg-accent/10
-    text-center font-display text-xs font-bold leading-tight text-accent
-    transition-all duration-300 ease-out
-    hover:scale-110
-    hover:border-accent
-    hover:bg-accent/20
-    hover:shadow-[0_0_20px_rgba(139,69,19,0.55)]
-    sm:h-20 sm:w-20 sm:text-sm
-  "
->
-  <div className="flex flex-col">
-    <span>{item.month}</span>
-    <span>{item.year}</span>
-  </div>
-</div>
-            </div>
+          <ol className="mt-12 space-y-8">
+            {journey.map((item, i) => (
+              <li key={item.title} className="relative flex gap-6">
+                {/* Timeline circle + line */}
+                <div className="flex flex-col items-center">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 px-2 text-center font-display text-xs font-bold leading-tight text-accent sm:h-20 sm:w-20 sm:text-sm">
+                    <div
+                      className="
+                        flex h-16 w-16 shrink-0 items-center justify-center
+                        rounded-full border border-accent/30 bg-accent/10
+                        text-center font-display text-xs font-bold leading-tight text-accent
+                        transition-all duration-300 ease-out
+                        hover:scale-110
+                        hover:border-accent
+                        hover:bg-accent/20
+                        hover:shadow-[0_0_20px_rgba(139,69,19,0.55)]
+                        sm:h-20 sm:w-20 sm:text-sm
+                      "
+                    >
+                      <div className="flex flex-col">
+                        <span>{item.month}</span>
+                        <span>{item.year}</span>
+                      </div>
+                    </div>
+                  </div>
 
-            {i < journey.length - 1 && (
-              <div className="mt-2 w-px flex-1 bg-border" />
-            )}
-          </div>
+                  {i < journey.length - 1 && (
+                    <div className="mt-2 w-px flex-1 bg-border" />
+                  )}
+                </div>
 
-          {/* Content */}
-          <div className="pb-2 pt-1">
-            <h3 className="font-display text-lg font-semibold text-foreground">
-              {item.title}
-            </h3>
+                {/* Content */}
+                <div className="pb-2 pt-1">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
+                    {item.title}
+                  </h3>
 
-            <p className="mt-1.5 leading-relaxed text-muted-foreground">
-              {item.text}
-            </p>
-          </div>
-        </li>
-      ))}
-    </ol>
-  </div>
-</section>
+                  <p className="mt-1.5 leading-relaxed text-muted-foreground">
+                    {item.text}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">

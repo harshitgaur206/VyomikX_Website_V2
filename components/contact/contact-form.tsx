@@ -125,16 +125,6 @@ export function ContactForm() {
       noValidate
       className="relative rounded-3xl border border-border bg-card p-6 shadow-xl backdrop-blur-md sm:p-8"
     >
-      {/* Top Telemetry Header */}
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-2 border-b border-border/70 pb-4">
-        <div className="flex items-center gap-2 font-mono text-xs text-accent">
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>[DIRECT_DISPATCH_SERVICE]</span>
-        </div>
-        <span className="font-mono text-[11px] text-muted-foreground">
-          Target: <strong className="text-foreground">vyomikX@gmail.com</strong>
-        </span>
-      </div>
 
       {/* Quick Select Presets */}
       <div className="mb-6 space-y-2">
@@ -264,7 +254,7 @@ export function ContactForm() {
         {status === "submitting" ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Dispatching to vyomikX@gmail.com...
+             Dispatching to vyomikx@gmail.com...
           </>
         ) : (
           <>

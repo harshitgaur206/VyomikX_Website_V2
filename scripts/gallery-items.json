@@ -1,0 +1,1190 @@
+[
+  {
+    "id": "ws-amu-workshop-1",
+    "title": "Sensor Arrays & Breadboard Wiring",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG_20260926_154108.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Calibrating ultrasonic and IR sensors for autonomous tracking."
+  },
+  {
+    "id": "ws-amu-workshop-2",
+    "title": "Hardware Showcase & Peer Learning",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG_20260926_160721.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Participants demonstrating their working circuits and robotics prototypes."
+  },
+  {
+    "id": "ws-amu-workshop-3",
+    "title": "VyomikX AMU Workshop Group Session",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG_20260926_160910.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Celebrating student creations, open-source hardware, and future builds at AMU."
+  },
+  {
+    "id": "ws-amu-workshop-4",
+    "title": "Autonomous Rover & Sensor Calibration",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG20260926102110.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Demonstrating open-hardware robotics, obstacle avoidance logic, and sensor feedback at AMU."
+  },
+  {
+    "id": "ws-amu-workshop-5",
+    "title": "Hands-On Robotics Prototyping",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG20260926104322.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Students assembling chassis kits, motor drivers, and microcontroller circuits."
+  },
+  {
+    "id": "ws-amu-workshop-6",
+    "title": "Microcontroller Circuit Assembly",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG20260926105217.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Live firmware flashing, breadboard connections, and telemetry monitoring."
+  },
+  {
+    "id": "ws-amu-workshop-7",
+    "title": "Interactive STEM & Robotics Q&A",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG20260926110727.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Discussing robotics design, embedded systems, and technology pathways with students."
+  },
+  {
+    "id": "ws-amu-workshop-8",
+    "title": "Hardware Mentoring & Circuit Debugging",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG20260926110958.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "VyomikX mentors assisting students with circuit debugging and sensor wiring."
+  },
+  {
+    "id": "ws-amu-workshop-9",
+    "title": "Robotics Demonstration & Chassis Testing",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG20260926131925.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Testing wheeled rover navigation and motor driver performance."
+  },
+  {
+    "id": "ws-amu-workshop-10",
+    "title": "Student Collaborative Hardware Build",
+    "category": "AMU Workshop",
+    "image": "/Workshops/AMU_Workshop/IMG20260926133507.jpg",
+    "date": "Sep 2026",
+    "location": "ZHCET, AMU",
+    "description": "Team-based experimentation with microcontrollers, servos, and sensors."
+  },
+  {
+    "id": "ws-agrasen-inter-college-11",
+    "title": "Interactive STEM Hardware Lab",
+    "category": "Agrasen Inter College",
+    "image": "/Workshops/Agrasen_Inter_College/IMG_20260822_110337.jpg",
+    "date": "Aug 2026",
+    "location": "Agrasen Inter College, Aligarh",
+    "description": "Live demonstration of sensor feedback, motor control, and breadboard circuits."
+  },
+  {
+    "id": "ws-agrasen-inter-college-12",
+    "title": "Robotics Outreach & Intro Session",
+    "category": "Agrasen Inter College",
+    "image": "/Workshops/Agrasen_Inter_College/IMG20260822105825.jpg",
+    "date": "Aug 2026",
+    "location": "Agrasen Inter College, Aligarh",
+    "description": "Introducing students to fundamental electronics, microcontrollers, and robotics kits."
+  },
+  {
+    "id": "ws-agrasen-inter-college-13",
+    "title": "Hands-On Circuit Prototyping",
+    "category": "Agrasen Inter College",
+    "image": "/Workshops/Agrasen_Inter_College/IMG20260822121122.jpg",
+    "date": "Aug 2026",
+    "location": "Agrasen Inter College, Aligarh",
+    "description": "Mentoring school students through hands-on component wiring and testing."
+  },
+  {
+    "id": "ws-agrasen-inter-college-14",
+    "title": "Classroom Technology Exploration",
+    "category": "Agrasen Inter College",
+    "image": "/Workshops/Agrasen_Inter_College/IMG20260822122025.jpg",
+    "date": "Aug 2026",
+    "location": "Agrasen Inter College, Aligarh",
+    "description": "Students collaborating on open-hardware kits, switches, and sensors."
+  },
+  {
+    "id": "ws-babulal-jain-inter-college-15",
+    "title": "STEM Outreach & Live Demonstration",
+    "category": "Babulal Jain Inter College",
+    "image": "/Workshops/Babulal_Jain_Inter_College/IMG20260821111517.jpg",
+    "date": "Aug 2026",
+    "location": "Babulal Jain Inter College, Aligarh",
+    "description": "Engaging students with interactive robotics demonstrations and open-source tech."
+  },
+  {
+    "id": "ws-babulal-jain-inter-college-16",
+    "title": "Sensors & Motor Driver Exploration",
+    "category": "Babulal Jain Inter College",
+    "image": "/Workshops/Babulal_Jain_Inter_College/IMG20260821111647.jpg",
+    "date": "Aug 2026",
+    "location": "Babulal Jain Inter College, Aligarh",
+    "description": "Demonstrating obstacle detection sensors, relays, and motor driving modules."
+  },
+  {
+    "id": "ws-babulal-jain-inter-college-17",
+    "title": "Hands-On Breadboard Assembly",
+    "category": "Babulal Jain Inter College",
+    "image": "/Workshops/Babulal_Jain_Inter_College/IMG20260821112008_01.jpg",
+    "date": "Aug 2026",
+    "location": "Babulal Jain Inter College, Aligarh",
+    "description": "Guiding students step-by-step through circuit design and electronics basics."
+  },
+  {
+    "id": "ws-babulal-jain-inter-college-18",
+    "title": "Microcontroller Firmware & Logic",
+    "category": "Babulal Jain Inter College",
+    "image": "/Workshops/Babulal_Jain_Inter_College/IMG20260821112105.jpg",
+    "date": "Aug 2026",
+    "location": "Babulal Jain Inter College, Aligarh",
+    "description": "Explaining conditional logic, signal routing, and sensor integration."
+  },
+  {
+    "id": "ws-babulal-jain-inter-college-19",
+    "title": "Interactive Classroom Mentoring",
+    "category": "Babulal Jain Inter College",
+    "image": "/Workshops/Babulal_Jain_Inter_College/IMG20260821130325.jpg",
+    "date": "Aug 2026",
+    "location": "Babulal Jain Inter College, Aligarh",
+    "description": "Inspiring school students to explore technology, engineering, and robotics."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-20",
+    "title": "Hands-On Breadboard Circuit Assembly #1",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (1).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-21",
+    "title": "Microcontroller & Sensor Mentorship #2",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (2).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-22",
+    "title": "Line-Follower & Obstacle Avoider Build #3",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (3).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-23",
+    "title": "Motor Drivers & PWM Velocity Control #4",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (4).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-24",
+    "title": "Sensor Calibration & Feedback Logic #5",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (5).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-25",
+    "title": "Student Team Prototyping & Collaboration #6",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (6).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-26",
+    "title": "Interactive Hardware Demonstration #7",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (7).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-27",
+    "title": "Robotic Arm Joint Servos & Control #8",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (8).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-28",
+    "title": "Chassis Assembly & Component Wiring #9",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (9).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-29",
+    "title": "Autonomous Rover Navigation Session #10",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (10).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-30",
+    "title": "Embedded Electronics Mentorship #11",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (11).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-31",
+    "title": "Circuit Debugging & Practical Lab #12",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (12).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-32",
+    "title": "STEM Education & Hardware Exploration #13",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (13).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-33",
+    "title": "Sensor Telemetry & Testing #14",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (14).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-34",
+    "title": "Hands-On Breadboard Circuit Assembly #15",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (15).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-35",
+    "title": "Microcontroller & Sensor Mentorship #16",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (16).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-36",
+    "title": "Line-Follower & Obstacle Avoider Build #17",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (17).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-37",
+    "title": "Motor Drivers & PWM Velocity Control #18",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (18).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-38",
+    "title": "Sensor Calibration & Feedback Logic #19",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (19).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-39",
+    "title": "Student Team Prototyping & Collaboration #20",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (20).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-40",
+    "title": "Interactive Hardware Demonstration #21",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (21).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-41",
+    "title": "Robotic Arm Joint Servos & Control #22",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (22).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-42",
+    "title": "Chassis Assembly & Component Wiring #23",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (23).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-gopiram-paliwal-inter-college-43",
+    "title": "Autonomous Rover Navigation Session #24",
+    "category": "Gopiram Paliwal Inter College",
+    "image": "/Workshops/Gopiram_Paliwal_Inter_College/Photos/workshop (24).jpg",
+    "date": "Jul 2026",
+    "location": "Gopiram Paliwal Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-44",
+    "title": "Hands-On Breadboard Circuit Assembly #1",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/IMG_20260728_080423.jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-45",
+    "title": "Microcontroller & Sensor Mentorship #2",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/IMG_20260728_080720 (1).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-46",
+    "title": "Line-Follower & Obstacle Avoider Build #3",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/IMG_20260728_080720.jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-47",
+    "title": "Motor Drivers & PWM Velocity Control #4",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (1).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-48",
+    "title": "Sensor Calibration & Feedback Logic #5",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (2).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-49",
+    "title": "Student Team Prototyping & Collaboration #6",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (3).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-50",
+    "title": "Interactive Hardware Demonstration #7",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (4).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-51",
+    "title": "Robotic Arm Joint Servos & Control #8",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (5).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-52",
+    "title": "Chassis Assembly & Component Wiring #9",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (6).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-53",
+    "title": "Autonomous Rover Navigation Session #10",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (7).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-54",
+    "title": "Embedded Electronics Mentorship #11",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (8).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-55",
+    "title": "Circuit Debugging & Practical Lab #12",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (9).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-56",
+    "title": "STEM Education & Hardware Exploration #13",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (10).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-57",
+    "title": "Sensor Telemetry & Testing #14",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (11).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-58",
+    "title": "Hands-On Breadboard Circuit Assembly #15",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (12).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-59",
+    "title": "Microcontroller & Sensor Mentorship #16",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (13).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-60",
+    "title": "Line-Follower & Obstacle Avoider Build #17",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (14).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-61",
+    "title": "Motor Drivers & PWM Velocity Control #18",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (15).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-62",
+    "title": "Sensor Calibration & Feedback Logic #19",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (16).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-63",
+    "title": "Student Team Prototyping & Collaboration #20",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (17).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-64",
+    "title": "Interactive Hardware Demonstration #21",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (18).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-65",
+    "title": "Robotic Arm Joint Servos & Control #22",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (19).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-66",
+    "title": "Chassis Assembly & Component Wiring #23",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (20).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-67",
+    "title": "Autonomous Rover Navigation Session #24",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (21).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-68",
+    "title": "Embedded Electronics Mentorship #25",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (22).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-69",
+    "title": "Circuit Debugging & Practical Lab #26",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (23).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-70",
+    "title": "STEM Education & Hardware Exploration #27",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (24).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-71",
+    "title": "Sensor Telemetry & Testing #28",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (25).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-72",
+    "title": "Hands-On Breadboard Circuit Assembly #29",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (26).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-73",
+    "title": "Microcontroller & Sensor Mentorship #30",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (27).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-74",
+    "title": "Line-Follower & Obstacle Avoider Build #31",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (28).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-75",
+    "title": "Motor Drivers & PWM Velocity Control #32",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (29).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-76",
+    "title": "Sensor Calibration & Feedback Logic #33",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (30).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-77",
+    "title": "Student Team Prototyping & Collaboration #34",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (31).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-78",
+    "title": "Interactive Hardware Demonstration #35",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (32).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-79",
+    "title": "Robotic Arm Joint Servos & Control #36",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (33).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-80",
+    "title": "Chassis Assembly & Component Wiring #37",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (34).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-81",
+    "title": "Autonomous Rover Navigation Session #38",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (35).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-82",
+    "title": "Embedded Electronics Mentorship #39",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (36).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-83",
+    "title": "Circuit Debugging & Practical Lab #40",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (37).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-84",
+    "title": "STEM Education & Hardware Exploration #41",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (38).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-85",
+    "title": "Sensor Telemetry & Testing #42",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (39).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-86",
+    "title": "Hands-On Breadboard Circuit Assembly #43",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (40).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-87",
+    "title": "Microcontroller & Sensor Mentorship #44",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (41).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-88",
+    "title": "Line-Follower & Obstacle Avoider Build #45",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (42).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-89",
+    "title": "Motor Drivers & PWM Velocity Control #46",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (43).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-90",
+    "title": "Sensor Calibration & Feedback Logic #47",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (44).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-91",
+    "title": "Student Team Prototyping & Collaboration #48",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (45).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-92",
+    "title": "Interactive Hardware Demonstration #49",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (46).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-93",
+    "title": "Robotic Arm Joint Servos & Control #50",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (47).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-94",
+    "title": "Chassis Assembly & Component Wiring #51",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (48).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-95",
+    "title": "Autonomous Rover Navigation Session #52",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (49).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-96",
+    "title": "Embedded Electronics Mentorship #53",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (50).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-97",
+    "title": "Circuit Debugging & Practical Lab #54",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (51).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-98",
+    "title": "STEM Education & Hardware Exploration #55",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (52).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-99",
+    "title": "Sensor Telemetry & Testing #56",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (53).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-100",
+    "title": "Hands-On Breadboard Circuit Assembly #57",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (54).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-101",
+    "title": "Microcontroller & Sensor Mentorship #58",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (55).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-102",
+    "title": "Line-Follower & Obstacle Avoider Build #59",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (56).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-103",
+    "title": "Motor Drivers & PWM Velocity Control #60",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (57).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-104",
+    "title": "Sensor Calibration & Feedback Logic #61",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (58).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-heeralal-barahseeni-inter-college-105",
+    "title": "Student Team Prototyping & Collaboration #62",
+    "category": "Heeralal Barahseeni Inter College",
+    "image": "/Workshops/Heeralal_Barahseeni_Inter_College/Photos/workshop (59).jpg",
+    "date": "Jul 2026",
+    "location": "Heeralal Barahseeni Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-106",
+    "title": "Hands-On Breadboard Circuit Assembly #1",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (3).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-107",
+    "title": "Microcontroller & Sensor Mentorship #2",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (4).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-108",
+    "title": "Line-Follower & Obstacle Avoider Build #3",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (5).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-109",
+    "title": "Motor Drivers & PWM Velocity Control #4",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (6).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-110",
+    "title": "Sensor Calibration & Feedback Logic #5",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (7).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-111",
+    "title": "Student Team Prototyping & Collaboration #6",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (8).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-112",
+    "title": "Interactive Hardware Demonstration #7",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (9).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-113",
+    "title": "Robotic Arm Joint Servos & Control #8",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (10).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-114",
+    "title": "Chassis Assembly & Component Wiring #9",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (11).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-115",
+    "title": "Autonomous Rover Navigation Session #10",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (12).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-116",
+    "title": "Embedded Electronics Mentorship #11",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (13).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-117",
+    "title": "Circuit Debugging & Practical Lab #12",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (14).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-118",
+    "title": "STEM Education & Hardware Exploration #13",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (15).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-119",
+    "title": "Sensor Telemetry & Testing #14",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (16).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-120",
+    "title": "Hands-On Breadboard Circuit Assembly #15",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (17).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-121",
+    "title": "Microcontroller & Sensor Mentorship #16",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (18).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-122",
+    "title": "Line-Follower & Obstacle Avoider Build #17",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (19).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-123",
+    "title": "Motor Drivers & PWM Velocity Control #18",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (20).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-124",
+    "title": "Sensor Calibration & Feedback Logic #19",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (21).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-125",
+    "title": "Student Team Prototyping & Collaboration #20",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (22).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-126",
+    "title": "Interactive Hardware Demonstration #21",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (23).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-127",
+    "title": "Robotic Arm Joint Servos & Control #22",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (24).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Practical experimentation with ultrasonic sensors, IR arrays, and motor driver boards."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-128",
+    "title": "Chassis Assembly & Component Wiring #23",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (25).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Demonstrating open-hardware tools and empowering students to build functional technology."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-129",
+    "title": "Autonomous Rover Navigation Session #24",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (26).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Step-by-step guidance on breadboard component routing, power regulation, and signal logic."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-130",
+    "title": "Embedded Electronics Mentorship #25",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop (29).jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Guiding students through hands-on wiring, sensor calibration, and embedded hardware principles."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-131",
+    "title": "Circuit Debugging & Practical Lab #26",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop_2.jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Interactive mentoring on motor drivers, microcontrollers, and real-time electronic control."
+  },
+  {
+    "id": "ws-raghuveer-sahay-inter-college-132",
+    "title": "STEM Education & Hardware Exploration #27",
+    "category": "Raghuveer Sahay Inter College",
+    "image": "/Workshops/Raghuveer_sahay_Inter_College/Photos/workshop_4.jpg",
+    "date": "Jul 2026",
+    "location": "Raghuveer Sahay Inter College, Aligarh",
+    "description": "Students collaborating in teams to assemble robotic chassis and program sensor thresholds."
+  }
+]

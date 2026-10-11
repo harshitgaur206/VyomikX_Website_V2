@@ -18,6 +18,7 @@ export default function HomePage() {
       <FuturePreview />
       <TeamPreview />
       <HomeCta />
+      
     </>
   )
 }

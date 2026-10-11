@@ -89,15 +89,17 @@ export default function TeamPage() {
             No experience needed — just curiosity. We will guide you step-by-step through your
             first build, completely free.
           </p>
-          <Button asChild size="lg" className="mt-8 rounded-full">
-  <Link
-    href="/contact?topic=workshop"
-    className="flex items-center justify-center"
-  >
-    Join a Workshop
-    <ArrowRight className="ml-1 h-4 w-4" />
-  </Link>
-</Button>
+          <div className="mt-8 flex justify-center">
+            <Button asChild size="lg" className="rounded-full px-8 shadow-sm">
+              <Link
+                href="/contact?topic=workshop"
+                className="inline-flex items-center justify-center gap-2"
+              >
+                <span>Join a Workshop</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>

@@ -47,20 +47,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/logo/favicon.ico' },
+      { url: '/logo/icon.png', type: 'image/png' },
+      { url: '/logo/icon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/apple-icon.png',
+    shortcut: '/logo/favicon.ico',
+    apple: '/logo/apple-icon.png',
   },
 }
 
@@ -83,10 +75,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`bg-background ${inter.variable} ${sourceSerif.variable}`}
     >
-      <body className="antialiased font-sans min-h-dvh flex flex-col">
+      <body className="antialiased font-sans min-h-dvh flex flex-col overflow-x-hidden w-full">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <SiteNav />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 w-full min-w-0">{children}</main>
           <SiteFooter />
         </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}

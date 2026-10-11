@@ -20,8 +20,8 @@ export function HeroPhotoGrid() {
           className="absolute right-0 top-0 aspect-[4/3] w-[76%] rotate-[4deg] overflow-hidden rounded-3xl border-4 border-card bg-card shadow-2xl transition-all duration-500 hover:rotate-0 hover:scale-[1.02] hover:z-20 sm:right-2"
         >
           <Image
-            src="/outreach/workshop-team.jpg"
-            alt="Students building a spider robot with mentorship"
+            src="/team/vyomikx-whole-team.jpg"
+            alt="VyomikX student mentors and organizers team"
             fill
             sizes="(max-width: 768px) 75vw, 420px"
             className="object-cover"
