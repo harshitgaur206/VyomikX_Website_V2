@@ -9,6 +9,32 @@ export const metadata: Metadata = {
   title: "Future Vision",
   description:
     "VyomikX strategic roadmap — open campus maker labs, free school outreach, shared hardware libraries, and open engineering documentation.",
+  alternates: {
+    canonical: "/future",
+  },
+  openGraph: {
+    type: "website",
+    url: "/future",
+    title: "Future Vision — VyomikX",
+    description:
+      "VyomikX strategic roadmap — open campus maker labs, free school outreach, shared hardware libraries, and open engineering documentation.",
+    siteName: "VyomikX",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "VyomikX Future Vision & Roadmap",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Future Vision — VyomikX",
+    description:
+      "VyomikX strategic roadmap — open campus maker labs, free school outreach, shared hardware libraries, and open engineering documentation.",
+    images: ["/og-image.jpg"],
+  },
 }
 
 const strategicPillars = [

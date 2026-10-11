@@ -30,20 +30,23 @@ export const metadata: Metadata = {
     template: '%s — VyomikX',
   },
   description: siteDescription,
-  keywords: ['robotics', 'STEM', 'VyomikX', 'workshops', 'education', 'ZHCET', 'AMU', 'community'],
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: siteUrl,
     siteName: 'VyomikX',
     title: siteTitle,
     description: siteDescription,
-    images: [{ url: '/logo/logo.jpg', width: 1200, height: 630, alt: 'VyomikX' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'VyomikX' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteTitle,
     description: siteDescription,
-    images: ['/logo/logo.jpg'],
+    images: ['/og-image.jpg'],
   },
   icons: {
     icon: [

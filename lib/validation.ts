@@ -50,6 +50,7 @@ export const contactSchema = z.object({
   message: z.string().trim().min(1, "Please enter your message or request details.").max(4000),
   phone: z.string().trim().max(30).optional().default(""),
   preferredTime: z.string().trim().max(60).optional().default(""),
+  companyWebsiteX9: z.string().trim().max(200).optional().default(""),
   website: z.string().trim().max(200).optional().default(""),
 })
 

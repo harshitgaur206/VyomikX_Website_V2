@@ -20,7 +20,11 @@ export function logEvent({ level, route, message, meta, error }: LogPayload) {
       ? {
           error:
             error instanceof Error
-              ? { name: error.name, message: error.message, stack: error.stack }
+              ? {
+                  name: error.name,
+                  message: error.message,
+                  stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
+                }
               : String(error),
         }
       : {}),

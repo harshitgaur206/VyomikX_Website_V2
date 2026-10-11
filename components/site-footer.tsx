@@ -88,7 +88,13 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-8 border-t border-border/60 pt-4 flex flex-col items-center justify-between gap-2 text-[11px] sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+            <span>&bull;</span>
+            <Link href="/privacy" className="transition-colors hover:text-foreground underline-offset-2 hover:underline">
+              Privacy &amp; Media Policy
+            </Link>
+          </div>
           <p className="text-muted-foreground/80">Built by Team VyomikX.</p>
         </div>
       </div>

@@ -46,9 +46,36 @@ export async function generateMetadata({
     }
   }
 
+  const title = `${project.title} — VyomikX`
+  const description = project.summary || project.whyWeBuilt
+  const canonicalUrl = `/projects/${project.slug}`
+  const coverImage = project.image || "/og-image.jpg"
+
   return {
     title: project.title,
-    description: project.whyWeBuilt,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      type: "article",
+      url: canonicalUrl,
+      title,
+      description,
+      siteName: "VyomikX",
+      images: [
+        {
+          url: coverImage,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [coverImage],
+    },
   }
 }
 

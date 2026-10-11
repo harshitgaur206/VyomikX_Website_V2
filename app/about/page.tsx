@@ -8,7 +8,33 @@ import { site, values } from "@/lib/site-data"
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "VyomikX is a student-led movement at ZHCET, AMU sharing tools, knowledge , mentorship, and equipment so every curious student can build with technology — for free.",
+    "VyomikX is a student-led movement at ZHCET, AMU sharing tools, knowledge, mentorship, and equipment so every curious student can build with technology — for free.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    type: "website",
+    url: "/about",
+    title: "About Us — VyomikX",
+    description:
+      "VyomikX is a student-led movement at ZHCET, AMU sharing tools, knowledge, mentorship, and equipment so every curious student can build with technology — for free.",
+    siteName: "VyomikX",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About VyomikX",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us — VyomikX",
+    description:
+      "VyomikX is a student-led movement at ZHCET, AMU sharing tools, knowledge, mentorship, and equipment so every curious student can build with technology — for free.",
+    images: ["/og-image.jpg"],
+  },
 }
 
 const valueIcons = [Wrench, BookOpen, Users, HandHeart]
@@ -133,8 +159,8 @@ export default function AboutPage() {
             <GraduationCap className="h-8 w-8 text-accent" />
             <h2 className="mt-4 font-display text-2xl font-bold text-foreground">Our Vision</h2>
             <p className="mt-3 leading-relaxed text-muted-foreground">
-              A community where any student — regardless of background or budget — can walk into
-              a maker space , rather theoretically and build something practically that changes their future.
+              A community where any student — regardless of background or budget — can move beyond
+              theory, walk into a maker space, and build real technology that shapes their future.
             </p>
           </div>
         </div>

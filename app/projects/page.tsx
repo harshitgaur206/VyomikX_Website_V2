@@ -6,6 +6,32 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "Robotics projects built by VyomikX to be shared — with free assembly guides, affordable parts, and step-by-step mentorship for every student.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    type: "website",
+    url: "/projects",
+    title: "Projects — VyomikX",
+    description:
+      "Robotics projects built by VyomikX to be shared — with free assembly guides, affordable parts, and step-by-step mentorship for every student.",
+    siteName: "VyomikX",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "VyomikX Robotics Projects",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects — VyomikX",
+    description:
+      "Robotics projects built by VyomikX to be shared — with free assembly guides, affordable parts, and step-by-step mentorship for every student.",
+    images: ["/og-image.jpg"],
+  },
 }
 
 export default function ProjectsPage() {

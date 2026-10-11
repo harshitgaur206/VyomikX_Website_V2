@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/future",
     "/gallery",
     "/projects",
+    "/privacy",
     "/team",
   ].map((route) => ({
     url: `${siteUrl}${route}`,

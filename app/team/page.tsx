@@ -10,6 +10,32 @@ export const metadata: Metadata = {
   title: "Team",
   description:
     "Meet the students behind VyomikX — volunteers at ZHCET, AMU who share tools, mentorship, and equipment so every curious student can build with technology.",
+  alternates: {
+    canonical: "/team",
+  },
+  openGraph: {
+    type: "website",
+    url: "/team",
+    title: "Team — VyomikX",
+    description:
+      "Meet the students behind VyomikX — volunteers at ZHCET, AMU who share tools, mentorship, and equipment so every curious student can build with technology.",
+    siteName: "VyomikX",
+    images: [
+      {
+        url: "/team/vyomikx-whole-team.jpg",
+        width: 2048,
+        height: 1536,
+        alt: "Team VyomikX at ZHCET, AMU",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Team — VyomikX",
+    description:
+      "Meet the students behind VyomikX — volunteers at ZHCET, AMU who share tools, mentorship, and equipment so every curious student can build with technology.",
+    images: ["/team/vyomikx-whole-team.jpg"],
+  },
 }
 
 const coordinators = team.filter((m) => m.role === "Team Coordinator")

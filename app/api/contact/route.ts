@@ -130,23 +130,25 @@ export async function POST(request: Request) {
       return jsonError(firstIssue, 400, requestId)
     }
 
-    const { name, email, organization, type, message, phone, preferredTime, website } = parsed.data
+    const { name, email, organization, type, message, phone, preferredTime, companyWebsiteX9, website } = parsed.data
 
-    // Honeypot check
-    if (website) {
+    // Honeypot check (either new obscure field or legacy field)
+    if (companyWebsiteX9 || website) {
       logEvent({
         level: "warn",
         route: "/api/contact",
         message: "Honeypot triggered by bot",
         meta: { requestId },
       })
-      return jsonSuccess(
+      const botRes = jsonSuccess(
         {
           status: "RECEIVED",
           message: "Thank you! Your request has been received.",
         },
         requestId
       )
+      botRes.headers.set("Cache-Control", "no-store")
+      return botRes
     }
 
     let submission
@@ -195,6 +197,7 @@ export async function POST(request: Request) {
         { status: 503 }
       )
       res.headers.set("X-Request-ID", requestId)
+      res.headers.set("Cache-Control", "no-store")
       return res
     }
 
@@ -216,6 +219,7 @@ export async function POST(request: Request) {
       { status: 200 }
     )
     successRes.headers.set("X-Request-ID", requestId)
+    successRes.headers.set("Cache-Control", "no-store")
     return successRes
 
   } catch (err) {
@@ -225,9 +229,11 @@ export async function POST(request: Request) {
       message: "Unhandled contact route crash",
       error: err,
     })
-    return NextResponse.json(
-      { success: false, error: "Something went wrong. Please try again." },
+    const crashRes = NextResponse.json(
+      { success: false, error: "Something went wrong. Please try again later." },
       { status: 500 }
     )
+    crashRes.headers.set("Cache-Control", "no-store")
+    return crashRes
   }
 }

@@ -8,6 +8,32 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with VyomikX — join a free workshop, request a learning guide, borrow equipment, donate spare parts, or mentor a student.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    type: "website",
+    url: "/contact",
+    title: "Contact — VyomikX",
+    description:
+      "Get in touch with VyomikX — join a free workshop, request a learning guide, borrow equipment, donate spare parts, or mentor a student.",
+    siteName: "VyomikX",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact VyomikX",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact — VyomikX",
+    description:
+      "Get in touch with VyomikX — join a free workshop, request a learning guide, borrow equipment, donate spare parts, or mentor a student.",
+    images: ["/og-image.jpg"],
+  },
 }
 
 const highlights = [

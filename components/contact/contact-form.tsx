@@ -54,7 +54,7 @@ export function ContactForm() {
     const organization = String(data.get("organization") || "").trim()
     const preferredTime = String(data.get("preferredTime") || "").trim()
     const message = String(data.get("message") || "").trim()
-    const website = String(data.get("website") || "").trim()
+    const companyWebsiteX9 = String(data.get("companyWebsiteX9") || "").trim()
 
     const nextErrors: Errors = {}
     if (!name) nextErrors.name = "Please enter your name."
@@ -80,7 +80,7 @@ export function ContactForm() {
           type,
           preferredTime,
           message,
-          website,
+          companyWebsiteX9,
         }),
       })
       const result = await res.json()
@@ -103,14 +103,11 @@ export function ContactForm() {
         </div>
         <div className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-emerald-600 dark:text-emerald-400">
           <Cpu className="h-3.5 w-3.5" />
-          <p className="mt-2 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
-  Thank you! Your request has been received successfully. Our team has been
-  notified and will get back to you shortly.
-</p>
+          <span>Verified Request</span>
         </div>
         <h3 className="mt-3 font-display text-2xl font-bold text-foreground">Request Submitted Successfully</h3>
         <p className="mt-2 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
-          Thank you! Your submission has been forwarded directly to <strong>vyomikx@gmail.com</strong>. We will get back to you shortly.
+          Thank you! Your submission has been received. Our team will review your request and get back to you shortly.
         </p>
         <Button className="mt-6 rounded-full bg-primary px-7 text-primary-foreground hover:opacity-90" onClick={() => setStatus("idle")}>
           Send Another Message
@@ -160,21 +157,20 @@ export function ContactForm() {
         </div>
 
         <div
-  className="absolute -left-[9999px]"
-  aria-hidden="true"
->
-  <label htmlFor="website">
-    Website
-  </label>
-
-  <input
-    id="website"
-    name="website"
-    type="text"
-    tabIndex={-1}
-    autoComplete="off"
-  />
-</div>
+          className="absolute -left-[9999px]"
+          aria-hidden="true"
+        >
+          <label htmlFor="companyWebsiteX9">
+            Company Website
+          </label>
+          <input
+            id="companyWebsiteX9"
+            name="companyWebsiteX9"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
 
         <div className="space-y-2">
           <Label htmlFor="email">Email Address *</Label>

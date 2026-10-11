@@ -427,7 +427,7 @@ export const projects: Project[] = [
       "A modular ESP32-powered home automation controller supporting multi-channel relay switching, MQTT telemetry, local web dashboard, and physical wall switch overrides.",
     image: "/projects/smart-home-automation/Home-Automation.jpeg",
     whyWeBuilt:
-      "Modern home automation proprietary hubs are expensive; we engineered a low-cost, open-hardware controller with fallback physical wall switches.",
+      "Proprietary home-automation hubs are often expensive; we engineered a low-cost, open-hardware controller with fallback physical wall switches.",
     guideAvailable: true,
     guideUrl: "https://drive.google.com/file/d/1At4yY-0zSontfj6icrsMnTSlqPod8SBB/view?usp=drive_link",
     overview:
@@ -952,7 +952,7 @@ export const futureVision: FutureVisionItem[] = [
   {
     title: "Inter-College Robotics Exchange",
     timeframe: "Mid Term",
-    description: "Partnering with neighboring student clubs of different colleges to host Tech camps over over India.",
+    description: "Partnering with neighboring student clubs of different colleges to host tech camps across India.",
   },
   {
     title: "Regional Student Innovation Hub",
