@@ -148,7 +148,7 @@ export function OpenResources() {
       <SectionHeading
         eyebrow="Open Resources"
         title="Everything we share is 100% free"
-        description="Learning guides, equipments, mentorship — no fees, no paywalls. We exist to remove barriers, not create them."
+        description="Learning guides, equipment, mentorship — no fees, no paywalls. We exist to remove barriers, not create them."
         align="center"
         className="mx-auto"
       />

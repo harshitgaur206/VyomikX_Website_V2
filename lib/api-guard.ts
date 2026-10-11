@@ -38,28 +38,48 @@ if (
   })
 }
 
+const IPV4_REGEX = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+const IPV6_REGEX = /^(?:[0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}$|^::1$|^::$/
+
+export function isValidIp(ip: string): boolean {
+  const trimmed = ip.trim()
+  return IPV4_REGEX.test(trimmed) || IPV6_REGEX.test(trimmed)
+}
+
 /**
- * Hardened client IP determination:
- * On Vercel edge runtime, x-real-ip is set by the trusted Vercel proxy.
- * We prioritize x-real-ip to prevent client spoofing via arbitrary x-forwarded-for headers.
+ * Hardened client IP determination with trusted proxy boundaries:
+ * 1. Prioritizes trusted edge headers (x-real-ip, x-vercel-forwarded-for, cf-connecting-ip).
+ * 2. Validates IP syntax (IPv4/IPv6).
+ * 3. Never groups unknown/unverified traffic into a shared "unknown" key in production.
  */
-export function getClientIp(request: Request): string {
+export function getClientIp(request: Request): string | null {
   const realIp = request.headers.get("x-real-ip")
-  if (realIp) {
+  if (realIp && isValidIp(realIp)) {
     return realIp.trim()
   }
 
   const vercelForwardedFor = request.headers.get("x-vercel-forwarded-for")
   if (vercelForwardedFor) {
-    return vercelForwardedFor.split(",")[0].trim()
+    const candidate = vercelForwardedFor.split(",")[0].trim()
+    if (isValidIp(candidate)) return candidate
+  }
+
+  const cfConnectingIp = request.headers.get("cf-connecting-ip")
+  if (cfConnectingIp && isValidIp(cfConnectingIp)) {
+    return cfConnectingIp.trim()
   }
 
   const forwardedFor = request.headers.get("x-forwarded-for")
   if (forwardedFor) {
-    return forwardedFor.split(",")[0].trim()
+    const candidate = forwardedFor.split(",")[0].trim()
+    if (isValidIp(candidate)) return candidate
   }
 
-  return "unknown"
+  if (process.env.NODE_ENV !== "production") {
+    return "127.0.0.1"
+  }
+
+  return null
 }
 
 export function isAllowedOrigin(request: Request): boolean {
@@ -123,20 +143,130 @@ export async function checkRateLimit(
 export type ApiGuardConfig = {
   maxBodySize?: number
   routeId?: string
+  parseJson?: boolean
 }
 
-export type ApiGuardResult = {
+export type ApiGuardResult<T = unknown> = {
   errorResponse: NextResponse | null
   requestId: string
+  data: T | null
 }
 
-export async function runApiGuard(
+/**
+ * Consumes the request body stream chunk-by-chunk up to maxBodySize bytes.
+ * Enforces hard byte limit while actively reading, preventing chunked transfer encoding
+ * abuse and bypassed Content-Length headers.
+ */
+export async function readBoundedJsonStream<T = unknown>(
+  request: Request,
+  maxBodySize: number,
+  requestId: string
+): Promise<{ data: T | null; errorResponse: NextResponse | null }> {
+  const contentLength = request.headers.get("content-length")
+  if (contentLength !== null) {
+    const declaredLength = parseInt(contentLength, 10)
+    if (Number.isNaN(declaredLength) || declaredLength < 0) {
+      const res = NextResponse.json(
+        { success: false, error: "Invalid Content-Length header.", requestId },
+        { status: 400 }
+      )
+      res.headers.set("X-Request-ID", requestId)
+      res.headers.set("Cache-Control", "no-store")
+      return { data: null, errorResponse: res }
+    }
+    if (declaredLength > maxBodySize) {
+      const res = NextResponse.json(
+        { success: false, error: "Request body is too large.", requestId },
+        { status: 413 }
+      )
+      res.headers.set("X-Request-ID", requestId)
+      res.headers.set("Cache-Control", "no-store")
+      return { data: null, errorResponse: res }
+    }
+  }
+
+  if (!request.body) {
+    const res = NextResponse.json(
+      { success: false, error: "Missing request body.", requestId },
+      { status: 400 }
+    )
+    res.headers.set("X-Request-ID", requestId)
+    res.headers.set("Cache-Control", "no-store")
+    return { data: null, errorResponse: res }
+  }
+
+  const reader = request.body.getReader()
+  const chunks: Uint8Array[] = []
+  let totalBytes = 0
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      if (value) {
+        totalBytes += value.byteLength
+        if (totalBytes > maxBodySize) {
+          await reader.cancel("Payload exceeded size limit")
+          const res = NextResponse.json(
+            { success: false, error: "Request payload exceeded size limit.", requestId },
+            { status: 413 }
+          )
+          res.headers.set("X-Request-ID", requestId)
+          res.headers.set("Cache-Control", "no-store")
+          return { data: null, errorResponse: res }
+        }
+        chunks.push(value)
+      }
+    }
+  } catch {
+    const res = NextResponse.json(
+      { success: false, error: "Failed to read request body stream.", requestId },
+      { status: 400 }
+    )
+    res.headers.set("X-Request-ID", requestId)
+    res.headers.set("Cache-Control", "no-store")
+    return { data: null, errorResponse: res }
+  }
+
+  if (chunks.length === 0 || totalBytes === 0) {
+    const res = NextResponse.json(
+      { success: false, error: "Empty request body.", requestId },
+      { status: 400 }
+    )
+    res.headers.set("X-Request-ID", requestId)
+    res.headers.set("Cache-Control", "no-store")
+    return { data: null, errorResponse: res }
+  }
+
+  try {
+    const totalBuffer = new Uint8Array(totalBytes)
+    let offset = 0
+    for (const chunk of chunks) {
+      totalBuffer.set(chunk, offset)
+      offset += chunk.byteLength
+    }
+    const rawText = new TextDecoder("utf-8").decode(totalBuffer)
+    const parsedData = JSON.parse(rawText) as T
+    return { data: parsedData, errorResponse: null }
+  } catch {
+    const res = NextResponse.json(
+      { success: false, error: "Invalid JSON request body.", requestId },
+      { status: 400 }
+    )
+    res.headers.set("X-Request-ID", requestId)
+    res.headers.set("Cache-Control", "no-store")
+    return { data: null, errorResponse: res }
+  }
+}
+
+export async function runApiGuard<T = unknown>(
   request: Request,
   config: ApiGuardConfig = {}
-): Promise<ApiGuardResult> {
+): Promise<ApiGuardResult<T>> {
   const requestId = randomUUID()
   const maxBodySize = config.maxBodySize || 20_000
   const routeId = config.routeId || "api"
+  const parseJson = config.parseJson ?? false
 
   // 1. Strict Origin & Referer protection
   if (!isAllowedOrigin(request)) {
@@ -145,11 +275,22 @@ export async function runApiGuard(
       { status: 403 }
     )
     res.headers.set("X-Request-ID", requestId)
-    return { errorResponse: res, requestId }
+    res.headers.set("Cache-Control", "no-store")
+    return { errorResponse: res, requestId, data: null }
   }
 
-  // 2. Multi-dimensional Durable Rate Limiting (IP + route)
+  // 2. Client Identity & Multi-dimensional Durable Rate Limiting (IP + route)
   const ip = getClientIp(request)
+  if (!ip) {
+    const res = NextResponse.json(
+      { success: false, error: "Unable to verify trusted client identity.", requestId },
+      { status: 400 }
+    )
+    res.headers.set("X-Request-ID", requestId)
+    res.headers.set("Cache-Control", "no-store")
+    return { errorResponse: res, requestId, data: null }
+  }
+
   const rateLimitKey = `${routeId}:${ip}`
   
   let isLimited = false
@@ -164,11 +305,12 @@ export async function runApiGuard(
   } catch (err) {
     if (process.env.NODE_ENV === "production") {
       const res = NextResponse.json(
-        { success: false, error: "Service unavailable.", requestId },
+        { success: false, error: "Service temporarily unavailable.", requestId },
         { status: 503 }
       )
       res.headers.set("X-Request-ID", requestId)
-      return { errorResponse: res, requestId }
+      res.headers.set("Cache-Control", "no-store")
+      return { errorResponse: res, requestId, data: null }
     }
   }
 
@@ -182,11 +324,12 @@ export async function runApiGuard(
       { status: 429 }
     )
     res.headers.set("X-Request-ID", requestId)
+    res.headers.set("Cache-Control", "no-store")
     res.headers.set("Retry-After", "600")
     res.headers.set("X-RateLimit-Limit", String(RATE_LIMIT_MAX))
     res.headers.set("X-RateLimit-Remaining", String(remaining))
     res.headers.set("X-RateLimit-Reset", String(reset))
-    return { errorResponse: res, requestId }
+    return { errorResponse: res, requestId, data: null }
   }
 
   // 3. Content-Type validation
@@ -197,10 +340,19 @@ export async function runApiGuard(
       { status: 415 }
     )
     res.headers.set("X-Request-ID", requestId)
-    return { errorResponse: res, requestId }
+    res.headers.set("Cache-Control", "no-store")
+    return { errorResponse: res, requestId, data: null }
   }
 
-  // 4. Body size protection
+  // 4. Stream consumption or Content-Length verification
+  if (parseJson) {
+    const streamResult = await readBoundedJsonStream<T>(request, maxBodySize, requestId)
+    if (streamResult.errorResponse) {
+      return { errorResponse: streamResult.errorResponse, requestId, data: null }
+    }
+    return { errorResponse: null, requestId, data: streamResult.data }
+  }
+
   const contentLength = request.headers.get("content-length")
   if (contentLength && Number(contentLength) > maxBodySize) {
     const res = NextResponse.json(
@@ -208,8 +360,9 @@ export async function runApiGuard(
       { status: 413 }
     )
     res.headers.set("X-Request-ID", requestId)
-    return { errorResponse: res, requestId }
+    res.headers.set("Cache-Control", "no-store")
+    return { errorResponse: res, requestId, data: null }
   }
 
-  return { errorResponse: null, requestId }
+  return { errorResponse: null, requestId, data: null }
 }

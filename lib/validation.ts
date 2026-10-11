@@ -1,4 +1,5 @@
 import { z } from "zod"
+import { NextResponse } from "next/server"
 
 export function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -14,18 +15,20 @@ export function sanitizeHeader(value: string): string {
 }
 
 export function jsonError(message: string, status = 400, requestId?: string) {
-  const body: Record<string, unknown> = { ok: false, error: message }
+  const body: Record<string, unknown> = { success: false, ok: false, error: message }
   if (requestId) body.requestId = requestId
-  const res = Response.json(body, { status })
+  const res = NextResponse.json(body, { status })
   if (requestId) res.headers.set("X-Request-ID", requestId)
+  res.headers.set("Cache-Control", "no-store")
   return res
 }
 
 export function jsonSuccess<T extends Record<string, unknown>>(data: T, requestId?: string) {
-  const body: Record<string, unknown> = { ok: true, ...data }
+  const body: Record<string, unknown> = { success: true, ok: true, ...data }
   if (requestId) body.requestId = requestId
-  const res = Response.json(body)
+  const res = NextResponse.json(body)
   if (requestId) res.headers.set("X-Request-ID", requestId)
+  res.headers.set("Cache-Control", "no-store")
   return res
 }
 

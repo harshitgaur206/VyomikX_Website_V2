@@ -8,18 +8,12 @@ export const runtime = "nodejs"
 const MAX_BODY_SIZE = 10_000
 
 export async function POST(request: Request) {
-  const { errorResponse, requestId } = await runApiGuard(request, {
+  const { errorResponse, requestId, data: jsonBody } = await runApiGuard(request, {
     maxBodySize: MAX_BODY_SIZE,
     routeId: "feedback",
+    parseJson: true,
   })
   if (errorResponse) return errorResponse
-
-  let jsonBody: unknown
-  try {
-    jsonBody = await request.json()
-  } catch {
-    return jsonError("Invalid JSON body.", 400, requestId)
-  }
 
   const parsed = feedbackSchema.safeParse(jsonBody)
   if (!parsed.success) {

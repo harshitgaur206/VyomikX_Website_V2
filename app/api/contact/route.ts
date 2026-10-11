@@ -111,18 +111,12 @@ async function sendEmailNotification(
 
 export async function POST(request: Request) {
   try {
-    const { errorResponse, requestId } = await runApiGuard(request, {
+    const { errorResponse, requestId, data: jsonBody } = await runApiGuard(request, {
       maxBodySize: MAX_BODY_SIZE,
       routeId: "contact",
+      parseJson: true,
     })
     if (errorResponse) return errorResponse
-
-    let jsonBody: unknown
-    try {
-      jsonBody = await request.json()
-    } catch {
-      return jsonError("Invalid JSON request body.", 400, requestId)
-    }
 
     const parsed = contactSchema.safeParse(jsonBody)
     if (!parsed.success) {
@@ -140,15 +134,13 @@ export async function POST(request: Request) {
         message: "Honeypot triggered by bot",
         meta: { requestId },
       })
-      const botRes = jsonSuccess(
+      return jsonSuccess(
         {
           status: "RECEIVED",
           message: "Thank you! Your request has been received.",
         },
         requestId
       )
-      botRes.headers.set("Cache-Control", "no-store")
-      return botRes
     }
 
     let submission
@@ -184,21 +176,19 @@ export async function POST(request: Request) {
       logEvent({
         level: "error",
         route: "/api/contact",
-        message: "Contact email notification failed",
-        meta: { requestId },
+        message: "Contact email notification failed after database persistence",
+        meta: { submissionId: submission.id, requestId },
         error,
       })
-      const res = NextResponse.json(
+      // Return 200 with status RECEIVED: submission is safely in the database, avoid duplicate user retries
+      return jsonSuccess(
         {
-          success: false,
-          error: "Your request was saved, but we couldn't send the notification email.",
-          requestId,
+          status: "RECEIVED",
+          message: "Thank you! Your request has been received and logged.",
+          id: submission.id,
         },
-        { status: 503 }
+        requestId
       )
-      res.headers.set("X-Request-ID", requestId)
-      res.headers.set("Cache-Control", "no-store")
-      return res
     }
 
     logEvent({
@@ -208,19 +198,14 @@ export async function POST(request: Request) {
       meta: { submissionId: submission.id, requestId },
     })
 
-    const successRes = NextResponse.json(
+    return jsonSuccess(
       {
-        success: true,
-        id: submission.id,
-        status: "RECEIVED",
+        status: "CONFIRMED",
         message: "Thank you! Your request has been received.",
-        requestId,
+        id: submission.id,
       },
-      { status: 200 }
+      requestId
     )
-    successRes.headers.set("X-Request-ID", requestId)
-    successRes.headers.set("Cache-Control", "no-store")
-    return successRes
 
   } catch (err) {
     logEvent({
@@ -229,11 +214,6 @@ export async function POST(request: Request) {
       message: "Unhandled contact route crash",
       error: err,
     })
-    const crashRes = NextResponse.json(
-      { success: false, error: "Something went wrong. Please try again later." },
-      { status: 500 }
-    )
-    crashRes.headers.set("Cache-Control", "no-store")
-    return crashRes
+    return jsonError("Something went wrong. Please try again later.", 500)
   }
 }
