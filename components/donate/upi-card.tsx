@@ -6,8 +6,8 @@ import { Check, Copy, ExternalLink, QrCode, Smartphone, Mail, Phone, ShieldCheck
 import { Button } from "@/components/ui/button"
 
 const UPI_ID = "mr.professor2770@okhdfcbank"
-const PAYEE_NAME = "Mr.professor (Nigam chaudhary)"
-const UPI_PAY_URL = "upi://pay?pa=mr.professor2770@okhdfcbank&pn=Mr.professor%20(Nigam%20chaudhary)&aid=uGICAgKDzhtPBMg"
+const PAYEE_NAME = "Nigam Chaudhary"
+const UPI_PAY_URL = "upi://pay?pa=mr.professor2770@okhdfcbank&pn=Nigam%20Chaudhary&aid=uGICAgKDzhtPBMg"
 const CONTACT_PHONE = "+91 79833 57727"
 const CONTACT_PHONE_RAW = "+917983357727"
 const CONTACT_EMAIL = "vyomikx@gmail.com"
@@ -53,10 +53,11 @@ export function UpiCard() {
             <Image
               src="/donate/upi-qr.png"
               alt="Scan to pay VyomikX via UPI"
-              width={256}
-              height={256}
+              width={512}
+              height={512}
               className="h-full w-full object-contain"
               priority
+              unoptimized
             />
           </div>
           <p className="mt-2 text-center font-mono text-[11px] font-medium text-slate-600">
@@ -123,7 +124,7 @@ export function UpiCard() {
               <span>{CONTACT_PHONE}</span>
             </a>
             <a
-              href={`mailto:${CONTACT_EMAIL}?subject=VyomikX%20Donation%20Confirmation`}
+              href={`mailto:${CONTACT_EMAIL}?subject=VyomikX%20Support%20Confirmation`}
               className="inline-flex items-center gap-1.5 text-foreground hover:text-primary transition-colors"
             >
               <Mail className="h-3.5 w-3.5 text-primary" />

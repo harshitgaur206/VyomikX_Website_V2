@@ -3,7 +3,7 @@ import Image from "next/image"
 import { BookOpen, GraduationCap, HandHeart, Users, Wrench } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 import { SectionHeading } from "@/components/section-heading"
-import { site, values } from "@/lib/site-data"
+import { values } from "@/lib/site-data"
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -259,20 +259,6 @@ export default function AboutPage() {
             ))}
           </ol>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-          {site.stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-border bg-card p-6 text-center"
-            >
-              <dt className="font-display text-4xl font-bold text-primary">{stat.value}</dt>
-              <dd className="mt-2 text-sm text-muted-foreground">{stat.label}</dd>
-            </div>
-          ))}
-        </dl>
       </section>
     </>
   )

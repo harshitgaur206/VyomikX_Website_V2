@@ -68,7 +68,7 @@ export function SiteNav() {
             <Link href="/contact">Get in Touch</Link>
           </Button>
           <Button asChild variant="default" className="rounded-full text-xs font-semibold shadow-xs">
-            <Link href="/donate">Support Us</Link>
+            <Link href="/support">Support Us</Link>
           </Button>
         </div>
 

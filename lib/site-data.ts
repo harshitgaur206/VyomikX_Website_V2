@@ -34,10 +34,10 @@ export const communityLinks = [
     cta: "Borrow Equipment",
   },
   {
-    title: "Donate Spare Parts & Support",
-    description: "Support our outreach or donate unused components sitting in a drawer to help students build.",
-    href: "/donate",
-    cta: "Donate & Support",
+    title: "Support Our Mission",
+    description: "Help fund hardware kits and free robotics outreach for curious students across India.",
+    href: "/support",
+    cta: "Support Us",
   },
   {
     title: "Mentor a Student",
@@ -56,7 +56,7 @@ export const navLinks: NavLink[] = [
   { label: "Gallery", href: "/gallery" },
   { label: "Future Vision", href: "/future" },
   { label: "Team", href: "/team" },
-  { label: "Donate", href: "/donate" },
+  { label: "Support Us", href: "/support" },
   { label: "Contact", href: "/contact" },
 ]
 

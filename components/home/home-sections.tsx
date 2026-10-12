@@ -292,17 +292,17 @@ export function HomeCta() {
                 </Link>
               </Button>
 
-              {/* Donate Spare Parts */}
+              {/* Support Our Mission */}
               <Button
                 asChild
                 size="lg"
                 className="w-full rounded-full border border-[#8B5E3C] bg-[#f5e6d3] text-[#5A3825] shadow-sm transition-all duration-300 hover:border-[#6E472D] hover:bg-[#6E472D] hover:text-white dark:border-[#A67550]/70 dark:bg-[#2A221B] dark:text-[#EADBC8] dark:hover:border-[#8B5E3C] dark:hover:bg-[#8B5E3C] dark:hover:text-white sm:w-auto"
               >
                 <Link
-                  href="/contact?topic=donate"
+                  href="/support"
                   className="inline-flex items-center justify-center gap-2"
                 >
-                  <span>Donate Spare Parts</span>
+                  <span>Support Us</span>
                   <Heart className="h-4 w-4 shrink-0" />
                 </Link>
               </Button>
