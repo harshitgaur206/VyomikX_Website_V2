@@ -92,7 +92,7 @@ export default function PrivacyPage() {
             </h2>
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            All server communications are encrypted in transit via TLS 1.3 / HTTPS. Contact submissions are securely stored in serverless PostgreSQL (Neon) and processed using strict rate limiting, input sanitization, and origin verification. Data is retained only as long as necessary to service educational inquiries and workshop logistical coordination.
+            We implement industry-standard technical and organizational security measures to protect your personal information against unauthorized access, alteration, or disclosure. All data transmissions are encrypted in transit using secure HTTPS connections. Submitted inquiries are kept in protected databases with strict access controls and are retained only for as long as necessary to coordinate educational workshops, provide mentorship, or fulfill your request.
           </p>
         </section>
 

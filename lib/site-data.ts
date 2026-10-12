@@ -6,7 +6,7 @@ export const site = {
   subtitle:
     "A student-led movement at ZHCET, AMU. We share tools, mentorship, and equipment so curious minds from all backgrounds can build real technology.",
   email: "vyomikx@gmail.com",
-  phone: "+91 897890",
+  phone: "+91 7983357727",
   location: "ZHCET, Aligarh Muslim University, Aligarh, India",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/vyomikx/" },
@@ -34,10 +34,10 @@ export const communityLinks = [
     cta: "Borrow Equipment",
   },
   {
-    title: "Donate Spare Parts",
-    description: "Have unused components sitting in a drawer? Help a student build their first robot.",
-    href: "/contact?topic=donate",
-    cta: "Donate Parts",
+    title: "Donate Spare Parts & Support",
+    description: "Support our outreach or donate unused components sitting in a drawer to help students build.",
+    href: "/donate",
+    cta: "Donate & Support",
   },
   {
     title: "Mentor a Student",
@@ -56,6 +56,7 @@ export const navLinks: NavLink[] = [
   { label: "Gallery", href: "/gallery" },
   { label: "Future Vision", href: "/future" },
   { label: "Team", href: "/team" },
+  { label: "Donate", href: "/donate" },
   { label: "Contact", href: "/contact" },
 ]
 
