@@ -4,9 +4,15 @@ import { fileURLToPath } from "url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+const isDev = process.env.NODE_ENV !== "production"
+
+const scriptSrc = isDev
+  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com;"
+  : "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com;"
+
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com;
+  ${scriptSrc}
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' data: https://fonts.gstatic.com;
   img-src 'self' data: blob: https://lh3.googleusercontent.com https://drive.google.com;
