@@ -1,4 +1,4 @@
-import { isAllowedOrigin, checkRateLimit } from "@/lib/api-guard"
+import { isAllowedOrigin, checkRateLimit, isValidIp, getClientIp } from "@/lib/api-guard"
 import { contactSchema, feedbackSchema, sanitizeHeader } from "@/lib/validation"
 
 describe("VyomikX API Security Suite", () => {
@@ -39,6 +39,31 @@ describe("VyomikX API Security Suite", () => {
       message: "a".repeat(4001),
     })
     expect(res.success).toBe(false)
+  })
+
+  test("Contact schema accepts and preserves honeypot fields without type mismatches", () => {
+    const res = contactSchema.safeParse({
+      name: "Legit Human",
+      email: "human@vyomikx.in",
+      message: "I want to attend a workshop",
+      companyWebsiteX9: "http://bot-spam.com",
+      website: "http://another-spam.com",
+    })
+    expect(res.success).toBe(true)
+    if (res.success) {
+      expect(res.data.companyWebsiteX9).toBe("http://bot-spam.com")
+      expect(res.data.website).toBe("http://another-spam.com")
+    }
+  })
+
+  test("IP Validator correctly validates IPv4 and IPv6 syntax", () => {
+    expect(isValidIp("192.168.1.1")).toBe(true)
+    expect(isValidIp("203.0.113.195")).toBe(true)
+    expect(isValidIp("::1")).toBe(true)
+    expect(isValidIp("2001:db8::1")).toBe(true)
+    expect(isValidIp("malicious-domain.com")).toBe(false)
+    expect(isValidIp("999.999.999.999")).toBe(false)
+    expect(isValidIp("192.168.1.1; DROP TABLE users;")).toBe(false)
   })
 
   test("CRLF Email Header Sanitization strips newline characters", () => {

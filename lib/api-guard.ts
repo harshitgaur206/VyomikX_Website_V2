@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { Ratelimit } from "@upstash/ratelimit"
 import { Redis } from "@upstash/redis"
 import { randomUUID } from "node:crypto"
+import { isIP } from "node:net"
 
 const ALLOWED_ORIGINS = new Set([
   "http://localhost:3000",
@@ -38,12 +39,8 @@ if (
   })
 }
 
-const IPV4_REGEX = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
-const IPV6_REGEX = /^(?:[0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}$|^::1$|^::$/
-
 export function isValidIp(ip: string): boolean {
-  const trimmed = ip.trim()
-  return IPV4_REGEX.test(trimmed) || IPV6_REGEX.test(trimmed)
+  return isIP(ip.trim()) !== 0
 }
 
 /**

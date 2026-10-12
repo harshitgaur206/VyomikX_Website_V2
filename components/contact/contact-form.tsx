@@ -55,6 +55,7 @@ export function ContactForm() {
     const preferredTime = String(data.get("preferredTime") || "").trim()
     const message = String(data.get("message") || "").trim()
     const companyWebsiteX9 = String(data.get("companyWebsiteX9") || "").trim()
+    const website = String(data.get("website") || "").trim()
 
     const nextErrors: Errors = {}
     if (!name) nextErrors.name = "Please enter your name."
@@ -81,6 +82,7 @@ export function ContactForm() {
           preferredTime,
           message,
           companyWebsiteX9,
+          website,
         }),
       })
       const result = await res.json()
@@ -160,12 +162,18 @@ export function ContactForm() {
           className="absolute -left-[9999px]"
           aria-hidden="true"
         >
-          <label htmlFor="companyWebsiteX9">
-            Company Website
-          </label>
+          <label htmlFor="companyWebsiteX9">Company Website</label>
           <input
             id="companyWebsiteX9"
             name="companyWebsiteX9"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
             type="text"
             tabIndex={-1}
             autoComplete="off"

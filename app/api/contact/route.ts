@@ -118,6 +118,25 @@ export async function POST(request: Request) {
     })
     if (errorResponse) return errorResponse
 
+    // Inspect raw payload for honeypot traps before schema parsing (immune to Zod stripping)
+    const rawPayload = jsonBody && typeof jsonBody === "object" ? (jsonBody as Record<string, unknown>) : null
+    const rawHoneypot = rawPayload?.companyWebsiteX9 || rawPayload?.website
+    if (typeof rawHoneypot === "string" && rawHoneypot.trim().length > 0) {
+      logEvent({
+        level: "warn",
+        route: "/api/contact",
+        message: "Honeypot triggered by bot (raw payload)",
+        meta: { requestId },
+      })
+      return jsonSuccess(
+        {
+          status: "RECEIVED",
+          message: "Thank you! Your request has been received.",
+        },
+        requestId
+      )
+    }
+
     const parsed = contactSchema.safeParse(jsonBody)
     if (!parsed.success) {
       const firstIssue = parsed.error.issues[0]?.message || "Invalid input."
@@ -126,12 +145,12 @@ export async function POST(request: Request) {
 
     const { name, email, organization, type, message, phone, preferredTime, companyWebsiteX9, website } = parsed.data
 
-    // Honeypot check (either new obscure field or legacy field)
+    // Schema-level honeypot check (defense-in-depth)
     if (companyWebsiteX9 || website) {
       logEvent({
         level: "warn",
         route: "/api/contact",
-        message: "Honeypot triggered by bot",
+        message: "Honeypot triggered by bot (schema-validated)",
         meta: { requestId },
       })
       return jsonSuccess(

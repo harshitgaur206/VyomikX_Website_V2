@@ -6,13 +6,15 @@ const __dirname = path.dirname(__filename)
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com;
+  script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' data: https://fonts.gstatic.com;
   img-src 'self' data: blob: https://lh3.googleusercontent.com https://drive.google.com;
   media-src 'self' blob: https://video-downloads.googleusercontent.com https://drive.google.com https://docs.google.com;
   frame-src 'self' https://drive.google.com https://docs.google.com;
   connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://*.upstash.io;
+  worker-src 'self' blob:;
+  manifest-src 'self';
   object-src 'none';
   base-uri 'self';
   form-action 'self';
